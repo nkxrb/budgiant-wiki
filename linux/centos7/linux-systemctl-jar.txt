@@ -1,0 +1,36 @@
+#centos7配置systemctl service 启动项目
+#1.开机自启脚本目录：					cd /usr/lib/systemd/system
+#2.编辑一个新的service文件：			vi yourProjectName.service
+									[Unit] 
+									Description=yourProjectName #描述 
+									After=syslog.target network.target #依赖 
+
+									[Service] 
+									Type=simple 
+
+									ExecStart=/usr/bin/java -jar /opt/javaapps/yourProjectName.jar 
+									#前面是java命令的绝对路径 后面是jar包的绝对路径 
+									ExecStop=/bin/kill -15 $MAINPID 
+
+									User=root 
+									Group=root 
+
+									[Install] 
+									WantedBy=multi-user.target
+
+#3.重新加载服务配置:					systemctl daemon-reload
+
+#4.启动服务：						systemctl start yourProjectName  
+   查看服务状态：						systemctl status yourProjectName  
+   停止服务：						systemctl stop yourProjectName  
+
+#5.设置开机自启动:					systemctl enable yourProjectName
+   设置开机不自启动:					systemctl disable yourProjectName  
+
+#6.查看项目日志：						journalctl -u yourProjectName  或 journalctl -u yourProjectName.service
+
+
+#7.开启防火墙：						systemctl status firewalld
+   查看所有开放的端口：				firewall-cmd --zone=public --list-ports
+   开放一个端口：						firewall-cmd --zone=public --add-port=80/tcp --permanent （--permanent永久生效，没有此参数重启后失效）
+   重新载入：						firewall-cmd --reload		

@@ -1,0 +1,58 @@
+#1.download
+	https://dev.mysql.com/downloads/mysql/
+
+#2.卸载、清理痕迹
+	查看当前安装mysql情况： 		rpm -qa|grep -i mysql 		
+	删除命令：					rpm -e –nodeps 包名	
+	若提示依赖包错误：			rpm -ev MySQL-client-5.5.25a-1.rhel5 --nodeps
+	error: %preun(xxxxxx)..:	rpm -e --noscripts MySQL-client-5.5.25a-1.rhel5
+	删除mysql用户及用户组：		more /etc/passwd | grep mysql
+								more /etc/shadow | grep mysql
+								more /etc/group | grep mysql
+								userdel mysql
+								groupdel mysql
+
+
+	查找相关的文件				find / -name mysql
+	删除相关文件或文件夹			rm -rf /var/lib/mysql
+
+
+#3.安装
+	解压安装包：					tar -zxvf mysql-5.7.26-el7-x86_64.tar.gz
+	添加系统mysql组     			groupadd mysql
+	添加mysql用户 				useradd -r -g mysql mysql
+	安装数据库 					bin/mysqld --initialize --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data
+								上条命令执行完后，记录右下角root@localhost后产生的密码OxpX2&2)eXD-
+	创建RSA(数据加密传输)  		bin/mysql_ssl_rsa_setup --datadir=/usr/local/mysql/data
+	修改mysql目录拥有者为mysql 	chown -R mysql:mysql ./
+
+
+#4.配置my.cnf
+	默认读取位置：				/etc/my.cnf	全局选项
+								/etc/mysql/my.cnf	全局选项
+								SYSCONFDIR/my.cnf	全局选项
+								$MYSQL_HOME/my.cnf	服务器特定选项（仅限服务器）
+								defaults-extra-file	指定的文件 --defaults-extra-file，如果有的话
+								~/.my.cnf	用户特定选项
+								~/.mylogin.cnf	用户特定的登录路径选项（仅限客户端）
+
+	初始化mysql服务：				cp mysql.server /etc/init.d/mysql
+	修改mysql.server：			vim /etc/init.d/mysql
+								--basedir=/usr/local/mysql
+								--datadir=/usr/local/mysql/data
+	创建软连接命令：				ln -s  /usr/local/mysql/bin/mysql  /usr/bin
+								--因为系统默认会查找/usr/bin下的命令，由于mysql没有在这个目录下，所以出现not found
+
+	初始化密码、修改密码：		set password=password('root');
+
+	设置root账户的host地址（修改了才可以远程连接）
+								mysql>grant all privileges on *.* to 'root'@'%' identified by 'root';
+								mysql>flush privileges;
+
+								如果连接不上就可能是防火墙问题，也注意端口是否开放
+
+	配置mysql自动启动				chmod 755 /etc/init.d/mysql
+								chkconfig --add mysql
+								chkconfig --level 345 mysql on
+
+#6.授权
