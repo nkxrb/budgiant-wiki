@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Saving in Ajax Applications - CKEditor 4 Documentation</title>
+    <meta name="description" content="Learn how to install, integrate, configure and develop CKEditor Ecosystem products. Browse through API documentation and online samples.">
+    <meta name="twitter:card" content="Learn how to install, integrate, configure and develop CKEditor Ecosystem products. Browse through API documentation and online samples.">
+    <meta name="twitter:site" content="@ckeditor">
+    <meta property="og:title" content="Saving in Ajax Applications - CKEditor 4 Documentation">
+    <meta property="og:description" content="Learn how to install, integrate, configure and develop CKEditor Ecosystem products. Browse through API documentation and online samples.">
+    <meta property="og:image" content="https://ckeditor.com/docs/assets/img/og/ogimage-ecosystem.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ckeditor.com/docs/ckeditor4/latest/examples/saveajax.html">
+    <meta property="DC.language" content="en">
+    <meta property="DC.publisher" content="CKSource">
+    <meta property="DC.creator" content="CKEditor">
+    <meta property="DC.title" content="Saving in Ajax Applications - CKEditor 4 Documentation">
+    <meta property="DC.format" content="text/html">
+    <meta property="DC.type" content="Text">
+    <meta property="DC.description" content="Learn how to install, integrate, configure and develop CKEditor Ecosystem products. Browse through API documentation and online samples.">
+    <link rel="canonical" href="static/css/saveajax">
+    
+    
+    
+    
+    <link rel="stylesheet" href="static/css/docsearch.min.css">
+    <link rel="stylesheet" href="static/css/styles.css" type="text/css" media="all">
+    <script>
+      ( function() {
+      	'use strict';
+      	// Set up global variables;
+      	if ( !window.umebrto ) {
+      		window.umberto = {};
+      	}
+      	window.umberto.relativeAppPath = "../../../assets/1.3.1/scripts"
+      
+      	// Add app script
+      	var el = document.createElement( 'script' );
+      	el.setAttribute( 'async', 'async' );
+      	el.setAttribute( 'defer', 'defer' );
+      	if ( typeof Symbol === 'function' && typeof Symbol() === 'symbol' ) {
+      		el.src = "../../../assets/1.3.1/scripts/app.js";
+      	} else {
+      		el.src = "../../../assets/1.3.1/scripts/app-polyfill.js";
+      	}
+      	document.getElementsByTagName( 'head' )[ 0 ].appendChild( el );
+      
+      	// Changing documentation theme enable it via `localStorage.setItem( 'theme', 'theme-dark' )`
+      	if ( localStorage.getItem( 'theme' ) === 'theme-dark' ) {
+      		document.getElementsByTagName( 'html' )[ 0 ].classList.add( 'theme-dark' );
+      	}
+      } )();
+    </script>
+    <!-- Google Tag Manager-->
+    <script>if (["ckeditor.com"].indexOf(location.hostname) !== -1) {
+          (function (w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+              var f = d.getElementsByTagName(s)[0],
+                  j = d.createElement(s),
+                  dl = l != 'dataLayer' ? '&l=' + l : '';
+              j.async = true;
+              j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+              f.parentNode.insertBefore(j, f);
+          })( window, document, 'script', 'dataLayer', 'GTM-KFSS6L' );
+      }
+      
+    </script>
+    <!-- End Google Tag Manager-->
+    <script>if ( ["ckeditor.com"].indexOf( location.hostname ) !== -1) {
+      	window.emojicsOpts = {
+      		widget: '50c7737f072dfd100f3dad0411f02e',
+      		position: 'inline'
+      	};
+      	( function( d, s, id ) {
+      		var js, fjs = d.getElementsByTagName( s )[ 0 ];
+      		js = d.createElement( s );
+      		js.id = id;
+      		js.async = 1;
+      		js.src = '//connect.emojics.com/dist/sdk.js';
+      		fjs.parentNode.insertBefore( js, fjs );
+      	} )( document, 'script', 'emojics-js' );
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="javascript:;" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript)-->
+    <header class="top" data-project="ckeditor4">
+      <div class="header__main">
+        <div class="header__main-rwd-button"><a href="#"><span></span><span></span><span></span></a></div>
+        <div class="header__main-title"><a class="header__main-title-home" href="index1.html">CKEditor Ecosystem Documentation</a></div>
+        <div class="top__search">
+          <input class="top__search__box" type="text" id="docsearch_input" placeholder="Search in CKEditor 4">
+          <div class="top__search__button"><img src="static/picture/loupe.jpg" alt="Search"></div>
+        </div>
+      </div>
+      <div class="header__sub">
+        <ul class="top__menu">
+          <li class="top__menu-project-logo"><a href="index2.html">CKEditor 4</a></li>
+          <li><a href="index.html">Guides</a></li>
+          <li><a href="index3.html">Features</a></li>
+          <li><a class="top__menu__item--active" href="index4.html">Examples</a></li>
+          <li><a class="top__menu__api" href="index5.html">API</a></li>
+        </ul>
+      </div>
+      <div class="header__menu-rwd">
+        <ul class="header__menu-rwd__projects">
+          <li data-project="ckeditor5"><a href="index6.html">CKEditor 5</a></li>
+          <li data-project="ckeditor4"><a href="index2.html">CKEditor 4
+              <ul class="tree header__menu-rwd__projects-pages">
+                <li data-group="guide"><a href="index.html">Guides</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+                <li data-group="features"><a href="index3.html">Features</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+                <li data-group="sdk"><a href="index4.html">Examples</a>
+                  <!-- Display subpages for active project.-->
+                  <ul class="header__menu-rwd__projects-subpages">
+                                        <li>
+                                          <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">End-user Features</span></div>
+                                          <ul class="tree__item-nested-list">
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">User Interface</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="uicolor1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">UI Color</span></div></a></li>
+                                                                                        <li><a href="uilanguages.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">UI Language</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Resizing</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="size1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Editor Size</span></div></a></li>
+                                                                                        <li><a href="autogrow1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Editor Auto Grow</span></div></a></li>
+                                                                                        <li><a href="resize1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Resizing Customization</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting Images</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="image1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Default Image Plugin</span></div></a></li>
+                                                                                        <li><a href="image21.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Enhanced Image Plugin</span></div></a></li>
+                                                                                        <li><a href="easyimage1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Easy Image Plugin</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting Content</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="pastefromword1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from Word</span></div></a></li>
+                                                                                        <li><a href="pastefromgoogledocs1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from Google Docs</span></div></a></li>
+                                                                                        <li><a href="pastefromexcel1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from Excel</span></div></a></li>
+                                                                                        <li><a href="pastefromlibreoffice1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from LibreOffice</span></div></a></li>
+                                                                                        <li><a href="spreadsheets1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Spreadsheets</span></div></a></li>
+                                                                                        <li><a href="fileupload.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">File Upload</span></div></a></li>
+                                                                                        <li><a href="mediaembed.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Embedding Media Resources</span></div></a></li>
+                                                                                        <li><a href="table1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Tables with Column Resizing</span></div></a></li>
+                                                                                        <li><a href="codesnippet1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Code Snippets</span></div></a></li>
+                                                                                        <li><a href="mathjax1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Mathematical Formulas</span></div></a></li>
+                                                                                        <li><a href="mathtype1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Mathematical and Chemical Formulas</span></div></a></li>
+                                                                                        <li><a href="placeholder1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Placeholders</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Styling and Formatting</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="basicstyles1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Basic Text Styles</span></div></a></li>
+                                                                                        <li><a href="copyformatting1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Copying Text Formatting</span></div></a></li>
+                                                                                        <li><a href="removeformat1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Removing Text Formatting</span></div></a></li>
+                                                                                        <li><a href="styles1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Styles and Stylesheet Parser</span></div></a></li>
+                                                                                        <li><a href="format1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Text Formats</span></div></a></li>
+                                                                                        <li><a href="colorbutton1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Text and Background Color</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Working with Document</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="spellchecker.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Spelling and Grammar Checking</span></div></a></li>
+                                                                                        <li><a href="mentions1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Mentions, Tags and Emoji</span></div></a></li>
+                                                                                        <li><a href="autocomplete1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Autocomplete</span></div></a></li>
+                                                                                        <li><a href="sourcearea1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Source Code Editing</span></div></a></li>
+                                                                                        <li><a href="magicline1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Magic Line</span></div></a></li>
+                                                                                        <li><a href="language.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Multilingual Content</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Accessibility Support</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="accessibility.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Accessibility and Keyboard Shortcuts</span></div></a></li>
+                                                                                        <li><a href="accessibilitychecker.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Accessibility Checker</span></div></a></li>
+                                                                                        <li><a href="tabindex.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">&quot;Tab&quot; Key Navigation</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                          </ul>
+                                        </li>
+                                        <li>
+                                          <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Integration Features</span></div>
+                                          <ul class="tree__item-nested-list">
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Types</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="classic.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Classic Editor</span></div></a></li>
+                                                                                        <li><a href="inline.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Inline Editor</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor UI</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="fixedui.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Fixed User Interface</span></div></a></li>
+                                                                                        <li><a href="floatingui.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Floating User Interface</span></div></a></li>
+                                                                                        <li><a href="sharedspace1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Shared User Interface</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Presets</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="basicpreset.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Basic Preset</span></div></a></li>
+                                                                                        <li><a href="standardpreset.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Standard Preset</span></div></a></li>
+                                                                                        <li><a href="fullpreset.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Full Preset</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Framework Integration</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="angular.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Angular Integration</span></div></a></li>
+                                                                                        <li><a href="react.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">React Integration</span></div></a></li>
+                                                                                        <li><a href="vue.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Vue Integration</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Toolbar</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="toolbar1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Custom Toolbar</span></div></a></li>
+                                                                                        <li><a href="balloontoolbar1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Balloon Toolbar</span></div></a></li>
+                                                                                        <li><a href="toolbarlocation1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Toolbar Location</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Content Filtering</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="acf.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">ACF – Automatic Mode</span></div></a></li>
+                                                                                        <li><a href="acfcustom.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">ACF – Custom Mode</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Saving Data</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="savetextarea.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Saving Textarea Data</span></div></a></li>
+                                                                                        <li><a href="">
+                                                                                            <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--sdk tree__item__text">Saving in Ajax Applications</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Output Control</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="htmlformatting.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">HTML Output Formatting</span></div></a></li>
+                                                                                        <li><a href="fullpage1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Editing Complete HTML Pages</span></div></a></li>
+                                                                                        <li><a href="enterkey1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Enter Key Configuration</span></div></a></li>
+                                                                                        <li><a href="bbcode1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">BBCode Editing</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">API Usage</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="api.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Using CKEditor API</span></div></a></li>
+                                                                                        <li><a href="readonly1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Read-Only Mode</span></div></a></li>
+                                                                                        <li><a href="draganddrop.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Drag and Drop Integration</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Utilities</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="devtools1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Developer Tools</span></div></a></li>
+                                                                                        <li><a href="uicolorpicker1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">UI Color Picker</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Tutorials</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="timestamp.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Timestamp Plugin</span></div></a></li>
+                                                                                        <li><a href="abbr.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Abbreviation Plugin</span></div></a></li>
+                                                                                        <li><a href="simplebox.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Custom Widget</span></div></a></li>
+                                                                                        <li><a href="autotag.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Autotag Plugin</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                          </ul>
+                                        </li>
+                  </ul>
+                </li>
+                <li data-group="api-reference"><a href="index5.html">API</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+              </ul></a></li>
+          <li data-project="letters"><a href="overview.html">Letters</a></li>
+          <li data-project="cs"><a href="overview1.html">Cloud Services</a></li>
+          <li data-project="ckfinder"><a href="index7.html">CKFinder</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="main">
+      <section class="main__content formatted main__content--sdk">
+        <div class="main__content-inner">
+          <div class="github-contrib"><a href="javascript:;" title="Contribute to this guide"><img src="static/picture/edit.jpg" alt="Contribute to this guide"></a><a href="javascript:;" title="Report an issue"><img src="static/picture/exclamation-circle.jpg" alt="Report an issue"></a>
+          </div>
+          <div class="rwd-breadcrumbs"><a href="index1.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="index2.html">CKEditor 4</a><span class="rwd-breadcrumbs__separator">/</span><a href="index4.html">Examples</a>
+          </div>
+          <script src="static/js/ckeditor.js"></script>
+          <script src="static/js/icons.js"></script>
+			<script data-sample="1">
+				var editor1, html = '';
+		
+				function createEditor() {
+					if ( editor1 )
+						return;
+		
+					// Create a new editor instance inside the <div id="editor"> element,
+					// setting its value to html.
+					var config = {};
+					editor1 = CKEDITOR.appendTo( 'editor1', config, html );
+		
+					// Update button states.
+					document.getElementById( 'remove' ).style.display = '';
+					document.getElementById( 'create' ).style.display = 'none';
+				}
+		
+				function removeEditor() {
+					if ( !editor1 )
+						return;
+		
+					// Retrieve the editor content. In an Ajax application this data would be
+					// sent to the server or used in any other way.
+					html = editor1.getData();
+		
+					// Update <div> with "Edited Content".
+					document.getElementById( 'editorcontent1' ).innerHTML = html;
+					// Show <div> with "Edited Content".
+					document.getElementById( 'content1' ).style.display = '';
+					// Update button states.
+					document.getElementById( 'remove' ).style.display = 'none';
+					document.getElementById( 'create' ).style.display = '';
+		
+					// Destroy the editor.
+					editor1.destroy();
+					editor1 = null;
+				}
+			</script>
+			<h1>CKEditor in Ajax Applications <a class="documentation" href="dev_savedata.html">Documentation</a></h1>
+
+			<div class="description">
+				<p>
+					With <a href="inline.html">inline editing</a> and possibility to create and destroy CKEditor instances dynamically, CKEditor is a perfect match for Ajax applications. Getting updated data from
+					CKEditor is easy thanks to rich JavaScript API. It is also possible to detect whenever a change is made in the editor thanks to the
+					<code><a href="ckeditor_editor#event-change">change</a></code> event, which makes additional features like auto-saving really easy to develop.
+				</p>
+
+			</div>
+			<h2 class="editor-title">Creating and Destroying CKEditor on the Fly</h2>
+
+			<p>In this example CKEditor is created dynamically after pressing the &quot;Create Editor&quot; button. After pressing the &quot;Remove Editor&quot; button the editor content is passed to a dedicated <code>&lt;div&gt;</code> element and CKEditor is removed.</p>
+			<p>This functionality is achieved using just three simple methods: <code><a href="ckeditor#method-appendTo">CKEDITOR.appendTo()</a></code>, <code><a href="ckeditor_editor#method-getData">editor.getData()</a></code> and <code><a href="ckeditor_editor#method-destroy">editor.destroy()</a></code>.</p>
+			<p data-sample="1">
+				<input onclick="createEditor();" type="button" value="Create Editor" id="create">
+				<input onclick="removeEditor();" type="button" value="Remove Editor" id="remove" style="display:none">
+			</p>
+
+			<!-- This <div> will store the editor. -->
+			<div id="editor1" data-sample="1">
+			</div>
+			<div id="content1" style="display: none" data-sample="1">
+				<h3>Edited Content</h3>
+				<!-- This <div> will be used to display the editor content. -->
+				<div id="editorcontent1">
+				</div>
+			</div>
+
+			<h2 class="editor-title">The <code>change</code> Event</h2>
+
+			<p>Whenever a change is made in the editor, CKEditor fires a <code><a href="ckeditor_editor#event-change">change</a></code> event, which makes it possible to auto-save data on the fly. In the example below the <code>change</code> event is used to mirror entered content below the editor. To see it in action, start typing in the editing area.</p>
+			<textarea cols="80" id="editor2" name="editor2" rows="10" data-sample="2">
+			</textarea>
+
+			<div id="content2" style="display: none" data-sample="2">
+				<p>The number of <code>change</code> events: <strong><span id="changes"></span></strong>.</p>
+				<h3>Mirrored Content</h3>
+				<!-- This <div> will be used to display the editor content. -->
+				<div id="editorcontent2">
+				</div>
+			</div>
+
+			<div class="tip">
+				<p>
+					Saving data is a server-side operation and you are free to implement the save functionality on your own, in any way you like. CKEditor is a pure JavaScript component and it does not offer anything more than JavaScript methods and events to access the data so that you could save it on the server.
+				</p>
+				<p>
+					Be aware that a <strong><a href="javascript:;">Save</a></strong> plugin for CKEditor is available. It provides the <span class="button_icon" data-icon="save" title="Save">&#xA0;</span> button, which fires a <code><a href="ckeditor_editor#event-save">save</a></code> event, but it currently works only for classic editor placed inside the <code>&lt;form&gt;</code> element. If you would like to use the <strong>Save</strong> button to save data without reloading the page, e.g. in an Ajax application using inline editor, check <a href="dev_savedata.html">the documentation about saving data</a>.
+				</p>
+			</div>
+
+			<h2>Related Features</h2>
+
+			<ul>
+				<li><a href="classic.html">Editor Types &#x2013; Classic Editor</a></li>
+				<li><a href="inline.html">Editor Types &#x2013; Inline Editor</a></li>
+				<li><a href="savetextarea.html">Saving Data &#x2013; Saving Data in CKEditor Replacing a Textarea</a></li>
+			</ul>
+
+			<script data-sample="2">
+				(function () {
+					var changesCount = 0;
+					var editor2 = CKEDITOR.replace( 'editor2', {
+						removePlugins: 'sourcearea'
+
+					} );
+					editor2.on( 'change', function ( ev ) {
+						changesCount++;
+						document.getElementById( 'content2' ).style.display = '';
+						document.getElementById( 'changes' ).innerHTML = changesCount.toString();
+						document.getElementById( 'editorcontent2' ).innerHTML = editor2.getData();
+					} );
+				})();
+			</script>
+		
+          <h2>Get Sample Source Code</h2>
+          <ul class="sdk-sample-source-code">
+            <li><a class="sdk-sample-source-code__button" href="#">Creating and destroying CKEditor on the fly</a>
+              <pre class="sdk-sample-source-code__code-block">
+                <div class="sdk-sample-source-code__code-block-action-buttons"><a class="sdk-sample-source-code__code-block-copy" href="#">Copy</a><a class="sdk-sample-source-code__code-block-download" href="#">Download</a></div><code class="html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;robots&quot; content=&quot;noindex, nofollow&quot;&gt;
+  &lt;title&gt;Creating and destroying CKEditor on the fly&lt;/title&gt;
+  &lt;script src=&quot;https://cdn.ckeditor.com/4.14.0/standard-all/ckeditor.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;script&gt;
+    var editor1, html = '';
+
+    function createEditor() {
+      if (editor1)
+        return;
+
+      // Create a new editor instance inside the &lt;div id=&quot;editor&quot;&gt; element,
+      // setting its value to html.
+      var config = {};
+      editor1 = CKEDITOR.appendTo('editor1', config, html);
+
+      // Update button states.
+      document.getElementById('remove').style.display = '';
+      document.getElementById('create').style.display = 'none';
+    }
+
+    function removeEditor() {
+      if (!editor1)
+        return;
+
+      // Retrieve the editor content. In an Ajax application this data would be
+      // sent to the server or used in any other way.
+      html = editor1.getData();
+
+      // Update &lt;div&gt; with &quot;Edited Content&quot;.
+      document.getElementById('editorcontent1').innerHTML = html;
+      // Show &lt;div&gt; with &quot;Edited Content&quot;.
+      document.getElementById('content1').style.display = '';
+      // Update button states.
+      document.getElementById('remove').style.display = 'none';
+      document.getElementById('create').style.display = '';
+
+      // Destroy the editor.
+      editor1.destroy();
+      editor1 = null;
+    }
+  &lt;/script&gt;
+  &lt;p&gt;
+    &lt;input onclick=&quot;createEditor();&quot; type=&quot;button&quot; value=&quot;Create Editor&quot; id=&quot;create&quot;&gt;
+    &lt;input onclick=&quot;removeEditor();&quot; type=&quot;button&quot; value=&quot;Remove Editor&quot; id=&quot;remove&quot; style=&quot;display:none&quot;&gt;
+  &lt;/p&gt;
+  &lt;div id=&quot;editor1&quot;&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;content1&quot; style=&quot;display: none&quot;&gt;
+    &lt;h3&gt;Edited Content&lt;/h3&gt;
+    &lt;!-- This &lt;div&gt; will be used to display the editor content. --&gt;
+    &lt;div id=&quot;editorcontent1&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+            </li>
+            <li><a class="sdk-sample-source-code__button" href="#">The &lt;code&gt;change&lt;/code&gt; event</a>
+              <pre class="sdk-sample-source-code__code-block">
+                <div class="sdk-sample-source-code__code-block-action-buttons"><a class="sdk-sample-source-code__code-block-copy" href="#">Copy</a><a class="sdk-sample-source-code__code-block-download" href="#">Download</a></div><code class="html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;robots&quot; content=&quot;noindex, nofollow&quot;&gt;
+  &lt;title&gt;The &lt;code&gt;change&lt;/code&gt; event&lt;/title&gt;
+  &lt;script src=&quot;https://cdn.ckeditor.com/4.14.0/standard-all/ckeditor.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;textarea cols=&quot;80&quot; id=&quot;editor2&quot; name=&quot;editor2&quot; rows=&quot;10&quot;&gt;
+&lt;/textarea&gt;
+  &lt;div id=&quot;content2&quot; style=&quot;display: none&quot;&gt;
+    &lt;p&gt;The number of &lt;code&gt;change&lt;/code&gt; events: &lt;strong&gt;&lt;span id=&quot;changes&quot;&gt;&lt;/span&gt;&lt;/strong&gt;.&lt;/p&gt;
+    &lt;h3&gt;Mirrored Content&lt;/h3&gt;
+    &lt;!-- This &lt;div&gt; will be used to display the editor content. --&gt;
+    &lt;div id=&quot;editorcontent2&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+    (function() {
+      var changesCount = 0;
+      var editor2 = CKEDITOR.replace('editor2', {
+        removePlugins: 'sourcearea'
+
+      });
+      editor2.on('change', function(ev) {
+        changesCount++;
+        document.getElementById('content2').style.display = '';
+        document.getElementById('changes').innerHTML = changesCount.toString();
+        document.getElementById('editorcontent2').innerHTML = editor2.getData();
+      });
+    })();
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+            </li>
+          </ul>
+          <div class="feedback-widget">
+            <div id="emojics-root"></div>
+          </div>
+        </div>
+      </section>
+      <div class="side-navigation side-navigation--sdk">
+        <div class="side-navigation__wrapper">
+          <nav class="side-navigation__inner">
+            <ul class="tree sdk-tree">
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">End-user Features</span></div>
+                              <ul class="tree__item-nested-list">
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">User Interface</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="uicolor1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">UI Color</span></div></a></li>
+                                                                <li><a href="uilanguages.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">UI Language</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Resizing</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="size1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Editor Size</span></div></a></li>
+                                                                <li><a href="autogrow1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Editor Auto Grow</span></div></a></li>
+                                                                <li><a href="resize1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Resizing Customization</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting Images</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="image1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Default Image Plugin</span></div></a></li>
+                                                                <li><a href="image21.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Enhanced Image Plugin</span></div></a></li>
+                                                                <li><a href="easyimage1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Easy Image Plugin</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting Content</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="pastefromword1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from Word</span></div></a></li>
+                                                                <li><a href="pastefromgoogledocs1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from Google Docs</span></div></a></li>
+                                                                <li><a href="pastefromexcel1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from Excel</span></div></a></li>
+                                                                <li><a href="pastefromlibreoffice1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from LibreOffice</span></div></a></li>
+                                                                <li><a href="spreadsheets1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Spreadsheets</span></div></a></li>
+                                                                <li><a href="fileupload.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">File Upload</span></div></a></li>
+                                                                <li><a href="mediaembed.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Embedding Media Resources</span></div></a></li>
+                                                                <li><a href="table1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Tables with Column Resizing</span></div></a></li>
+                                                                <li><a href="codesnippet1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Code Snippets</span></div></a></li>
+                                                                <li><a href="mathjax1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Mathematical Formulas</span></div></a></li>
+                                                                <li><a href="mathtype1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Mathematical and Chemical Formulas</span></div></a></li>
+                                                                <li><a href="placeholder1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Placeholders</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Styling and Formatting</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="basicstyles1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Basic Text Styles</span></div></a></li>
+                                                                <li><a href="copyformatting1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Copying Text Formatting</span></div></a></li>
+                                                                <li><a href="removeformat1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Removing Text Formatting</span></div></a></li>
+                                                                <li><a href="styles1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Styles and Stylesheet Parser</span></div></a></li>
+                                                                <li><a href="format1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Text Formats</span></div></a></li>
+                                                                <li><a href="colorbutton1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Text and Background Color</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Working with Document</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="spellchecker.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Spelling and Grammar Checking</span></div></a></li>
+                                                                <li><a href="mentions1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Mentions, Tags and Emoji</span></div></a></li>
+                                                                <li><a href="autocomplete1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Autocomplete</span></div></a></li>
+                                                                <li><a href="sourcearea1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Source Code Editing</span></div></a></li>
+                                                                <li><a href="magicline1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Magic Line</span></div></a></li>
+                                                                <li><a href="language.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Multilingual Content</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Accessibility Support</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="accessibility.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Accessibility and Keyboard Shortcuts</span></div></a></li>
+                                                                <li><a href="accessibilitychecker.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Accessibility Checker</span></div></a></li>
+                                                                <li><a href="tabindex.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">&quot;Tab&quot; Key Navigation</span></div></a></li>
+                                                </ul>
+                                              </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Integration Features</span></div>
+                              <ul class="tree__item-nested-list">
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Types</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="classic.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Classic Editor</span></div></a></li>
+                                                                <li><a href="inline.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Inline Editor</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor UI</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="fixedui.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Fixed User Interface</span></div></a></li>
+                                                                <li><a href="floatingui.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Floating User Interface</span></div></a></li>
+                                                                <li><a href="sharedspace1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Shared User Interface</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Presets</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="basicpreset.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Basic Preset</span></div></a></li>
+                                                                <li><a href="standardpreset.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Standard Preset</span></div></a></li>
+                                                                <li><a href="fullpreset.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Full Preset</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Framework Integration</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="angular.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Angular Integration</span></div></a></li>
+                                                                <li><a href="react.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">React Integration</span></div></a></li>
+                                                                <li><a href="vue.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Vue Integration</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Toolbar</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="toolbar1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Custom Toolbar</span></div></a></li>
+                                                                <li><a href="balloontoolbar1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Balloon Toolbar</span></div></a></li>
+                                                                <li><a href="toolbarlocation1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Toolbar Location</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Content Filtering</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="acf.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">ACF – Automatic Mode</span></div></a></li>
+                                                                <li><a href="acfcustom.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">ACF – Custom Mode</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Saving Data</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="savetextarea.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Saving Textarea Data</span></div></a></li>
+                                                                <li><a href="">
+                                                                    <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--sdk tree__item__text">Saving in Ajax Applications</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Output Control</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="htmlformatting.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">HTML Output Formatting</span></div></a></li>
+                                                                <li><a href="fullpage1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Editing Complete HTML Pages</span></div></a></li>
+                                                                <li><a href="enterkey1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Enter Key Configuration</span></div></a></li>
+                                                                <li><a href="bbcode1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">BBCode Editing</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">API Usage</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="api.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Using CKEditor API</span></div></a></li>
+                                                                <li><a href="readonly1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Read-Only Mode</span></div></a></li>
+                                                                <li><a href="draganddrop.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Drag and Drop Integration</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Utilities</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="devtools1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Developer Tools</span></div></a></li>
+                                                                <li><a href="uicolorpicker1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">UI Color Picker</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Tutorials</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="timestamp.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Timestamp Plugin</span></div></a></li>
+                                                                <li><a href="abbr.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Abbreviation Plugin</span></div></a></li>
+                                                                <li><a href="simplebox.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Custom Widget</span></div></a></li>
+                                                                <li><a href="autotag.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Autotag Plugin</span></div></a></li>
+                                                </ul>
+                                              </li>
+                              </ul>
+                            </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </main>
+    <footer class="footer footer--bordered">
+      <p>&copy; 2003-2020 <a href="javascript:;">CKSource</a>. All rights reserved.</p>
+    </footer>
+    <script type="text/javascript" src="static/js/docsearch.min.js"></script><script type="text/javascript">
+docsearch({
+apiKey:'7fd1a5354ceba927a56450ce0459620d',indexName:'ckeditor_docs_site',inputSelector:'#docsearch_input',algoliaOptions:{hitsPerPage:250,attributesToRetrieve:'*',facetFilters:['tags: ckeditor4']},
+transformData: function( hits ) {var sortingFn = function( a, b ) {a.custom_ranking = a.custom_ranking || 0;b.custom_ranking = b.custom_ranking || 0;if ( a.custom_ranking === b.custom_ranking ) return a.index - b.index;if ( a.custom_ranking > b.custom_ranking ) return -1;if ( a.custom_ranking < b.custom_ranking ) return 1;};var result = [];var tags = [ 'guide', 'features', 'examples', 'api' ];var hitsGrouped = { api: [] };hitsGrouped[ 'examples' ] = hits.filter( function( h ) {return h.tags.includes( 'examples' );} ).slice( 0, 7 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn );tags.forEach( function( tag ) {if ( tag !== 'examples' ) {hitsGrouped[ tag ] = hits.filter( function( h ) {return h.tags.includes( tag );} ).slice( 0, 10 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn ).slice( 0, 3 );}} );var apiSearchHits = [];if ( window.apiSearch ) apiSearchHits = window.apiSearch();hitsGrouped.api = hitsGrouped.api.filter( function( h ) {var isDuplicated = false;for ( var i = 0; i < apiSearchHits.length; i++ ) {if ( h.url.includes( apiSearchHits[ i ].urlShort ) ) {isDuplicated = true;break;}}return !isDuplicated;} );hitsGrouped.api = ( apiSearchHits || [] ).concat( hitsGrouped.api );result = result.concat( hitsGrouped[ 'examples' ] );tags.forEach( function( tag ) {if ( tag !== 'examples' ) result = result.concat( hitsGrouped[ tag ].slice( 0, 4 ) );} );return result;}
+});
+</script>
+  </body>
+</html>

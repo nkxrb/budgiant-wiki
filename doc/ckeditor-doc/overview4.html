@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Overview - Cloud Services Documentation</title>
+    <meta name="description" content="CKEditor Cloud Services is a cloud platform for editing and real-time collaboration services. Learn how to connect to CKEditor Cloud Services and what services are available.">
+    <meta name="twitter:card" content="CKEditor Cloud Services is a cloud platform for editing and real-time collaboration services. Learn how to connect to CKEditor Cloud Services and what services are available.">
+    <meta name="twitter:site" content="@ckeditor">
+    <meta property="og:title" content="Overview - Cloud Services Documentation">
+    <meta property="og:description" content="CKEditor Cloud Services is a cloud platform for editing and real-time collaboration services. Learn how to connect to CKEditor Cloud Services and what services are available.">
+    <meta property="og:image" content="https://ckeditor.com/docs/assets/img/og/ogimage-ecosystem.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ckeditor.com/docs/cs/latest/onpremises/overview.html">
+    <meta property="DC.language" content="en">
+    <meta property="DC.publisher" content="CKSource">
+    <meta property="DC.creator" content="CKEditor">
+    <meta property="DC.title" content="Overview - Cloud Services Documentation">
+    <meta property="DC.format" content="text/html">
+    <meta property="DC.type" content="Text">
+    <meta property="DC.description" content="CKEditor Cloud Services is a cloud platform for editing and real-time collaboration services. Learn how to connect to CKEditor Cloud Services and what services are available.">
+    
+    
+    
+    
+    <link rel="stylesheet" href="static/css/docsearch.min.css">
+    <link rel="stylesheet" href="static/css/styles.css" type="text/css" media="all">
+    <script>
+      ( function() {
+      	'use strict';
+      	// Set up global variables;
+      	if ( !window.umebrto ) {
+      		window.umberto = {};
+      	}
+      	window.umberto.relativeAppPath = "../../../assets/1.3.1/scripts"
+      
+      	// Add app script
+      	var el = document.createElement( 'script' );
+      	el.setAttribute( 'async', 'async' );
+      	el.setAttribute( 'defer', 'defer' );
+      	if ( typeof Symbol === 'function' && typeof Symbol() === 'symbol' ) {
+      		el.src = "../../../assets/1.3.1/scripts/app.js";
+      	} else {
+      		el.src = "../../../assets/1.3.1/scripts/app-polyfill.js";
+      	}
+      	document.getElementsByTagName( 'head' )[ 0 ].appendChild( el );
+      
+      	// Changing documentation theme enable it via `localStorage.setItem( 'theme', 'theme-dark' )`
+      	if ( localStorage.getItem( 'theme' ) === 'theme-dark' ) {
+      		document.getElementsByTagName( 'html' )[ 0 ].classList.add( 'theme-dark' );
+      	}
+      } )();
+    </script>
+    <!-- Google Tag Manager-->
+    <script>if (["ckeditor.com"].indexOf(location.hostname) !== -1) {
+          (function (w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+              var f = d.getElementsByTagName(s)[0],
+                  j = d.createElement(s),
+                  dl = l != 'dataLayer' ? '&l=' + l : '';
+              j.async = true;
+              j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+              f.parentNode.insertBefore(j, f);
+          })( window, document, 'script', 'dataLayer', 'GTM-KFSS6L' );
+      }
+      
+    </script>
+    <!-- End Google Tag Manager-->
+    <script>if ( ["ckeditor.com"].indexOf( location.hostname ) !== -1) {
+      	window.emojicsOpts = {
+      		widget: '50c7737f072dfd100f3dad0411f02e',
+      		position: 'inline'
+      	};
+      	( function( d, s, id ) {
+      		var js, fjs = d.getElementsByTagName( s )[ 0 ];
+      		js = d.createElement( s );
+      		js.id = id;
+      		js.async = 1;
+      		js.src = '//connect.emojics.com/dist/sdk.js';
+      		fjs.parentNode.insertBefore( js, fjs );
+      	} )( document, 'script', 'emojics-js' );
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="javascript:;" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript)-->
+    <header class="top" data-project="cs">
+      <div class="header__main">
+        <div class="header__main-rwd-button"><a href="#"><span></span><span></span><span></span></a></div>
+        <div class="header__main-title"><a class="header__main-title-home" href="index1.html">CKEditor Ecosystem Documentation</a></div>
+        <div class="top__search">
+          <input class="top__search__box" type="text" id="docsearch_input" placeholder="Search in Cloud Services">
+          <div class="top__search__button"><img src="static/picture/loupe.jpg" alt="Search"></div>
+        </div>
+      </div>
+      <div class="header__sub">
+        <ul class="top__menu">
+          <li class="top__menu-project-logo"><a href="overview1.html">Cloud Services</a></li>
+          <li><a href="javascript:;">Guides</a></li>
+          <li><a class="top__menu__item--active" href="javascript:;">On-Premises</a></li>
+          <li><a href="index11.html">Examples</a></li>
+        </ul>
+      </div>
+      <div class="header__menu-rwd">
+        <ul class="header__menu-rwd__projects">
+          <li data-project="ckeditor5"><a href="index6.html">CKEditor 5</a></li>
+          <li data-project="ckeditor4"><a href="index2.html">CKEditor 4</a></li>
+          <li data-project="letters"><a href="overview.html">Letters</a></li>
+          <li data-project="cs"><a href="overview1.html">Cloud Services
+              <ul class="tree header__menu-rwd__projects-pages">
+                <li data-group="guides"><a href="javascript:;">Guides</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+                <li data-group="onpremises"><a href="javascript:;">On-Premises</a>
+                  <!-- Display subpages for active project.-->
+                  <ul class="header__menu-rwd__projects-subpages">
+                            <li><a href="">
+                                <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                            <li><a href="javascript:;">
+                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Requirements</span></div></a></li>
+                            <li><a href="javascript:;">
+                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Architecture</span></div></a></li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Installation</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Docker</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Node.js</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li><a href="javascript:;">
+                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Management</span></div></a></li>
+                            <li><a href="javascript:;">
+                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Testing</span></div></a></li>
+                            <li><a href="javascript:;">
+                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Endpoints</span></div></a></li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Features</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Restful APIs</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Webhooks</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">API secret</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Easy Image</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li><a href="javascript:;">
+                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">SSL communication</span></div></a></li>
+                            <li><a href="javascript:;">
+                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Logs</span></div></a></li>
+                  </ul>
+                </li>
+                <li data-group="examples"><a href="index11.html">Examples</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+              </ul></a></li>
+          <li data-project="ckfinder"><a href="index7.html">CKFinder</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="main">
+      <section class="main__content formatted">
+        <div class="main__content-inner">
+          <div class="rwd-breadcrumbs"><a href="index1.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="overview1.html">Cloud Services</a><span class="rwd-breadcrumbs__separator">/</span><a href="javascript:;">On-Premises</a>
+          </div>
+          <h1 class="main__content-title"><img src="static/picture/book.jpg" alt="guide">Overview
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#next-steps">Next steps</a></li></ol></nav><p>The On-Premises version of <a href="overview1.html">CKEditor Cloud Services</a> is an application that can be installed and run on the customer&#x2019;s in-house servers and computing infrastructure, including a private cloud. It is a highly scalable solution, designed to handle an unlimited number of concurrent connections. It contains all the features of CKEditor Cloud Services available as <abbr title="Software as a Service">SaaS</abbr>.</p>
+<div class="info-box notice"><p>The information contained in the On-Premises section mainly concerns the way of installation, requirements, management, and differences in functionality between the On-Premises and SaaS versions.</p><p>The whole functionality of the system is described in the <a href="overview1.html">Guides</a> section, when the differences are described in the <a href="javascript:;">Features</a> section.</p></div>
+<div class="info-box notice"><p>A valid license key is needed in order to install CKEditor Cloud Services On-Premises.<br>
+<a href="javascript:;" target="_blank" rel="noopener">Contact us</a> for a trial license key.</p></div>
+<p>The documentation in this section refers to a simplified version of CKEditor Cloud Services On-Premises which was designed to be easy to set up and maintain (while preserving all features). It also lowers the running costs by reducing the number of servers required to run the whole application to the minimum.</p>
+<p>If your usage scenario involves running CKEditor Cloud Services On-Premises for more than 50,000 concurrent connections, please <a href="javascript:;" target="_blank" rel="noopener">contact us</a> to discuss the most optimal setup for your needs.</p>
+<p>The CKEditor Cloud Services On-premise installation requires two servers: one for running the application (&#x201C;Application Server&#x201D;) and another one for hosting the databases (&#x201C;Database Server&#x201D;). Refer to the <a href="javascript:;">Requirements guide</a> for more information.</p>
+<h2 id="next-steps"><a class="headerlink" href="#next-steps">#</a> Next steps</h2>
+<p>Read <a href="javascript:;">how to install CKEditor Cloud Services On-Premises</a>.</p>
+
+          <div class="feedback-widget">
+            <div id="emojics-root"></div>
+          </div>
+        </div>
+      </section>
+      <div class="side-navigation">
+        <div class="side-navigation__wrapper">
+          <nav class="side-navigation__inner">
+            <ul class="tree guide-tree">
+                          <li><a href="">
+                              <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                          <li><a href="javascript:;">
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Requirements</span></div></a></li>
+                          <li><a href="javascript:;">
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Architecture</span></div></a></li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Installation</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Docker</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Node.js</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li><a href="javascript:;">
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Management</span></div></a></li>
+                          <li><a href="javascript:;">
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Testing</span></div></a></li>
+                          <li><a href="javascript:;">
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Endpoints</span></div></a></li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Features</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Restful APIs</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Webhooks</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">API secret</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Easy Image</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li><a href="javascript:;">
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">SSL communication</span></div></a></li>
+                          <li><a href="javascript:;">
+                              <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Logs</span></div></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </main>
+    <footer class="footer footer--bordered">
+      <p>&copy; 2003-2020 <a href="javascript:;">CKSource</a>. All rights reserved.</p>
+    </footer>
+    <script type="text/javascript" src="static/js/docsearch.min.js"></script><script type="text/javascript">
+docsearch({
+apiKey:'7fd1a5354ceba927a56450ce0459620d',indexName:'ckeditor_docs_site',inputSelector:'#docsearch_input',algoliaOptions:{hitsPerPage:250,attributesToRetrieve:'*',facetFilters:['tags: cs']},
+transformData: function( hits ) {var sortingFn = function( a, b ) {a.custom_ranking = a.custom_ranking || 0;b.custom_ranking = b.custom_ranking || 0;if ( a.custom_ranking === b.custom_ranking ) return a.index - b.index;if ( a.custom_ranking > b.custom_ranking ) return -1;if ( a.custom_ranking < b.custom_ranking ) return 1;};var result = [];var tags = [ 'guides', 'onpremises', 'examples' ];var hitsGrouped = { api: [] };hitsGrouped[ 'onpremises' ] = hits.filter( function( h ) {return h.tags.includes( 'onpremises' );} ).slice( 0, 7 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn );tags.forEach( function( tag ) {if ( tag !== 'onpremises' ) {hitsGrouped[ tag ] = hits.filter( function( h ) {return h.tags.includes( tag );} ).slice( 0, 10 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn ).slice( 0, 3 );}} );var apiSearchHits = [];if ( window.apiSearch ) apiSearchHits = window.apiSearch();hitsGrouped.api = hitsGrouped.api.filter( function( h ) {var isDuplicated = false;for ( var i = 0; i < apiSearchHits.length; i++ ) {if ( h.url.includes( apiSearchHits[ i ].urlShort ) ) {isDuplicated = true;break;}}return !isDuplicated;} );hitsGrouped.api = ( apiSearchHits || [] ).concat( hitsGrouped.api );result = result.concat( hitsGrouped[ 'onpremises' ] );tags.forEach( function( tag ) {if ( tag !== 'onpremises' ) result = result.concat( hitsGrouped[ tag ].slice( 0, 4 ) );} );return result;}
+});
+</script>
+  </body>
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accessibility Support - CKEditor 4 Documentation</title>
+    <meta name="description" content="Learn how to install, integrate and configure CKEditor 4. More complex aspects, like creating plugins, widgets and skins are explained here, too. API reference and examples included.">
+    <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 4. More complex aspects, like creating plugins, widgets and skins are explained here, too. API reference and examples included.">
+    <meta name="twitter:site" content="@ckeditor">
+    <meta property="og:title" content="Accessibility Support - CKEditor 4 Documentation">
+    <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 4. More complex aspects, like creating plugins, widgets and skins are explained here, too. API reference and examples included.">
+    <meta property="og:image" content="https://ckeditor.com/docs/assets/img/og/ogimage-ecosystem.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ckeditor.com/docs/ckeditor4/latest/guide/dev_a11y.html">
+    <meta property="DC.language" content="en">
+    <meta property="DC.publisher" content="CKSource">
+    <meta property="DC.creator" content="CKEditor">
+    <meta property="DC.title" content="Accessibility Support - CKEditor 4 Documentation">
+    <meta property="DC.format" content="text/html">
+    <meta property="DC.type" content="Text">
+    <meta property="DC.description" content="Learn how to install, integrate and configure CKEditor 4. More complex aspects, like creating plugins, widgets and skins are explained here, too. API reference and examples included.">
+    <link rel="canonical" href="static/css/dev_a11y">
+    
+    
+    
+    
+    <link rel="stylesheet" href="static/css/docsearch.min.css">
+    <link rel="stylesheet" href="static/css/styles.css" type="text/css" media="all">
+    <script>
+      ( function() {
+      	'use strict';
+      	// Set up global variables;
+      	if ( !window.umebrto ) {
+      		window.umberto = {};
+      	}
+      	window.umberto.relativeAppPath = "../../../assets/1.3.1/scripts"
+      
+      	// Add app script
+      	var el = document.createElement( 'script' );
+      	el.setAttribute( 'async', 'async' );
+      	el.setAttribute( 'defer', 'defer' );
+      	if ( typeof Symbol === 'function' && typeof Symbol() === 'symbol' ) {
+      		el.src = "../../../assets/1.3.1/scripts/app.js";
+      	} else {
+      		el.src = "../../../assets/1.3.1/scripts/app-polyfill.js";
+      	}
+      	document.getElementsByTagName( 'head' )[ 0 ].appendChild( el );
+      
+      	// Changing documentation theme enable it via `localStorage.setItem( 'theme', 'theme-dark' )`
+      	if ( localStorage.getItem( 'theme' ) === 'theme-dark' ) {
+      		document.getElementsByTagName( 'html' )[ 0 ].classList.add( 'theme-dark' );
+      	}
+      } )();
+    </script>
+    <!-- Google Tag Manager-->
+    <script>if (["ckeditor.com"].indexOf(location.hostname) !== -1) {
+          (function (w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+              var f = d.getElementsByTagName(s)[0],
+                  j = d.createElement(s),
+                  dl = l != 'dataLayer' ? '&l=' + l : '';
+              j.async = true;
+              j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+              f.parentNode.insertBefore(j, f);
+          })( window, document, 'script', 'dataLayer', 'GTM-KFSS6L' );
+      }
+      
+    </script>
+    <!-- End Google Tag Manager-->
+    <script>if ( ["ckeditor.com"].indexOf( location.hostname ) !== -1) {
+      	window.emojicsOpts = {
+      		widget: '50c7737f072dfd100f3dad0411f02e',
+      		position: 'inline'
+      	};
+      	( function( d, s, id ) {
+      		var js, fjs = d.getElementsByTagName( s )[ 0 ];
+      		js = d.createElement( s );
+      		js.id = id;
+      		js.async = 1;
+      		js.src = '//connect.emojics.com/dist/sdk.js';
+      		fjs.parentNode.insertBefore( js, fjs );
+      	} )( document, 'script', 'emojics-js' );
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="javascript:;" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript)-->
+    <header class="top" data-project="ckeditor4">
+      <div class="header__main">
+        <div class="header__main-rwd-button"><a href="#"><span></span><span></span><span></span></a></div>
+        <div class="header__main-title"><a class="header__main-title-home" href="index1.html">CKEditor Ecosystem Documentation</a></div>
+        <div class="top__search">
+          <input class="top__search__box" type="text" id="docsearch_input" placeholder="Search in CKEditor 4">
+          <div class="top__search__button"><img src="static/picture/loupe.jpg" alt="Search"></div>
+        </div>
+      </div>
+      <div class="header__sub">
+        <ul class="top__menu">
+          <li class="top__menu-project-logo"><a href="index2.html">CKEditor 4</a></li>
+          <li><a class="top__menu__item--active" href="index.html">Guides</a></li>
+          <li><a href="index3.html">Features</a></li>
+          <li><a href="index4.html">Examples</a></li>
+          <li><a class="top__menu__api" href="index5.html">API</a></li>
+          <li><a class="top__menu-github-link" href="javascript:;" target="_blank" title="CKEditor 4 on GitHub."><svg viewbox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a></li>
+        </ul>
+      </div>
+      <div class="header__menu-rwd">
+        <ul class="header__menu-rwd__projects">
+          <li data-project="ckeditor5"><a href="index6.html">CKEditor 5</a></li>
+          <li data-project="ckeditor4"><a href="index2.html">CKEditor 4
+              <ul class="tree header__menu-rwd__projects-pages">
+                <li data-group="guide"><a href="index.html">Guides</a>
+                  <!-- Display subpages for active project.-->
+                  <ul class="header__menu-rwd__projects-subpages">
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Getting Started</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="dev_installation.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Quick Start Guide</span></div></a></li>
+                                    <li><a href="dev_basics.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Basic CKEditor Concepts</span></div></a></li>
+                                    <li><a href="dev_best_practices.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Best Practices</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting CKEditor</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="dev_ckeditor_js_load.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Loading CKEditor</span></div></a></li>
+                                            <li><a href="dev_framed.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Classic Editing</span></div></a></li>
+                                            <li><a href="dev_inline.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inline Editing</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li><a href="dev_configuration.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Setting Configuration</span></div></a></li>
+                                    <li><a href="dev_acf.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Content Filtering (ACF)</span></div></a></li>
+                                    <li><a href="dev_savedata.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting and Saving Data</span></div></a></li>
+                                    <li><a href="dev_example_setups.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Example CKEditor Setups</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Advanced Installation Tasks</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="dev_advanced_installation.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Installing Components</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="dev_plugins.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing Plugins</span></div></a></li>
+                                            <li><a href="dev_skins.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing Skins</span></div></a></li>
+                                            <li><a href="dev_widget_installation.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing Widgets</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Upgrading</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="dev_upgrade.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Upgrading</span></div></a></li>
+                                            <li><a href="dev_patching.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Patching Older Versions</span></div></a></li>
+                                            <li><a href="dev_upgrade_ckeditor_3.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Upgrading from CKEditor 3</span></div></a></li>
+                                            <li><a href="dev_api_changes.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">API Changes from v3 to v4</span></div></a></li>
+                                            <li><a href="dev_upgrade_fckeditor_2.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Upgrading from FCKeditor 2</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Building CKEditor</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="dev_source.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting Source Code</span></div></a></li>
+                                            <li><a href="dev_build.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Building from Source</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li><a href="dev_package_managers.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using Package Managers</span></div></a></li>
+                                    <li><a href="dev_basepath.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Specifying Editor Path</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Integration</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="dev_integration.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                    <li><a href="dev_easyimage_integration.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Easy Image</span></div></a></li>
+                                    <li><a href="dev_spreadsheets.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Spreadsheets</span></div></a></li>
+                                    <li><a href="dev_angular.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Angular Integration</span></div></a></li>
+                                    <li><a href="dev_react.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">React Integration</span></div></a></li>
+                                    <li><a href="dev_vue.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Vue Integration</span></div></a></li>
+                                    <li><a href="dev_webpack.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Webpack Integration</span></div></a></li>
+                                    <li><a href="dev_jquery.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">jQuery Adapter</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">File Manager</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="dev_file_browse_upload.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">File Manager Integration</span></div></a></li>
+                                            <li><a href="dev_file_manager_configuration.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Advanced Configuration</span></div></a></li>
+                                            <li><a href="dev_ckfinder_integration.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKFinder Integration</span></div></a></li>
+                                            <li><a href="dev_file_browser_api.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">File Browser API</span></div></a></li>
+                                            <li><a href="dev_dialog_add_file_browser.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating with Dialogs</span></div></a></li>
+                                            <li><a href="dev_file_upload.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Uploading Dropped or Pasted Files</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Accessibility Checker</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="dev_a11ychecker_custom_issue_typ.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Custom Issue Types</span></div></a></li>
+                                            <li><a href="dev_a11ychecker_custom_quick_fix.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Custom Quick Fixes</span></div></a></li>
+                                      </ul>
+                                    </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">CKEditor Deep Dive</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="dev_deep_dive.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Advanced Content Filter</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="dev_advanced_content_filter.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                            <li><a href="dev_allowed_content_rules.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Allowed Content Rules</span></div></a></li>
+                                            <li><a href="dev_disallowed_content.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Disallowed Content</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li><a href="dev_unsupported_environments.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Enabling CKEditor in Unsupported Environments</span></div></a></li>
+                                    <li><a href="dev_widgets.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Widgets</span></div></a></li>
+                                    <li><a href="dev_clipboard.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Clipboard Integration</span></div></a></li>
+                                    <li><a href="dev_errors.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Error Code Reference</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Contributing</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="dev_contributing.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">How to Contribute</span></div></a></li>
+                                    <li><a href="dev_contributing_code.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Contributing Code</span></div></a></li>
+                                    <li><a href="dev_issues_readme.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Reporting Issues</span></div></a></li>
+                                    <li><a href="dev_issues_tracker.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Issues Tracker</span></div></a></li>
+                                    <li><a href="dev_code_documentation.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Code Documentation</span></div></a></li>
+                                    <li><a href="dev_tests.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Testing Environment</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Compatibility, Compliance, License</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="dev_browsers.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Browser Compatibility</span></div></a></li>
+                                    <li><a href="">
+                                        <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Accessibility Support</span></div></a></li>
+                                    <li><a href="dev_section508.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Section 508 Compliance</span></div></a></li>
+                                    <li><a href="dev_wcag.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">WCAG 2.0 Compliance</span></div></a></li>
+                                    <li><a href="dev_license.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">License</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">HOWTOs</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="dev_howtos_basic_configuration.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Basic Configuration</span></div></a></li>
+                                    <li><a href="dev_howtos_support.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Support</span></div></a></li>
+                                    <li><a href="dev_howtos_interface.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Interface</span></div></a></li>
+                                    <li><a href="dev_howtos_styles.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Styles</span></div></a></li>
+                                    <li><a href="dev_howtos_file_upload.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">File Upload</span></div></a></li>
+                                    <li><a href="dev_howtos_output.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Output</span></div></a></li>
+                                    <li><a href="dev_howtos_pasting.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Pasting</span></div></a></li>
+                                    <li><a href="dev_howtos_scayt.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Spell Checker and SCAYT</span></div></a></li>
+                                    <li><a href="dev_howtos_dialog_windows.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Dialog Windows</span></div></a></li>
+                                    <li><a href="dev_howtos_bugs_and_features.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Bugs and New Features</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">CKEditor 4 Plugin SDK</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="plugin_sdk_intro.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                    <li><a href="plugin_sdk_sample.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Creating a Basic Plugin</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Simple Plugin Tutorial</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="plugin_sdk_sample_1.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple Plugin (Part 1)</span></div></a></li>
+                                            <li><a href="plugin_sdk_sample_2.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple Plugin (Part 2)</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li><a href="plugin_sdk_integration_with_acf.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integration with ACF</span></div></a></li>
+                                    <li><a href="plugin_sdk_styles.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Plugin Stylesheets</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">CKEditor 4 Widget SDK</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="widget_sdk_intro.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Widget Tutorial</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="widget_sdk_tutorial_1.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Widget Tutorial (Part 1)</span></div></a></li>
+                                            <li><a href="widget_sdk_tutorial_2.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Widget Tutorial (Part 2)</span></div></a></li>
+                                      </ul>
+                                    </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">CKEditor 4 Skin SDK</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="skin_sdk_intro.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Advanced Concepts</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="skin_sdk_icons.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Icons</span></div></a></li>
+                                            <li><a href="skin_sdk_reset.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CSS Reset</span></div></a></li>
+                                            <li><a href="skin_sdk_chameleon.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Chameleon Feature</span></div></a></li>
+                                            <li><a href="skin_sdk_rtl.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Right-to-Left</span></div></a></li>
+                                            <li><a href="skin_sdk_hc.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">High Contrast</span></div></a></li>
+                                            <li><a href="skin_sdk_browser_hacks.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Browser Hacks</span></div></a></li>
+                                            <li><a href="skin_sdk_compatibility_with_cked.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Compatibility with CKEditor 4.5</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Creating a Custom Skin</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="skin_sdk_setup.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Setup</span></div></a></li>
+                                            <li><a href="skin_sdk_customize.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Customize</span></div></a></li>
+                                            <li><a href="skin_sdk_test.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Test and Shape It Up</span></div></a></li>
+                                            <li><a href="skin_sdk_build.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Build and Release</span></div></a></li>
+                                      </ul>
+                                    </li>
+                              </ul>
+                            </li>
+                  </ul>
+                </li>
+                <li data-group="features"><a href="index3.html">Features</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+                <li data-group="sdk"><a href="index4.html">Examples</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+                <li data-group="api-reference"><a href="index5.html">API</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+              </ul></a></li>
+          <li data-project="letters"><a href="overview.html">Letters</a></li>
+          <li data-project="cs"><a href="overview1.html">Cloud Services</a></li>
+          <li data-project="ckfinder"><a href="index7.html">CKFinder</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="main">
+      <section class="main__content formatted">
+        <div class="main__content-inner">
+          <div class="github-contrib"><a href="javascript:;" title="Contribute to this guide"><img src="static/picture/edit.jpg" alt="Contribute to this guide"></a><a href="javascript:;" title="Report an issue"><img src="static/picture/exclamation-circle.jpg" alt="Report an issue"></a>
+          </div>
+          <div class="rwd-breadcrumbs"><a href="index1.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="index2.html">CKEditor 4</a><span class="rwd-breadcrumbs__separator">/</span><a href="index.html">Guides</a>
+          </div>
+          <h1 class="main__content-title"><img src="static/picture/book.jpg" alt="guide">Accessibility Support in CKEditor
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#background">Background</a></li><li><a href="#supported-platforms">Supported Platforms</a></li><li><a href="#assisting-users-with-special-needs">Assisting Users with Special Needs</a><ol><li><a href="#visual-impairment">Visual Impairment</a></li><li><a href="#mobility-impairment">Mobility Impairment</a></li></ol></li><li><a href="#accessibility-features-overview">Accessibility Features Overview</a><ol><li><a href="#keyboard-access">Keyboard Access</a><ol><li><a href="#reaching-the-editor-on-the-page">Reaching the Editor on the Page</a></li><li><a href="#keyboard-navigation">Keyboard Navigation</a></li></ol></li><li><a href="#assistive-technology-support">Assistive Technology Support</a><ol><li><a href="#announcing-the-editor-on-the-page">Announcing the Editor on the Page</a></li><li><a href="#wai-aria-support-in-editor-interface">WAI-ARIA Support in Editor Interface</a></li><li><a href="#accessibility-instructions-dialog-window">Accessibility Instructions Dialog Window</a></li></ol></li><li><a href="#visual-aids">Visual Aids</a><ol><li><a href="#high-contrast-mode">High Contrast Mode</a></li><li><a href="#textual-labels-for-color-information">Textual Labels for Color Information</a></li></ol></li><li><a href="#creating-accessible-content">Creating Accessible Content</a><ol><li><a href="#accessibility-checker">Accessibility Checker</a></li><li><a href="#setting-language-of-parts-for-editor-content">Setting Language of Parts for Editor Content</a></li></ol></li></ol></li><li><a href="#accessibility-features-demos">Accessibility Features Demos</a></li><li><a href="#related-features">Related Features</a></li></ol></nav><!--
+Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md.
+-->
+
+<p>Accessibility support is a priority issue in CKEditor. CKEditor complies with most important industry standards, recommendations and checklists, including:</p>
+<ul>
+<li><a href="javascript:;" target="_blank" rel="noopener">Section 508 Amendment to the Rehabilitation Act of 1973</a></li>
+<li><a href="javascript:;" target="_blank" rel="noopener">Web Content Accessibility Guidelines (WCAG 2.0)</a></li>
+<li><a href="javascript:;" target="_blank" rel="noopener">IBM Web Accessibility Checklist</a></li>
+<li><a href="javascript:;" target="_blank" rel="noopener">WAI-ARIA</a></li>
+</ul>
+<p>It also includes a number of features that make it easy to use with assistive technologies, such as intuitive keyboard navigation or WAI-ARIA based user interface. Scroll to the <a href="#accessibility-features-overview">Accessibility Features Overview</a> section for a short summary.</p>
+<h2 id="background"><a class="headerlink" href="#background">#</a> Background</h2>
+<p>Accessibility support in CKEditor goes back to early CKEditor 3.x releases; its most important foundation was work done in strict cooperation with IBM accessibility experts already in 2010, for <a href="javascript:;" target="_blank" rel="noopener">CKEditor 3.2</a>. Our unique approach has always focused on providing accessible solutions that not only satisfy the requirements defined in the standards but also are <a href="javascript:;" target="_blank" rel="noopener">usable in practical terms</a>. We also strive to evoke accessibility-friendly approach in our customers by stressing out that <a href="javascript:;" target="_blank" rel="noopener">good accessibility support increases business opportunities</a> and has lots of commercial benefits.</p>
+<h2 id="supported-platforms"><a class="headerlink" href="#supported-platforms">#</a> Supported Platforms</h2>
+<p>In our accessibility testing we use the <strong>latest Firefox</strong> version with <strong>latest JAWS</strong> version as our reference environment and officially supported platform. This is because we have found this combination to be most reliable and standards-compliant.</p>
+<p>This does not mean, however, that CKEditor has any major issues with other modern, standards-compliant browsers (including latest Internet Explorer versions) and alternative screen reader solutions like VoiceOver, NonVisual Desktop Access (NVDA) or ChromeVox. On the contrary: we assume that since we test in the most standards-compliant solution, other standards-compliant environments should also work correctly.</p>
+<p>In any case, if you encounter any accessibility-related issue while using CKEditor, please let us know by <a href="dev_issues_tracker.html">creating an issue</a> on our <a href="javascript:;" target="_blank" rel="noopener">GitHub issues page</a>. We treat all accessibility issues with utmost attention and will be happy to solve them and further improve CKEditor compliance with accessibility standards.</p>
+<h2 id="assisting-users-with-special-needs"><a class="headerlink" href="#assisting-users-with-special-needs">#</a> Assisting Users with Special Needs</h2>
+<p>CKEditor compliance with numerous accessibility standards means that it can cater to the needs of users with disabilities.</p>
+<p>The following features will make it possible for people with special needs to use CKEditor:</p>
+<h3 id="visual-impairment"><a class="headerlink" href="#visual-impairment">#</a> Visual Impairment</h3>
+<ul>
+<li>WAI-ARIA based UI with screen reader support.</li>
+<li>Full keyboard support for all editor features.</li>
+<li>High contrast rendering.</li>
+<li>All information conveyed with color is also available without color (e.g. through textual labels).</li>
+</ul>
+<h3 id="mobility-impairment"><a class="headerlink" href="#mobility-impairment">#</a> Mobility Impairment</h3>
+<ul>
+<li>Full keyboard support for all editor features.</li>
+</ul>
+<h2 id="accessibility-features-overview"><a class="headerlink" href="#accessibility-features-overview">#</a> Accessibility Features Overview</h2>
+<p>The following section describes some of the most important accessibility-related features that are available in CKEditor. You can try them out on the <a href="accessibility.html">working &#x201C;Accessibility Support and Keyboard Shortcuts&#x201D; sample</a> or any other applicable demos listed below.</p>
+<h3 id="keyboard-access"><a class="headerlink" href="#keyboard-access">#</a> Keyboard Access</h3>
+<p>The following features make working with CKEditor through standard keyboard easy.</p>
+<h4 id="reaching-the-editor-on-the-page"><a class="headerlink" href="#reaching-the-editor-on-the-page">#</a> Reaching the Editor on the Page</h4>
+<p>CKEditor takes part in the <kbd>Tab</kbd> order of a web page that it is embedded in. It can be reached and exited by using the <kbd>Tab</kbd> and <kbd>Shift+Tab</kbd> keyboard shortcuts that are commonly used for navigating between page elements. Read more <a href="javascript:;">here</a> and see the <a href="tabindex.html">working demo</a> here.</p>
+<h4 id="keyboard-navigation"><a class="headerlink" href="#keyboard-navigation">#</a> Keyboard Navigation</h4>
+<p>Once the editor is in focus (i.e. it is an active element for the user), its entire interface can be used through the keyboard. To do so, some basic key combinations can be employed. For example:</p>
+<ul>
+<li><kbd>Alt+F10</kbd> &#x2013; Moves the focus to the toolbar. <kbd>Enter</kbd> (or <kbd>Space</kbd>) selects an option, <kbd>Esc</kbd> returns to the editing area.</li>
+<li><kbd>Alt+F11</kbd> &#x2013; Moves the focus to the elements path. <kbd>Enter</kbd> and <kbd>Esc</kbd> can be used here as well.</li>
+<li><kbd>Tab</kbd>, <kbd>Shift+Tab</kbd> and <kbd>Arrow</kbd> keys &#x2013; Move through toolbar groups and buttons as well as context menu options and dialog window elements.</li>
+</ul>
+<p>There are plenty other keyboard shortcuts that can be utilized. For most editor functions we have chosen the key combinations that the user will naturally use. Everything else is clarified in the <a href="shortcuts.html">documentation</a> as well as the <strong>Accessibility Instructions</strong> dialog window (<kbd>Alt+0</kbd>).</p>
+<p>Additionally, for CKEditor 4.6 and later, all keyboard shortcuts available for a particular action or command are displayed directly in the editor, in toolbar button tooltips or context menu entries.</p>
+<p><img src="static/picture/keyboardshortcuts_01.png" data-lightbox="true" alt="Keyboard shortcuts visible in the editor context menu"></p>
+<p>You can also try out the <a href="accessibility.html">working demo</a>. The editor usage through the keyboard is most intuitive and as straightforward as possible.</p>
+<h3 id="assistive-technology-support"><a class="headerlink" href="#assistive-technology-support">#</a> Assistive Technology Support</h3>
+<p>The following features support using CKEditor with assistive technologies such as screen readers.</p>
+<h4 id="announcing-the-editor-on-the-page"><a class="headerlink" href="#announcing-the-editor-on-the-page">#</a> Announcing the Editor on the Page</h4>
+<p>When the user reaches an editor instance, the screen reader announces it with the following text:</p>
+<pre class="highlight"><code class="html">Rich text editor, editor1, press Alt+0 for help.
+</code></pre>
+<p>The <code>editor1</code> part of the text is simply the <a href="ckeditor_config#cfg-title">name that has been assigned to the editor instance</a> by the developer. This is even more useful when you have more than one editor instance on the same page. The website creator should make sure that editor instance names are meaningful, though, to make it really useful for the users.</p>
+<h4 id="wai-aria-support-in-editor-interface"><a class="headerlink" href="#wai-aria-support-in-editor-interface">#</a> WAI-ARIA Support in Editor Interface</h4>
+<p>The entire CKEditor user interface is ARIA-supported. As explained on <a href="javascript:;" target="_blank" rel="noopener">Mozilla Developer Network</a>:</p>
+<blockquote>
+	<a href="javascript:;" target="_blank" rel="noopener">WAI-ARIA</a>, the Accessible Rich Internet Applications specification from the W3C&apos;s Web Accessibility Initiative, provides a way to add the missing semantics needed by assistive technologies such as screen readers. ARIA enables developers to describe their widgets in more detail by adding special attributes to the markup. Designed to fill the gap between standard HTML tags and the desktop-style controls found in dynamic web applications, ARIA provides roles and states that describe the behaviour of most familiar UI widgets.
+</blockquote>
+<p>In CKEditor this includes the toolbar and bottom bar, panels and drop-down lists, context menus and dialog windows. Thanks to this feature the editor can be used with screen readers and other assistive technologies.</p>
+<h4 id="accessibility-instructions-dialog-window"><a class="headerlink" href="#accessibility-instructions-dialog-window">#</a> Accessibility Instructions Dialog Window</h4>
+<p>Instead of bothering the user and forcing to hear lots of instructions every time an editor instance is reached, in CKEditor we simply remind the keyboard shortcut required to get help. When a user presses the <kbd>Alt+0</kbd> keyboard shortcut, the <strong>Accessibility Instructions</strong> dialog window is opened. It contains some detailed information about the accessibility features of CKEditor, including all keyboard shortcuts needed to navigate the editor and use its features.</p>
+<p><img src="static/picture/a11yhelp_01.png" data-lightbox="true" alt="Accessibility Instructions dialog window"></p>
+<p>Thanks to this feature users do not need to be trained or pointed to documentation to understand how to use the editor, as the help is there whenever they need it.</p>
+<h3 id="visual-aids"><a class="headerlink" href="#visual-aids">#</a> Visual Aids</h3>
+<p>The following features make working with CKEditor easier for people with visual impairment.</p>
+<h4 id="high-contrast-mode"><a class="headerlink" href="#high-contrast-mode">#</a> High Contrast Mode</h4>
+<p>One less commonly considered accessibility feature is the compatibility with the operating system High Contrast Mode. As the name suggests, this is an operating system feature. In Windows it can be enabled through the accessibility options available in the Control Panel. It can also be turned on by using the <kbd>Alt+Left Shift+PrntScr</kbd> keyboard shortcut.</p>
+<p>In High Contrast Mode all images and colors are discarded. A predominant color pair is then used to display the entire operating system interface (usually white or yellow on black, or vice versa).</p>
+<p>The image below shows a standard CKEditor instance loaded in Windows 8 High Contrast Mode in Firefox.</p>
+<p><img src="static/picture/a11y_02.png" data-lightbox="true" alt="CKEditor in High Contrast Mode loaded in Firefox"></p>
+<p>Note that not all browsers support High Contrast Mode. Some of them may simply show web pages in full color despite the operating system settings.</p>
+<h4 id="textual-labels-for-color-information"><a class="headerlink" href="#textual-labels-for-color-information">#</a> Textual Labels for Color Information</h4>
+<p>Color blind users may have trouble accessing information that is conveyed with color. In CKEditor all information conveyed with color (including the color selector) is also available without color (e.g. through textual labels).</p>
+<h3 id="creating-accessible-content"><a class="headerlink" href="#creating-accessible-content">#</a> Creating Accessible Content</h3>
+<p>The following features can be used by developers to ensure that content created with CKEditor is accessible.</p>
+<h4 id="accessibility-checker"><a class="headerlink" href="#accessibility-checker">#</a> Accessibility Checker</h4>
+<p>The innovative <a href="accessibility_checker.html">Accessibility Checker</a> tool lets you inspect the accessibility level of content created in the editor and fix reported issues, often fully automatically. It is a <strong>must-have addon</strong> for government institutions and companies that are often required by law to ensure the content they produce meets accessibility standards. See the <a href="accessibilitychecker.html">working demo</a> and get the plugin <a href="javascript:;" target="_blank" rel="noopener">here</a>.</p>
+<h4 id="setting-language-of-parts-for-editor-content"><a class="headerlink" href="#setting-language-of-parts-for-editor-content">#</a> Setting Language of Parts for Editor Content</h4>
+<p>The optional Language plugin, introduced in CKEditor 4.3, implements the <a href="javascript:;" target="_blank" rel="noopener">WCAG 3.1.2 Language of Parts</a> specification. It lets you assign one of the pre-configured languages to a text selection. See the <a href="language.html">working demo</a> and get the plugin <a href="javascript:;" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="accessibility-features-demos"><a class="headerlink" href="#accessibility-features-demos">#</a> Accessibility Features Demos</h2>
+<p>See the following working samples to check some accessibility-related features of CKEditor:</p>
+<ul>
+<li>The <a href="accessibility.html">&#x201C;Accessibility Support and Keyboard Shortcuts&#x201D; sample</a> showcases such features as the Accessibility Help dialog or the usage of keyboard shortcuts.</li>
+<li>The <a href="accessibilitychecker.html">&#x201C;Accessibility Checker&#x201D; sample</a> shows how to detect and fix accessibility issues in your editor content.</li>
+</ul>
+<h2 id="related-features"><a class="headerlink" href="#related-features">#</a> Related Features</h2>
+<p>Refer to the following resources for more information about accessibility in CKEditor:</p>
+<ul>
+<li>The <a href="accessibility_checker.html">Managing Content Accessibility with Accessibility Checker</a> article describes an innovative Accessibility Checker tool that lets you inspect the accessibility level of content created in CKEditor and immediately solve any issues that are found.</li>
+<li>The <a href="shortcuts.html">Keyboard Shortcuts</a> article lists all keyboard shortcuts supported in CKEditor.</li>
+<li>The <a href="javascript:;">Page Navigation Using the &#x201C;Tab&#x201D; Key</a> article discusses how CKEditor participates in the page <kbd>Tab</kbd> order.</li>
+<li>The <a href="dev_section508.html">CKEditor Section 508 Compliance</a> article describes CKEditor 4 compatibility with <a href="javascript:;" target="_blank" rel="noopener">Section 508 Amendment to the Rehabilitation Act of 1973</a>.</li>
+<li>The <a href="dev_wcag.html">CKEditor WCAG 2.0 Compliance</a> article describes CKEditor 4 compatibility with the <a href="javascript:;" target="_blank" rel="noopener">Web Content Accessibility Guidelines (WCAG) 2.0</a> standard.</li>
+</ul>
+
+          <div class="feedback-widget">
+            <div id="emojics-root"></div>
+          </div>
+        </div>
+      </section>
+      <div class="side-navigation">
+        <div class="side-navigation__wrapper">
+          <nav class="side-navigation__inner">
+            <ul class="tree guide-tree">
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Getting Started</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="dev_installation.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Quick Start Guide</span></div></a></li>
+                                    <li><a href="dev_basics.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Basic CKEditor Concepts</span></div></a></li>
+                                    <li><a href="dev_best_practices.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Best Practices</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting CKEditor</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="dev_ckeditor_js_load.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Loading CKEditor</span></div></a></li>
+                                              <li><a href="dev_framed.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Classic Editing</span></div></a></li>
+                                              <li><a href="dev_inline.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Inline Editing</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li><a href="dev_configuration.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Setting Configuration</span></div></a></li>
+                                    <li><a href="dev_acf.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Content Filtering (ACF)</span></div></a></li>
+                                    <li><a href="dev_savedata.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting and Saving Data</span></div></a></li>
+                                    <li><a href="dev_example_setups.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Example CKEditor Setups</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Advanced Installation Tasks</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="dev_advanced_installation.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Installing Components</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="dev_plugins.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing Plugins</span></div></a></li>
+                                              <li><a href="dev_skins.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing Skins</span></div></a></li>
+                                              <li><a href="dev_widget_installation.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Installing Widgets</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Upgrading</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="dev_upgrade.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Upgrading</span></div></a></li>
+                                              <li><a href="dev_patching.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Patching Older Versions</span></div></a></li>
+                                              <li><a href="dev_upgrade_ckeditor_3.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Upgrading from CKEditor 3</span></div></a></li>
+                                              <li><a href="dev_api_changes.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">API Changes from v3 to v4</span></div></a></li>
+                                              <li><a href="dev_upgrade_fckeditor_2.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Upgrading from FCKeditor 2</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Building CKEditor</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="dev_source.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting Source Code</span></div></a></li>
+                                              <li><a href="dev_build.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Building from Source</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li><a href="dev_package_managers.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Using Package Managers</span></div></a></li>
+                                    <li><a href="dev_basepath.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Specifying Editor Path</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Integration</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="dev_integration.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                    <li><a href="dev_easyimage_integration.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Easy Image</span></div></a></li>
+                                    <li><a href="dev_spreadsheets.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Spreadsheets</span></div></a></li>
+                                    <li><a href="dev_angular.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Angular Integration</span></div></a></li>
+                                    <li><a href="dev_react.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">React Integration</span></div></a></li>
+                                    <li><a href="dev_vue.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Vue Integration</span></div></a></li>
+                                    <li><a href="dev_webpack.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Webpack Integration</span></div></a></li>
+                                    <li><a href="dev_jquery.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">jQuery Adapter</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">File Manager</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="dev_file_browse_upload.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">File Manager Integration</span></div></a></li>
+                                              <li><a href="dev_file_manager_configuration.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Advanced Configuration</span></div></a></li>
+                                              <li><a href="dev_ckfinder_integration.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CKFinder Integration</span></div></a></li>
+                                              <li><a href="dev_file_browser_api.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">File Browser API</span></div></a></li>
+                                              <li><a href="dev_dialog_add_file_browser.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integrating with Dialogs</span></div></a></li>
+                                              <li><a href="dev_file_upload.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Uploading Dropped or Pasted Files</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Accessibility Checker</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="dev_a11ychecker_custom_issue_typ.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Custom Issue Types</span></div></a></li>
+                                              <li><a href="dev_a11ychecker_custom_quick_fix.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Custom Quick Fixes</span></div></a></li>
+                                      </ul>
+                                    </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">CKEditor Deep Dive</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="dev_deep_dive.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Advanced Content Filter</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="dev_advanced_content_filter.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                              <li><a href="dev_allowed_content_rules.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Allowed Content Rules</span></div></a></li>
+                                              <li><a href="dev_disallowed_content.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Disallowed Content</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li><a href="dev_unsupported_environments.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Enabling CKEditor in Unsupported Environments</span></div></a></li>
+                                    <li><a href="dev_widgets.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Widgets</span></div></a></li>
+                                    <li><a href="dev_clipboard.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Clipboard Integration</span></div></a></li>
+                                    <li><a href="dev_errors.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Error Code Reference</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Contributing</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="dev_contributing.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">How to Contribute</span></div></a></li>
+                                    <li><a href="dev_contributing_code.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Contributing Code</span></div></a></li>
+                                    <li><a href="dev_issues_readme.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Reporting Issues</span></div></a></li>
+                                    <li><a href="dev_issues_tracker.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Issues Tracker</span></div></a></li>
+                                    <li><a href="dev_code_documentation.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Code Documentation</span></div></a></li>
+                                    <li><a href="dev_tests.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Testing Environment</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Compatibility, Compliance, License</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="dev_browsers.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Browser Compatibility</span></div></a></li>
+                                    <li><a href="">
+                                        <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Accessibility Support</span></div></a></li>
+                                    <li><a href="dev_section508.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Section 508 Compliance</span></div></a></li>
+                                    <li><a href="dev_wcag.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">WCAG 2.0 Compliance</span></div></a></li>
+                                    <li><a href="dev_license.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">License</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">HOWTOs</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="dev_howtos_basic_configuration.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Basic Configuration</span></div></a></li>
+                                    <li><a href="dev_howtos_support.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Support</span></div></a></li>
+                                    <li><a href="dev_howtos_interface.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Interface</span></div></a></li>
+                                    <li><a href="dev_howtos_styles.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Styles</span></div></a></li>
+                                    <li><a href="dev_howtos_file_upload.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">File Upload</span></div></a></li>
+                                    <li><a href="dev_howtos_output.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Output</span></div></a></li>
+                                    <li><a href="dev_howtos_pasting.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Pasting</span></div></a></li>
+                                    <li><a href="dev_howtos_scayt.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Spell Checker and SCAYT</span></div></a></li>
+                                    <li><a href="dev_howtos_dialog_windows.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Dialog Windows</span></div></a></li>
+                                    <li><a href="dev_howtos_bugs_and_features.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Bugs and New Features</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">CKEditor 4 Plugin SDK</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="plugin_sdk_intro.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                    <li><a href="plugin_sdk_sample.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Creating a Basic Plugin</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Simple Plugin Tutorial</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="plugin_sdk_sample_1.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple Plugin (Part 1)</span></div></a></li>
+                                              <li><a href="plugin_sdk_sample_2.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Simple Plugin (Part 2)</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li><a href="plugin_sdk_integration_with_acf.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integration with ACF</span></div></a></li>
+                                    <li><a href="plugin_sdk_styles.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Plugin Stylesheets</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">CKEditor 4 Widget SDK</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="widget_sdk_intro.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Widget Tutorial</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="widget_sdk_tutorial_1.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Widget Tutorial (Part 1)</span></div></a></li>
+                                              <li><a href="widget_sdk_tutorial_2.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Widget Tutorial (Part 2)</span></div></a></li>
+                                      </ul>
+                                    </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">CKEditor 4 Skin SDK</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="skin_sdk_intro.html">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Introduction</span></div></a></li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Advanced Concepts</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="skin_sdk_icons.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Icons</span></div></a></li>
+                                              <li><a href="skin_sdk_reset.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">CSS Reset</span></div></a></li>
+                                              <li><a href="skin_sdk_chameleon.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Chameleon Feature</span></div></a></li>
+                                              <li><a href="skin_sdk_rtl.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Right-to-Left</span></div></a></li>
+                                              <li><a href="skin_sdk_hc.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">High Contrast</span></div></a></li>
+                                              <li><a href="skin_sdk_browser_hacks.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Browser Hacks</span></div></a></li>
+                                              <li><a href="skin_sdk_compatibility_with_cked.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Compatibility with CKEditor 4.5</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Creating a Custom Skin</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="skin_sdk_setup.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Setup</span></div></a></li>
+                                              <li><a href="skin_sdk_customize.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Customize</span></div></a></li>
+                                              <li><a href="skin_sdk_test.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Test and Shape It Up</span></div></a></li>
+                                              <li><a href="skin_sdk_build.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Build and Release</span></div></a></li>
+                                      </ul>
+                                    </li>
+                            </ul>
+                          </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </main>
+    <footer class="footer footer--bordered">
+      <p>&copy; 2003-2020 <a href="javascript:;">CKSource</a>. All rights reserved.</p>
+    </footer>
+    <script type="text/javascript" src="static/js/docsearch.min.js"></script><script type="text/javascript">
+docsearch({
+apiKey:'7fd1a5354ceba927a56450ce0459620d',indexName:'ckeditor_docs_site',inputSelector:'#docsearch_input',algoliaOptions:{hitsPerPage:250,attributesToRetrieve:'*',facetFilters:['tags: ckeditor4']},
+transformData: function( hits ) {var sortingFn = function( a, b ) {a.custom_ranking = a.custom_ranking || 0;b.custom_ranking = b.custom_ranking || 0;if ( a.custom_ranking === b.custom_ranking ) return a.index - b.index;if ( a.custom_ranking > b.custom_ranking ) return -1;if ( a.custom_ranking < b.custom_ranking ) return 1;};var result = [];var tags = [ 'guide', 'features', 'examples', 'api' ];var hitsGrouped = { api: [] };hitsGrouped[ 'guide' ] = hits.filter( function( h ) {return h.tags.includes( 'guide' );} ).slice( 0, 7 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn );tags.forEach( function( tag ) {if ( tag !== 'guide' ) {hitsGrouped[ tag ] = hits.filter( function( h ) {return h.tags.includes( tag );} ).slice( 0, 10 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn ).slice( 0, 3 );}} );var apiSearchHits = [];if ( window.apiSearch ) apiSearchHits = window.apiSearch();hitsGrouped.api = hitsGrouped.api.filter( function( h ) {var isDuplicated = false;for ( var i = 0; i < apiSearchHits.length; i++ ) {if ( h.url.includes( apiSearchHits[ i ].urlShort ) ) {isDuplicated = true;break;}}return !isDuplicated;} );hitsGrouped.api = ( apiSearchHits || [] ).concat( hitsGrouped.api );result = result.concat( hitsGrouped[ 'guide' ] );tags.forEach( function( tag ) {if ( tag !== 'guide' ) result = result.concat( hitsGrouped[ tag ].slice( 0, 4 ) );} );return result;}
+});
+</script>
+  </body>
+</html>

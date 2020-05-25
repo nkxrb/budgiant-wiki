@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CKEditor Documentation Website</title>
+    <meta name="description" content="Learn how to install, integrate, configure and develop CKEditor Ecosystem products. Browse through API documentation and online samples.">
+    <meta name="twitter:card" content="Learn how to install, integrate, configure and develop CKEditor Ecosystem products. Browse through API documentation and online samples.">
+    <meta name="twitter:site" content="@ckeditor">
+    <meta property="og:title" content="CKEditor Documentation Website">
+    <meta property="og:description" content="Learn how to install, integrate, configure and develop CKEditor Ecosystem products. Browse through API documentation and online samples.">
+    <meta property="og:image" content="https://ckeditor.com/docs/assets/img/og/ogimage-ecosystem.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ckeditor.com/docs/index.html">
+    <meta property="DC.language" content="en">
+    <meta property="DC.publisher" content="CKSource">
+    <meta property="DC.creator" content="CKEditor">
+    <meta property="DC.title" content="CKEditor Documentation Website">
+    <meta property="DC.format" content="text/html">
+    <meta property="DC.type" content="Text">
+    <meta property="DC.description" content="Learn how to install, integrate, configure and develop CKEditor Ecosystem products. Browse through API documentation and online samples.">
+    
+    
+    
+    
+    <link rel="stylesheet" href="static/css/docsearch.min.css">
+    <link rel="stylesheet" href="static/css/styles.css" type="text/css" media="all">
+    <script>
+      ( function() {
+      	'use strict';
+      	// Set up global variables;
+      	if ( !window.umebrto ) {
+      		window.umberto = {};
+      	}
+      	window.umberto.relativeAppPath = "assets/1.3.1/scripts"
+      
+      	// Add app script
+      	var el = document.createElement( 'script' );
+      	el.setAttribute( 'async', 'async' );
+      	el.setAttribute( 'defer', 'defer' );
+      	if ( typeof Symbol === 'function' && typeof Symbol() === 'symbol' ) {
+      		el.src = "assets/1.3.1/scripts/app.js";
+      	} else {
+      		el.src = "assets/1.3.1/scripts/app-polyfill.js";
+      	}
+      	document.getElementsByTagName( 'head' )[ 0 ].appendChild( el );
+      
+      	// Changing documentation theme enable it via `localStorage.setItem( 'theme', 'theme-dark' )`
+      	if ( localStorage.getItem( 'theme' ) === 'theme-dark' ) {
+      		document.getElementsByTagName( 'html' )[ 0 ].classList.add( 'theme-dark' );
+      	}
+      } )();
+    </script>
+    <!-- Google Tag Manager-->
+    <script>if (["ckeditor.com"].indexOf(location.hostname) !== -1) {
+          (function (w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+              var f = d.getElementsByTagName(s)[0],
+                  j = d.createElement(s),
+                  dl = l != 'dataLayer' ? '&l=' + l : '';
+              j.async = true;
+              j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+              f.parentNode.insertBefore(j, f);
+          })( window, document, 'script', 'dataLayer', 'GTM-KFSS6L' );
+      }
+      
+    </script>
+    <!-- End Google Tag Manager-->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="javascript:;" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript)-->
+    <header class="top">
+      <div class="header__main">
+        <div class="header__main-rwd-button"><a href="#"><span></span><span></span><span></span></a></div>
+        <div class="header__main-title"><a class="header__main-title-home" href="">CKEditor Ecosystem Documentation</a></div>
+        <div class="top__search">
+          <input class="top__search__box" type="text" id="docsearch_input" placeholder="Search in all projects">
+          <div class="top__search__button"><img src="static/picture/loupe.jpg" alt="Search"></div>
+        </div>
+      </div>
+      <div class="header__menu-rwd">
+        <ul class="header__menu-rwd__projects">
+          <li data-project="ckeditor5"><a href="index6.html">CKEditor 5</a></li>
+          <li data-project="ckeditor4"><a href="index2.html">CKEditor 4</a></li>
+          <li data-project="letters"><a href="overview.html">Letters</a></li>
+          <li data-project="cs"><a href="overview1.html">Cloud Services</a></li>
+          <li data-project="ckfinder"><a href="index7.html">CKFinder</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="main main--no-sitenav main--home">
+      <section class="main__content formatted">
+        <div class="main__content-inner">
+          <div class="rwd-breadcrumbs">
+          </div>
+          <h1>CKEditor Ecosystem Documentation
+          </h1><style>
+/* enlarge width of homepage container */
+.main.main--home .main__content-inner {
+	max-width: 960px;
+	padding: 0;
+}
+
+.main.main--home .main__content-inner h1 {
+	padding-top: 1em;
+	margin-bottom: 0;
+	text-align: center;
+	font-size: 2em;
+}
+
+.main.main--home .main__content-inner h2 {
+	text-align: center;
+	margin: 0 auto 2em;
+	font-size: 1.2em;
+	max-width: 800px;
+	border: 0;
+}
+
+.docs-categories {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 3em 1em;
+}
+
+.docs-categories__item {
+	position: relative;
+	padding: .5em;
+}
+
+.docs-categories__item h4 {
+	position: relative;
+	padding: 0;
+	font-size: 1.3em;
+	font-weight: bold;
+	border: 0;
+	padding-left: 0.8em;
+
+	/* Fix for missing icon in legacy documentation. */
+	min-height: 48px;
+	line-height: 48px;
+}
+
+.docs-categories__item h4 a {
+	cursor: pointer;
+	color: inherit;
+}
+
+.docs-categories__item h4:before {
+	content: '';
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 48px;
+	height: 48px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-right: .5em;
+}
+
+/* subheader of product */
+.docs-categories__item p {
+	padding-left: 1em;
+	max-width: 250px;
+
+	/* Fix for one & two lines descriptions. */
+	min-height: 51px;
+}
+
+.docs-categories__item ul {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	border: 1px solid hsl( 0, 0%, 91% );
+	border-radius: 7px;
+}
+
+.docs-categories__item ul li a {
+	display: block;
+	cursor: pointer;
+	padding: .6em 1em;
+	border-bottom: 1px solid hsl( 0, 0%, 91% );
+	text-decoration: none;
+	transition: 200ms ease background;
+}
+
+.docs-categories__item ul li:first-of-type,
+.docs-categories__item ul li:first-of-type a {
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+}
+
+.docs-categories__item ul li:last-of-type,
+.docs-categories__item ul li:last-of-type a {
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+.docs-categories__item ul li a:hover,
+.docs-categories__item ul li a:focus {
+	background: hsl( 0, 0%, 96% )
+}
+
+.docs-categories__item ul li:last-of-type a {
+	border: 0;
+}
+
+.docs-categories__item--cke5 h4:before {
+	background-image: url( static/image/ckeditor-5.jpg );
+}
+.docs-categories__item--cke4 h4:before {
+	background-image: url( static/image/ckeditor-4.jpg );
+}
+.docs-categories__item--letters h4:before {
+	background-image: url( static/image/letters.jpg );
+	margin-right: .35em;
+}
+.docs-categories__item--ckfinder h4:before {
+	background-image: url( static/image/ckfinder.jpg );
+	margin-right: .35em;
+}
+.docs-categories__item--cloud h4:before {
+	background-image: url( static/image/cloud.jpg );
+	margin-right: .35em;
+}
+.docs-categories__item--legacy h4:before {
+	display: none;
+}
+
+@media screen and ( max-device-width: 800px ), screen and ( max-width: 800px ){
+	.main .main__content {
+		min-width: auto;
+	}
+
+	.docs-categories {
+		grid-template-columns: 1fr;
+		grid-gap: 1em 0.5em;
+	}
+
+	.main.main--home .main__content-inner h1 {
+		font-size: 2.3em;
+		font-weight: bold;
+		margin-top: 1em;
+	}
+
+	.main.main--home .main__content-inner h2 {
+		font-size: 1em;
+		padding: 1em;
+		margin-bottom: 1em;
+		max-width: 100%;
+	}
+
+	.docs-categories__item p {
+		max-width: 100%;
+		min-height: auto;
+	}
+}
+
+</style>
+
+<h2>Samples, tutorials, developer guides, functionality overview, deep dive into architecture, API reference.</h2>
+<div class="docs-categories">
+	<div class="docs-categories__item docs-categories__item--cke5">
+		<h4><a href="javascript:;">CKEditor 5</a></h4>
+		<p>A set of ready to use rich text editors created with a powerful framework.</p>
+		<ul>
+			<li><a href="overview2.html">CKEditor 5 Builds</a></li>
+			<li><a href="overview3.html">CKEditor 5 Framework</a></li>
+			<li><a href="index8.html">Examples</a></li>
+			<li><a href="index9.html">Features</a></li>
+			<li><a href="index10.html">API Reference</a></li>
+		</ul>
+	</div>
+	<div class="docs-categories__item docs-categories__item--cke4">
+		<h4><a href="javascript:;">CKEditor 4</a></h4>
+		<p>Battle-tested editor, with many features and legacy compatibility.</p>
+		<ul>
+			<li><a href="index.html">Developer&apos;s Guide</a></li>
+			<li><a href="index3.html">Features</a></li>
+			<li><a href="index4.html">Examples</a></li>
+			<li><a href="index5.html">API Reference</a></li>
+			<li><a href="accessibility_checker.html">Accessibility Checker</a></li>
+		</ul>
+	</div>
+	<div class="docs-categories__item docs-categories__item--letters">
+		<h4><a href="overview.html">Letters</a></h4>
+		<p>Ready-to-use, distraction-free, real-time collaborative editor.</p>
+		<ul>
+			<li><a href="overview.html">Overview</a></li>
+			<li><a href="overview.html">Guides</a></li>
+			<li><a href="javascript:;" target="_blank" rel="noopener">Online demo</a></li>
+		</ul>
+	</div>
+	<div class="docs-categories__item docs-categories__item--ckfinder">
+		<h4><a href="javascript:;">CKFinder</a></h4>
+		<p>Enrich CKEditor with image uploads.</p>
+		<ul>
+			<li><a href="javascript:;" data-skip-validation="true">Examples</a></li>
+			<li><a href="javascript:;" data-skip-validation="true">Developer&#x2019;s Guide</a></li>
+			<li><a href="javascript:;" data-skip-validation="true">PHP Connector</a></li>
+			<li><a href="javascript:;" data-skip-validation="true">ASP.NET Connector</a></li>
+			<li><a href="javascript:;" data-skip-validation="true">Java Connector</a></li>
+		</ul>
+	</div>
+	<div class="docs-categories__item docs-categories__item--cloud">
+		<h4><a href="overview1.html">CKEditor Cloud Services</a></h4>
+		<p>Cloud platform with editing features and real-time collaboration services.</p>
+		<ul>
+			<li><a href="overview1.html">Guides</a></li>
+			<li><a href="overview4.html">On-Premises</a></li>
+			<li><a href="index11.html">Examples</a></li>
+		</ul>
+	</div>
+	<div class="docs-categories__item docs-categories__item--legacy">
+		<h4>Legacy documentation</h4>
+		<p>Older software projects which are no longer actively maintained.</p>
+		<ul>
+			<li><a href="javascript:;" target="_blank" rel="noopener">The old Documentation Site</a></li>
+		</ul>
+	</div>
+</div>
+<!--- Do not add line breaks inside the style tag below --->
+<style>.headerlink::after {display:none}</style>
+<script>
+if ( window.location.hash && window.location.hash.indexOf( '#!/' ) === 0 ) {
+	var hash = window.location.hash.replace(/#!\/(api|guide)\/*$/, '#!\/$1\/index') || window.location.hash;
+		hash = hash.substring( 3 )
+				.replace( '-property-S-', '#property-S-' )
+				.replace( '-static-property-', '#static-property-' )
+				.replace( '-property-', '#property-' )
+				.replace( '-static-method-', '#static-method-' )
+				.replace( '-method-', '#method-' )
+				.replace( '-event-', '#event-' )
+				.replace( '-cfg-', '#cfg-' )
+				.replace( '-section-', '#' )
+				.replace( /\./g, '_' );
+		var separatorIndex = hash.indexOf( '#' );
+		var preHash = separatorIndex !== -1 ? hash.substring( 0, separatorIndex ) : hash;
+		var newHash = separatorIndex !== -1 ? hash.substring( separatorIndex ) : '';
+		window.location.replace( "/docs/ckeditor4/latest/" + encodeURI( preHash ) + '.html' + newHash );
+}
+</script>
+
+        </div>
+      </section>
+      <div class="side-navigation">
+        <div class="side-navigation__wrapper">
+          <nav class="side-navigation__inner"></nav>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2003-2020 <a href="javascript:;">CKSource</a>. All rights reserved.</p>
+    </footer>
+    <script type="text/javascript" src="static/js/docsearch.min.js"></script><script type="text/javascript">
+docsearch({apiKey:'7fd1a5354ceba927a56450ce0459620d',indexName:'ckeditor_docs_site',inputSelector:'#docsearch_input',algoliaOptions:{hitsPerPage:10,attributesToRetrieve:'*',facetFilters:['tags: ']}});
+</script>
+  </body>
+</html>

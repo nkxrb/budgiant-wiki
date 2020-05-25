@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Overview - Cloud Services Documentation</title>
+    <meta name="description" content="CKEditor Cloud Services is a cloud platform for editing and real-time collaboration services. Learn how to connect to CKEditor Cloud Services and what services are available.">
+    <meta name="twitter:card" content="CKEditor Cloud Services is a cloud platform for editing and real-time collaboration services. Learn how to connect to CKEditor Cloud Services and what services are available.">
+    <meta name="twitter:site" content="@ckeditor">
+    <meta property="og:title" content="Overview - Cloud Services Documentation">
+    <meta property="og:description" content="CKEditor Cloud Services is a cloud platform for editing and real-time collaboration services. Learn how to connect to CKEditor Cloud Services and what services are available.">
+    <meta property="og:image" content="https://ckeditor.com/docs/assets/img/og/ogimage-ecosystem.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ckeditor.com/docs/cs/latest/guides/overview.html">
+    <meta property="DC.language" content="en">
+    <meta property="DC.publisher" content="CKSource">
+    <meta property="DC.creator" content="CKEditor">
+    <meta property="DC.title" content="Overview - Cloud Services Documentation">
+    <meta property="DC.format" content="text/html">
+    <meta property="DC.type" content="Text">
+    <meta property="DC.description" content="CKEditor Cloud Services is a cloud platform for editing and real-time collaboration services. Learn how to connect to CKEditor Cloud Services and what services are available.">
+    
+    
+    
+    
+    <link rel="stylesheet" href="static/css/docsearch.min.css">
+    <link rel="stylesheet" href="static/css/styles.css" type="text/css" media="all">
+    <script>
+      ( function() {
+      	'use strict';
+      	// Set up global variables;
+      	if ( !window.umebrto ) {
+      		window.umberto = {};
+      	}
+      	window.umberto.relativeAppPath = "../../../assets/1.3.1/scripts"
+      
+      	// Add app script
+      	var el = document.createElement( 'script' );
+      	el.setAttribute( 'async', 'async' );
+      	el.setAttribute( 'defer', 'defer' );
+      	if ( typeof Symbol === 'function' && typeof Symbol() === 'symbol' ) {
+      		el.src = "../../../assets/1.3.1/scripts/app.js";
+      	} else {
+      		el.src = "../../../assets/1.3.1/scripts/app-polyfill.js";
+      	}
+      	document.getElementsByTagName( 'head' )[ 0 ].appendChild( el );
+      
+      	// Changing documentation theme enable it via `localStorage.setItem( 'theme', 'theme-dark' )`
+      	if ( localStorage.getItem( 'theme' ) === 'theme-dark' ) {
+      		document.getElementsByTagName( 'html' )[ 0 ].classList.add( 'theme-dark' );
+      	}
+      } )();
+    </script>
+    <!-- Google Tag Manager-->
+    <script>if (["ckeditor.com"].indexOf(location.hostname) !== -1) {
+          (function (w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+              var f = d.getElementsByTagName(s)[0],
+                  j = d.createElement(s),
+                  dl = l != 'dataLayer' ? '&l=' + l : '';
+              j.async = true;
+              j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+              f.parentNode.insertBefore(j, f);
+          })( window, document, 'script', 'dataLayer', 'GTM-KFSS6L' );
+      }
+      
+    </script>
+    <!-- End Google Tag Manager-->
+    <script>if ( ["ckeditor.com"].indexOf( location.hostname ) !== -1) {
+      	window.emojicsOpts = {
+      		widget: '50c7737f072dfd100f3dad0411f02e',
+      		position: 'inline'
+      	};
+      	( function( d, s, id ) {
+      		var js, fjs = d.getElementsByTagName( s )[ 0 ];
+      		js = d.createElement( s );
+      		js.id = id;
+      		js.async = 1;
+      		js.src = '//connect.emojics.com/dist/sdk.js';
+      		fjs.parentNode.insertBefore( js, fjs );
+      	} )( document, 'script', 'emojics-js' );
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="javascript:;" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript)-->
+    <header class="top" data-project="cs">
+      <div class="header__main">
+        <div class="header__main-rwd-button"><a href="#"><span></span><span></span><span></span></a></div>
+        <div class="header__main-title"><a class="header__main-title-home" href="index1.html">CKEditor Ecosystem Documentation</a></div>
+        <div class="top__search">
+          <input class="top__search__box" type="text" id="docsearch_input" placeholder="Search in Cloud Services">
+          <div class="top__search__button"><img src="static/picture/loupe.jpg" alt="Search"></div>
+        </div>
+      </div>
+      <div class="header__sub">
+        <ul class="top__menu">
+          <li class="top__menu-project-logo"><a href="">Cloud Services</a></li>
+          <li><a class="top__menu__item--active" href="javascript:;">Guides</a></li>
+          <li><a href="javascript:;">On-Premises</a></li>
+          <li><a href="index11.html">Examples</a></li>
+        </ul>
+      </div>
+      <div class="header__menu-rwd">
+        <ul class="header__menu-rwd__projects">
+          <li data-project="ckeditor5"><a href="index6.html">CKEditor 5</a></li>
+          <li data-project="ckeditor4"><a href="index2.html">CKEditor 4</a></li>
+          <li data-project="letters"><a href="overview.html">Letters</a></li>
+          <li data-project="cs"><a href="">Cloud Services
+              <ul class="tree header__menu-rwd__projects-pages">
+                <li data-group="guides"><a href="javascript:;">Guides</a>
+                  <!-- Display subpages for active project.-->
+                  <ul class="header__menu-rwd__projects-subpages">
+                            <li><a href="">
+                                <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Easy Image</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Quick start</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Websites management</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Service details</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Collaboration</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Quick start</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Collaboration data</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Import and export</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Document storage</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Connection optimization</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor bundle</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Restful APIs</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Webhooks</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Events</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Management</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Server</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Testing</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Security</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Roles</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Token endpoint</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">API secret</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Request signature</span></div></a></li>
+                              </ul>
+                            </li>
+                  </ul>
+                </li>
+                <li data-group="onpremises"><a href="javascript:;">On-Premises</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+                <li data-group="examples"><a href="index11.html">Examples</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+              </ul></a></li>
+          <li data-project="ckfinder"><a href="index7.html">CKFinder</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="main">
+      <section class="main__content formatted">
+        <div class="main__content-inner">
+          <div class="rwd-breadcrumbs"><a href="index1.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="">Cloud Services</a><span class="rwd-breadcrumbs__separator">/</span><a href="javascript:;">Guides</a>
+          </div>
+          <h1 class="main__content-title"><img src="static/picture/book.jpg" alt="guide">Overview
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#easy-image">Easy Image</a><ol><li><a href="#easy-image-for-ckeditor-5">Easy Image for CKEditor 5</a></li><li><a href="#easy-image-for-ckeditor-4">Easy Image for CKEditor 4</a></li><li><a href="#easy-image-in-letters">Easy Image in Letters</a></li></ol></li><li><a href="#real-time-collaboration">Real-time collaboration</a><ol><li><a href="#ckeditor-5-real-time-collaboration-features">CKEditor 5 Real-time collaboration features</a></li><li><a href="#letters">Letters</a></li></ol></li><li><a href="#next-steps">Next steps</a></li></ol></nav>
+<p>CKEditor Cloud Services is a cloud platform for editing and real-time collaboration services.</p>
+<div class="info-box notice"><p>The information in the guides applies to the cloud version as well as the On-Premises version.</p><p>More information about the On-Premises version can be found in the <a href="overview4.html">On-Premises</a> section.</p></div>
+<h2 id="easy-image"><a class="headerlink" href="#easy-image">#</a> Easy Image</h2>
+<p><a href="javascript:;" target="_blank" rel="noopener">Easy Image</a> is a service that takes care of <strong>image uploads</strong>. It reduces the effort required on your part to build a complete modern editing solution with support for embedding images.</p>
+<p>Easy Image guarantees that all images inserted into your content are responsive. With a single image upload, several optimized versions of the image are created after upload by CKEditor Cloud Services, for different sizes of displays. All this is transparent to the end user who uploaded the image. Rescaled and optimized images are delivered through a blazing-fast CDN.</p>
+<img src="static/picture/easy-image.png" width="1440" alt="Responsive images with Easy Image.">
+<p>Easy Image is a service that runs in the cloud, however, it also requires the client-side part to operate. At this moment there are three integrations available: for CKEditor 5, CKEditor 4 and inside Letters.</p>
+<h3 id="easy-image-for-ckeditor-5"><a class="headerlink" href="#easy-image-for-ckeditor-5">#</a> Easy Image for CKEditor 5</h3>
+<p>The Easy Image plugin is included in all CKEditor 5 Builds. No special steps are required to use it, apart from configuring the CKEditor Cloud Services access.</p>
+<p>See the <a href="javascript:;">Better images</a> section of the &#x201C;What&#x2019;s new in CKEditor 5?&#x201D; article for a few short demos of image uploads with Easy Image. Refer to the <a href="javascript:;">Easy Image integration guide</a> for more information.</p>
+<h3 id="easy-image-for-ckeditor-4"><a class="headerlink" href="#easy-image-for-ckeditor-4">#</a> Easy Image for CKEditor 4</h3>
+<p>Starting from the CKEditor 4.9 release, CKEditor 4 comes with an <a href="javascript:;" target="_blank" rel="noopener">optional plugin called Easy Image</a> that provides a similar modern user experience as the feature available in CKEditor 5.</p>
+<p>See the <a href="easyimage1.html" target="_blank" rel="noopener">Easy Image sample</a> in CKEditor Examples and refer to the <a href="javascript:;">Easy Image Functionality Overview</a> and <a href="javascript:;">Easy Image Integration</a> guides for more details.</p>
+<h3 id="easy-image-in-letters"><a class="headerlink" href="#easy-image-in-letters">#</a> Easy Image in Letters</h3>
+<p>Easy Image is included in Letters, so there are no extra steps needed to use it.</p>
+<h2 id="real-time-collaboration"><a class="headerlink" href="#real-time-collaboration">#</a> Real-time collaboration</h2>
+<p>CKEditor Cloud Services offers a fast and highly scalable service for real-time collaboration, compatible with rich text editors built on top of CKEditor 5 Framework. It is capable of handling real-time collaboration on text documents and tracking users connected to the document. It also serves as a storage for comments added to the document.</p>
+<p>Apart from having a supporting backend to transmit operations, resolve conflicts and apply changes between users connected to the same document, some features are needed on the client side to offer a full real-time collaboration experience:</p>
+<ul>
+<li>Showing multiple cursors and selection coming from other users.</li>
+<li>Showing users connecting to and disconnecting from the document.</li>
+<li>Offering the UI for managing comments and markers in the document.</li>
+</ul>
+<p>CKEditor Ecosystem offers two solutions for implementing real-time collaborative editing:</p>
+<ul>
+<li><a href="javascript:;" target="_blank" rel="noopener">CKEditor 5 Collaboration Features</a> &#x2014; A collection of plugins that can be integrated with any CKEditor 5 build to provide a fully flexible and customizable experience.</li>
+<li><a href="javascript:;" target="_blank" rel="noopener">Letters</a> &#x2014; A ready-to-use real-time collaborative editor with all the essential features.</li>
+</ul>
+<h3 id="ckeditor-5-real-time-collaboration-features"><a class="headerlink" href="#ckeditor-5-real-time-collaboration-features">#</a> CKEditor 5 Real-time collaboration features</h3>
+<p><a href="javascript:;">CKEditor 5 Real-time collaboration features</a> let you customize any CKEditor 5 build to include real-time collaborative editing, commenting and track changes features and tailor them to your needs.</p>
+<p>Real-time collaboration consists of four features delivered as separate plugins that can be used with any CKEditor 5 build:</p>
+<ul>
+<li><a href="javascript:;" target="_blank" rel="noopener">Real-time collaborative editing</a> &#x2013; Allows for editing the same document by multiple users simultaneously. It also automatically solves all conflicts if users make changes at the same time.</li>
+<li><a href="javascript:;" target="_blank" rel="noopener">Real-time collaborative comments</a> &#x2013; Makes it possible to add comments to any part of content in the editor.</li>
+<li><a href="javascript:;" target="_blank" rel="noopener">Real-time collaborative track changes</a> &#x2013; Changes to the content are saved as suggestions that can be accepted or discarded later.</li>
+<li><a href="javascript:;">Users selection and presence list</a> &#x2013; Shows the selection of other users and lets you view the list of users currently editing the content in the editor.</li>
+</ul>
+<p>All of the above features are customizable. This makes implementing real-time collaborative editing within your application a highly customizable out-of-the-box experience.</p>
+<img src="https://ckeditor.com/docs/ckeditor5/latest/assets/img/docs-collaboration-overview.png" width="810" alt="Real-time collaboration features in CKEditor 5.">
+<p>For an in-depth introduction to CKEditor 5 Collaboration Features refer to the <a href="javascript:;">Collaboration overview</a>.</p>
+<h3 id="letters"><a class="headerlink" href="#letters">#</a> Letters</h3>
+<p><a href="javascript:;" target="_blank" rel="noopener">Letters</a> is a ready-to-use, distraction-free real-time collaborative editor built on top of CKEditor 5 Framework. It offers a complete editing experience, with a beautiful UI, carefully selected editing features, real-time collaboration and comments &#x2014; all available out of the box, ready to integrate with your application.</p>
+<p><img src="static/picture/letters-interface.png" data-lightbox="true" alt="Letters interface." width="604"></p>
+<p>For an in-depth introduction to Letters features refer to the <a href="overview.html">Letters overview</a>.</p>
+<h2 id="next-steps"><a class="headerlink" href="#next-steps">#</a> Next steps</h2>
+<p>If you are interested in Easy Image, check <a href="javascript:;">Quick start</a> for a short instruction on how to start using Easy Image.</p>
+<p>If you are interested in CKEditor 5 Collaboration Features, check <a href="javascript:;">Collaboration overview</a> for information how to enable real-time collaborative editing in your CKEditor 5 build.</p>
+<p>If you are looking for a ready-to-use editing solution that includes both real-time collaboration and Easy Image, check <a href="overview.html">Letters</a>.</p>
+
+          <div class="feedback-widget">
+            <div id="emojics-root"></div>
+          </div>
+        </div>
+      </section>
+      <div class="side-navigation">
+        <div class="side-navigation__wrapper">
+          <nav class="side-navigation__inner">
+            <ul class="tree guide-tree">
+                          <li><a href="">
+                              <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Easy Image</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Quick start</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Websites management</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Service details</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Collaboration</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Quick start</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Collaboration data</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Import and export</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Document storage</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Connection optimization</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor bundle</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Restful APIs</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Webhooks</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Events</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Management</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Server</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Testing</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Security</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Roles</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Token endpoint</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">API secret</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Request signature</span></div></a></li>
+                            </ul>
+                          </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </main>
+    <footer class="footer footer--bordered">
+      <p>&copy; 2003-2020 <a href="javascript:;">CKSource</a>. All rights reserved.</p>
+    </footer>
+    <script type="text/javascript" src="static/js/docsearch.min.js"></script><script type="text/javascript">
+docsearch({
+apiKey:'7fd1a5354ceba927a56450ce0459620d',indexName:'ckeditor_docs_site',inputSelector:'#docsearch_input',algoliaOptions:{hitsPerPage:250,attributesToRetrieve:'*',facetFilters:['tags: cs']},
+transformData: function( hits ) {var sortingFn = function( a, b ) {a.custom_ranking = a.custom_ranking || 0;b.custom_ranking = b.custom_ranking || 0;if ( a.custom_ranking === b.custom_ranking ) return a.index - b.index;if ( a.custom_ranking > b.custom_ranking ) return -1;if ( a.custom_ranking < b.custom_ranking ) return 1;};var result = [];var tags = [ 'guides', 'onpremises', 'examples' ];var hitsGrouped = { api: [] };hitsGrouped[ 'guides' ] = hits.filter( function( h ) {return h.tags.includes( 'guides' );} ).slice( 0, 7 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn );tags.forEach( function( tag ) {if ( tag !== 'guides' ) {hitsGrouped[ tag ] = hits.filter( function( h ) {return h.tags.includes( tag );} ).slice( 0, 10 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn ).slice( 0, 3 );}} );var apiSearchHits = [];if ( window.apiSearch ) apiSearchHits = window.apiSearch();hitsGrouped.api = hitsGrouped.api.filter( function( h ) {var isDuplicated = false;for ( var i = 0; i < apiSearchHits.length; i++ ) {if ( h.url.includes( apiSearchHits[ i ].urlShort ) ) {isDuplicated = true;break;}}return !isDuplicated;} );hitsGrouped.api = ( apiSearchHits || [] ).concat( hitsGrouped.api );result = result.concat( hitsGrouped[ 'guides' ] );tags.forEach( function( tag ) {if ( tag !== 'guides' ) result = result.concat( hitsGrouped[ tag ].slice( 0, 4 ) );} );return result;}
+});
+</script>
+  </body>
+</html>

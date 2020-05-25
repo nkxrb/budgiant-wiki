@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notifications - CKEditor 4 Documentation</title>
+    <meta name="description" content="Learn how to install, integrate and configure CKEditor 4. More complex aspects, like creating plugins, widgets and skins are explained here, too. API reference and examples included.">
+    <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 4. More complex aspects, like creating plugins, widgets and skins are explained here, too. API reference and examples included.">
+    <meta name="twitter:site" content="@ckeditor">
+    <meta property="og:title" content="Notifications - CKEditor 4 Documentation">
+    <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 4. More complex aspects, like creating plugins, widgets and skins are explained here, too. API reference and examples included.">
+    <meta property="og:image" content="https://ckeditor.com/docs/assets/img/og/ogimage-ecosystem.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ckeditor.com/docs/ckeditor4/latest/features/notifications.html">
+    <meta property="DC.language" content="en">
+    <meta property="DC.publisher" content="CKSource">
+    <meta property="DC.creator" content="CKEditor">
+    <meta property="DC.title" content="Notifications - CKEditor 4 Documentation">
+    <meta property="DC.format" content="text/html">
+    <meta property="DC.type" content="Text">
+    <meta property="DC.description" content="Learn how to install, integrate and configure CKEditor 4. More complex aspects, like creating plugins, widgets and skins are explained here, too. API reference and examples included.">
+    <link rel="canonical" href="static/css/notifications">
+    
+    
+    
+    
+    <link rel="stylesheet" href="static/css/docsearch.min.css">
+    <link rel="stylesheet" href="static/css/styles.css" type="text/css" media="all">
+    <script>
+      ( function() {
+      	'use strict';
+      	// Set up global variables;
+      	if ( !window.umebrto ) {
+      		window.umberto = {};
+      	}
+      	window.umberto.relativeAppPath = "../../../assets/1.3.1/scripts"
+      
+      	// Add app script
+      	var el = document.createElement( 'script' );
+      	el.setAttribute( 'async', 'async' );
+      	el.setAttribute( 'defer', 'defer' );
+      	if ( typeof Symbol === 'function' && typeof Symbol() === 'symbol' ) {
+      		el.src = "../../../assets/1.3.1/scripts/app.js";
+      	} else {
+      		el.src = "../../../assets/1.3.1/scripts/app-polyfill.js";
+      	}
+      	document.getElementsByTagName( 'head' )[ 0 ].appendChild( el );
+      
+      	// Changing documentation theme enable it via `localStorage.setItem( 'theme', 'theme-dark' )`
+      	if ( localStorage.getItem( 'theme' ) === 'theme-dark' ) {
+      		document.getElementsByTagName( 'html' )[ 0 ].classList.add( 'theme-dark' );
+      	}
+      } )();
+    </script>
+    <!-- Google Tag Manager-->
+    <script>if (["ckeditor.com"].indexOf(location.hostname) !== -1) {
+          (function (w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+              var f = d.getElementsByTagName(s)[0],
+                  j = d.createElement(s),
+                  dl = l != 'dataLayer' ? '&l=' + l : '';
+              j.async = true;
+              j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+              f.parentNode.insertBefore(j, f);
+          })( window, document, 'script', 'dataLayer', 'GTM-KFSS6L' );
+      }
+      
+    </script>
+    <!-- End Google Tag Manager-->
+    <script>if ( ["ckeditor.com"].indexOf( location.hostname ) !== -1) {
+      	window.emojicsOpts = {
+      		widget: '50c7737f072dfd100f3dad0411f02e',
+      		position: 'inline'
+      	};
+      	( function( d, s, id ) {
+      		var js, fjs = d.getElementsByTagName( s )[ 0 ];
+      		js = d.createElement( s );
+      		js.id = id;
+      		js.async = 1;
+      		js.src = '//connect.emojics.com/dist/sdk.js';
+      		fjs.parentNode.insertBefore( js, fjs );
+      	} )( document, 'script', 'emojics-js' );
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="javascript:;" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript)-->
+    <header class="top" data-project="ckeditor4">
+      <div class="header__main">
+        <div class="header__main-rwd-button"><a href="#"><span></span><span></span><span></span></a></div>
+        <div class="header__main-title"><a class="header__main-title-home" href="index1.html">CKEditor Ecosystem Documentation</a></div>
+        <div class="top__search">
+          <input class="top__search__box" type="text" id="docsearch_input" placeholder="Search in CKEditor 4">
+          <div class="top__search__button"><img src="static/picture/loupe.jpg" alt="Search"></div>
+        </div>
+      </div>
+      <div class="header__sub">
+        <ul class="top__menu">
+          <li class="top__menu-project-logo"><a href="index2.html">CKEditor 4</a></li>
+          <li><a href="index.html">Guides</a></li>
+          <li><a class="top__menu__item--active" href="index3.html">Features</a></li>
+          <li><a href="index4.html">Examples</a></li>
+          <li><a class="top__menu__api" href="index5.html">API</a></li>
+          <li><a class="top__menu-github-link" href="javascript:;" target="_blank" title="CKEditor 4 on GitHub."><svg viewbox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a></li>
+        </ul>
+      </div>
+      <div class="header__menu-rwd">
+        <ul class="header__menu-rwd__projects">
+          <li data-project="ckeditor5"><a href="index6.html">CKEditor 5</a></li>
+          <li data-project="ckeditor4"><a href="index2.html">CKEditor 4
+              <ul class="tree header__menu-rwd__projects-pages">
+                <li data-group="guide"><a href="index.html">Guides</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+                <li data-group="features"><a href="index3.html">Features</a>
+                  <!-- Display subpages for active project.-->
+                  <ul class="header__menu-rwd__projects-subpages">
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">End-user Features</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">User Interface</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="uicolor.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">UI Color</span></div></a></li>
+                                            <li><a href="uilanguage.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">UI Language</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Resizing</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="size.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor Size</span></div></a></li>
+                                            <li><a href="autogrow.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor Auto Grow</span></div></a></li>
+                                            <li><a href="resize.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Resizing Customization</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting Images</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="image.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Default Image Plugin</span></div></a></li>
+                                            <li><a href="image2.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Enhanced Image</span></div></a></li>
+                                            <li><a href="easyimage.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Easy Image</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting Content</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="pastefromword.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Paste from Word</span></div></a></li>
+                                            <li><a href="pastefromgoogledocs.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Paste from Google Docs</span></div></a></li>
+                                            <li><a href="pastefromexcel.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Paste from Excel</span></div></a></li>
+                                            <li><a href="pastefromlibreoffice.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Paste from LibreOffice</span></div></a></li>
+                                            <li><a href="spreadsheets.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Spreadsheets</span></div></a></li>
+                                            <li><a href="table.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Tables with Column Resizing</span></div></a></li>
+                                            <li><a href="media_embed.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Embedding Media Resources</span></div></a></li>
+                                            <li><a href="codesnippet.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Code Snippets</span></div></a></li>
+                                            <li><a href="codesnippetgeshi.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Code Snippets (GeSHi)</span></div></a></li>
+                                            <li><a href="mathjax.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Mathematical Formulas</span></div></a></li>
+                                            <li><a href="mathtype.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Mathematical and Chemical Formulas</span></div></a></li>
+                                            <li><a href="placeholder.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Placeholders</span></div></a></li>
+                                            <li><a href="drop_paste.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Dropping and Pasting</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Styling and Formatting</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="basicstyles.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Basic Text Styles</span></div></a></li>
+                                            <li><a href="copyformatting.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Copying Text Formatting</span></div></a></li>
+                                            <li><a href="removeformat.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Removing Text Formatting</span></div></a></li>
+                                            <li><a href="styles.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Styles Drop-down</span></div></a></li>
+                                            <li><a href="format.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Text Formats</span></div></a></li>
+                                            <li><a href="colorbutton.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Text and Background Color</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Working with Document</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="spellcheck.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Spelling and Grammar Checking</span></div></a></li>
+                                            <li><a href="autocomplete.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Autocomplete</span></div></a></li>
+                                            <li><a href="mentions.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Mentions and Tags</span></div></a></li>
+                                            <li><a href="emoji.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Emoji</span></div></a></li>
+                                            <li><a href="sourcearea.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Source Code Editing</span></div></a></li>
+                                            <li><a href="magicline.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Magic Line</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Accessibility Support</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="accessibility_checker.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Accessibility Checker</span></div></a></li>
+                                            <li><a href="shortcuts.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Keyboard Shortcuts</span></div></a></li>
+                                      </ul>
+                                    </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Integration Features</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor UI</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="uitypes.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">UI Types</span></div></a></li>
+                                            <li><a href="sharedspace.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Shared UI</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Toolbar</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="toolbar.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Toolbar Configuration</span></div></a></li>
+                                            <li><a href="balloontoolbar.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Balloon Toolbar</span></div></a></li>
+                                            <li><a href="toolbarlocation.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Toolbar Location</span></div></a></li>
+                                            <li><a href="toolbarconcepts.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Toolbar Concepts</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">API Usage</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="readonly.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Read-Only Mode</span></div></a></li>
+                                            <li><a href="">
+                                                <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Notifications</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Output Control</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="output_format.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">HTML Output Formatting</span></div></a></li>
+                                            <li><a href="fullpage.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editing Complete HTML Pages</span></div></a></li>
+                                            <li><a href="enterkey.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Enter Key Configuration</span></div></a></li>
+                                            <li><a href="bbcode.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">BBCode Editing</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Utilities</span></div>
+                                      <ul class="tree__item-nested-list">
+                                            <li><a href="devtools.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Developer Tools</span></div></a></li>
+                                            <li><a href="uicolorpicker.html">
+                                                <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">UI Color Picker</span></div></a></li>
+                                      </ul>
+                                    </li>
+                              </ul>
+                            </li>
+                  </ul>
+                </li>
+                <li data-group="sdk"><a href="index4.html">Examples</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+                <li data-group="api-reference"><a href="index5.html">API</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+              </ul></a></li>
+          <li data-project="letters"><a href="overview.html">Letters</a></li>
+          <li data-project="cs"><a href="overview1.html">Cloud Services</a></li>
+          <li data-project="ckfinder"><a href="index7.html">CKFinder</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="main">
+      <section class="main__content formatted">
+        <div class="main__content-inner">
+          <div class="github-contrib"><a href="javascript:;" title="Contribute to this guide"><img src="static/picture/edit.jpg" alt="Contribute to this guide"></a><a href="javascript:;" title="Report an issue"><img src="static/picture/exclamation-circle.jpg" alt="Report an issue"></a>
+          </div>
+          <div class="rwd-breadcrumbs"><a href="index1.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="index2.html">CKEditor 4</a><span class="rwd-breadcrumbs__separator">/</span><a href="index3.html">Features</a>
+          </div>
+          <h1 class="main__content-title"><img src="static/picture/book.jpg" alt="guide">Notifications
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#showing-a-notification">Showing a Notification</a></li><li><a href="#notification-interface">Notification Interface</a></li><li><a href="#notification-integration">Notification Integration</a></li><li><a href="#notification-aggregator">Notification Aggregator</a></li></ol></nav><!--
+Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.md.
+-->
+
+<div class="info-box notice notice__info"><p>This feature was introduced in <strong>CKEditor 4.5</strong>. It is provided through optional plugins that are not included in the CKEditor presets available from the <a href="javascript:;" target="_blank" rel="noopener">Download</a> site and <a href="dev_plugins.html">need to be added to your custom build</a> with <a href="javascript:;" target="_blank" rel="noopener">online builder</a>.</p></div>
+<p>The optional <a href="javascript:;" target="_blank" rel="noopener">Notification</a> and <a href="javascript:;" target="_blank" rel="noopener">Notification Aggregator</a> plugins introduced in CKEditor 4.5 make it possible to show the user information about the status of selected operations directly in the editor.</p>
+<p>The new notification system lets you display all sorts of information in a consistent way because all plugins using the <a href="ckeditor_plugins_notification">notification API</a> will show information in the same way. This API also allows you to integrate the editor&#x2019;s notifications with your website (your CMS for example). Note that notifications do not work with dialog windows so no dialog should be displayed when the notification is to be shown.</p>
+<p>There are <a href="ckeditor_plugins_notification#property-type">four types of notifications</a> available:</p>
+<ul>
+<li><code>info</code> (default) &#x2013; Information for the user (e.g. &#x201C;File is uploading.&#x201D;, &#x201C;ACF modified content.&#x201D;).</li>
+<li><code>warning</code> &#x2013; A warning or an error message (e.g. &#x201C;This type of file is not supported.&#x201D;, &#x201C;You cannot paste the script.&#x201D;),</li>
+<li><code>success</code> &#x2013; Information about an operation that finished successfully (e.g. &#x201C;File uploaded.&#x201D;, &#x201C;Data imported.&#x201D;).</li>
+<li><code>progress</code> &#x2013; Information about the progress of an operation. When the operation is done, the notification type should be changed to <code>success</code>.</li>
+</ul>
+<p>The image below shows an example of a success and a progress notification.</p>
+<p><img src="https://ckeditor.com/docs/ckeditor4/latest/assets/img/notification.png" data-lightbox="true" alt="Notifications example"></p>
+<h2 id="showing-a-notification"><a class="headerlink" href="#showing-a-notification">#</a> Showing a Notification</h2>
+<p>To show a simple notification you need to <a href="ckeditor_plugins_notification#method-constructor">create a notification</a> instance and call the <a href="ckeditor_plugins_notification#method-show"><code>show</code></a> method or you can use the <a href="ckeditor_editor#method-showNotification"><code>showNotification</code></a> shortcut:</p>
+<pre><code>// The editor needs the &quot;notification&quot; plugin.
+var editor = <a href="ckeditor#method-replace">CKEDITOR.replace</a>( &apos;editor1&apos;, {
+    extraPlugins: &apos;notification&apos;
+} );
+
+editor.once( &apos;instanceReady&apos;, function() {
+    // Create and show the notification.
+    var notification1 = new <a href="ckeditor_plugins_notification">CKEDITOR.plugins.notification</a>( editor, {
+        message: &apos;Error occurred&apos;,
+        type: &apos;warning&apos;
+    } );
+    notification1.show();
+
+    // Use shortcut - it has the same result as above.
+    var notification2 = editor.showNotification( &apos;Error occurred&apos;, &apos;warning&apos; );
+} );
+</code></pre>
+<p>Note that the <a href="ckeditor_editor#method-showNotification"><code>showNotification</code></a> method is available even without the Notification plugin. In such case an alert will be shown instead of the notification.</p>
+<p>Once you create a notification you can update its state and even change its type:</p>
+<pre><code>var notification = editor.showNotification( &apos;Uploading...&apos;, &apos;progress&apos;, 0.25 );
+
+// ...
+
+notification.update( { progress: 0.75 } );
+
+// ...
+
+notification.update( { type: &apos;success&apos;, message: &apos;File uploaded.&apos; } );
+</code></pre>
+<p>Note that a developer may implement the notification interface in a custom way, for example to show the notification with a slide-in animation. In such case updating one notification is not the same as hiding one and showing another. One notification should show the status of one process, so it is better to update it to the <code>success</code> type instead of creating a new one every time the status changes.</p>
+<p>To learn more about the notification API, check the <a href="ckeditor_plugins_notification"><code>notification</code></a> documentation.</p>
+<h2 id="notification-interface"><a class="headerlink" href="#notification-interface">#</a> Notification Interface</h2>
+<p>By default notifications are displayed at the top center of the editable area. However, they try to be visible as long as possible without leaving the editable area. It means that notifications will move if a part of the editable will be out of the viewport, so you can edit a very long document and the notification will still be visible. The notifications also move below the toolbar if you are using the <a href="uitypes.html#floating-user-interface">floating user interface</a>, but they will not be visible at all if the editor is not visible at all.</p>
+<p><img src="https://ckeditor.com/docs/ckeditor4/latest/assets/img/notification_stick.png" data-lightbox="true" alt="Notifications stick to the viewport border to be visible as long as possible"></p>
+<p>Notifications can also hide after a timeout.</p>
+<ul>
+<li>By default, <code>info</code> and <code>success</code> notifications hide after 5 seconds &#x2014; this can be changed using the <a href="ckeditor_config#cfg-notification_duration"><code>notification_duration</code></a> option. The notification duration can also be changed on an instance basis.</li>
+<li>The <code>warning</code> notifications need to be hidden manually.</li>
+<li>The <code>progress</code> notifications are also not hidden automatically. They wait for the next progress update and to be finally changed to <code>success</code> or <code>warning</code>.</li>
+</ul>
+<p>The user can always hide notifications manually by using the <code>X</code> button or the <kbd>Esc</kbd> key.</p>
+<p>If you want to make sure that a notification will be shown after an update, that update needs to be marked as<br>
+<a href="ckeditor_plugins_notification#method-update">important</a>. This matters also with regard to accessibility &#x2014; important updates will be read by screen readers while the rest of the updates will not, because we do not want to spam the user with tons of messages if a notification is updated very often.</p>
+<h2 id="notification-integration"><a class="headerlink" href="#notification-integration">#</a> Notification Integration</h2>
+<p>If you want to replace the standard notification interface with a custom one or you want to integrate editor notifications with your website or CMS, you can do it by listening to notification events: <a href="ckeditor_editor#event-notificationShow">notificationShow</a>, <a href="ckeditor_editor#event-notificationUpdate">notificationUpdate</a> and <a href="ckeditor_editor#event-notificationHide">notificationHide</a>.</p>
+<p>To prevent notifications from being shown it is not enough to prevent <a href="ckeditor_editor#event-notificationShow"><code>notificationShow</code></a>, but you need to cancel <a href="ckeditor_editor#event-notificationUpdate"><code>notificationUpdate</code></a> too, otherwise important updates will display the notification.</p>
+<pre><code>editor.on( &apos;notificationShow&apos;, function( evt ) {
+    alert( evt.data.notification.message );
+
+    // Do not show the default notification.
+    evt.cancel();
+} );
+
+editor.on( &apos;notificationUpdate&apos;, function( evt ) {
+    // Do not show the notification even if the update was important.
+    evt.cancel();
+} );
+</code></pre>
+<p>Note that if you cancel the <a href="ckeditor_editor#event-notificationUpdate"><code>notificationUpdate</code></a> event, it only means that the notification will not be shown even if the update was important. The notification object will be updated anyway, including the <a href="ckeditor_plugins_notification#property-element"><code>element</code></a> property, so you do not need to do it manually. The event is fired before updating the notification object, so it is possible to compare old and new values:</p>
+<pre><code>editor.on( &apos;notificationUpdate&apos;, function( evt ) {
+    if( evt.data.options &amp;&amp; evt.data.options.message != evt.data.notification.message ) {
+        alert( &apos;Message changed!&apos;);
+    }
+} );
+</code></pre>
+<p>If you cancel the <a href="ckeditor_editor#event-notificationHide"><code>notificationHide</code></a> event, the notification will not be hidden. In this case it will not matter whether the defined notification duration passed or the user pressed the <code>X</code> button or <kbd>Esc</kbd>.</p>
+<h2 id="notification-aggregator"><a class="headerlink" href="#notification-aggregator">#</a> Notification Aggregator</h2>
+<p>If you want to show one notification aggregating many small tasks, you can use the <a href="ckeditor_plugins_notificationagg">notification aggregator</a>.</p>
+<p><img src="static/picture/notification_aggregator.png" data-lightbox="true" alt="Notifications aggregator example"></p>
+<pre><code>// The editor needs the &quot;notificationaggregator&quot; plugin.
+var editor = <a href="ckeditor#method-replace">CKEDITOR.replace</a>( &apos;editor1&apos;, {
+    extraPlugins: &apos;notificationaggregator&apos;
+} );
+
+editor.once( &apos;instanceReady&apos;, function() {
+    // Create a notification aggregator with the description template.
+    var aggregator = new <a href="ckeditor_plugins_notificationagg">CKEDITOR.plugins.notificationAggregator</a>( editor, &apos;Uploading {current} of {max}... {percentage}%&apos; );
+
+    // Create two tasks with different weights and add them to the aggregator.
+    var task1 = aggregator.createTask( { weight: 60 } ),
+        task2 = aggregator.createTask( { weight: 40 } );
+
+    // Finish the first task (100% done of the first task and 60% (=60/(60+40)) of the total).
+    task1.done();
+
+    // Update the second task (25% (10/40) done of the second task and 70% (=(60+10)/(60+40)) of the total).
+    task2.update( 10 );
+} );
+</code></pre>
+<p>It is also possible to create a separate template for a single item message, so that it would not look strange if the aggregator was handling only one task (for example: <em>Loading file.</em> instead of <em>Loading files 1 of 1.</em>).</p>
+<p>To learn more about the notification aggregator check <a href="ckeditor_plugins_notificationagg"><code>notificationAggregator</code></a> and <a href="ckeditor_plugins_notificationagg"><code>task</code></a>.</p>
+
+          <div class="feedback-widget">
+            <div id="emojics-root"></div>
+          </div>
+        </div>
+      </section>
+      <div class="side-navigation">
+        <div class="side-navigation__wrapper">
+          <nav class="side-navigation__inner">
+            <ul class="tree guide-tree">
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">End-user Features</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">User Interface</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="uicolor.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">UI Color</span></div></a></li>
+                                              <li><a href="uilanguage.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">UI Language</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Resizing</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="size.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor Size</span></div></a></li>
+                                              <li><a href="autogrow.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editor Auto Grow</span></div></a></li>
+                                              <li><a href="resize.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Resizing Customization</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting Images</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="image.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Default Image Plugin</span></div></a></li>
+                                              <li><a href="image2.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Enhanced Image</span></div></a></li>
+                                              <li><a href="easyimage.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Easy Image</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting Content</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="pastefromword.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Paste from Word</span></div></a></li>
+                                              <li><a href="pastefromgoogledocs.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Paste from Google Docs</span></div></a></li>
+                                              <li><a href="pastefromexcel.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Paste from Excel</span></div></a></li>
+                                              <li><a href="pastefromlibreoffice.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Paste from LibreOffice</span></div></a></li>
+                                              <li><a href="spreadsheets.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Spreadsheets</span></div></a></li>
+                                              <li><a href="table.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Tables with Column Resizing</span></div></a></li>
+                                              <li><a href="media_embed.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Embedding Media Resources</span></div></a></li>
+                                              <li><a href="codesnippet.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Code Snippets</span></div></a></li>
+                                              <li><a href="codesnippetgeshi.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Code Snippets (GeSHi)</span></div></a></li>
+                                              <li><a href="mathjax.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Mathematical Formulas</span></div></a></li>
+                                              <li><a href="mathtype.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Mathematical and Chemical Formulas</span></div></a></li>
+                                              <li><a href="placeholder.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Placeholders</span></div></a></li>
+                                              <li><a href="drop_paste.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Dropping and Pasting</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Styling and Formatting</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="basicstyles.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Basic Text Styles</span></div></a></li>
+                                              <li><a href="copyformatting.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Copying Text Formatting</span></div></a></li>
+                                              <li><a href="removeformat.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Removing Text Formatting</span></div></a></li>
+                                              <li><a href="styles.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Styles Drop-down</span></div></a></li>
+                                              <li><a href="format.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Text Formats</span></div></a></li>
+                                              <li><a href="colorbutton.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Text and Background Color</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Working with Document</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="spellcheck.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Spelling and Grammar Checking</span></div></a></li>
+                                              <li><a href="autocomplete.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Autocomplete</span></div></a></li>
+                                              <li><a href="mentions.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Mentions and Tags</span></div></a></li>
+                                              <li><a href="emoji.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Emoji</span></div></a></li>
+                                              <li><a href="sourcearea.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Source Code Editing</span></div></a></li>
+                                              <li><a href="magicline.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Magic Line</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Accessibility Support</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="accessibility_checker.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Accessibility Checker</span></div></a></li>
+                                              <li><a href="shortcuts.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Keyboard Shortcuts</span></div></a></li>
+                                      </ul>
+                                    </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Integration Features</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor UI</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="uitypes.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">UI Types</span></div></a></li>
+                                              <li><a href="sharedspace.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Shared UI</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Toolbar</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="toolbar.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Toolbar Configuration</span></div></a></li>
+                                              <li><a href="balloontoolbar.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Balloon Toolbar</span></div></a></li>
+                                              <li><a href="toolbarlocation.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Toolbar Location</span></div></a></li>
+                                              <li><a href="toolbarconcepts.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Toolbar Concepts</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">API Usage</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="readonly.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Read-Only Mode</span></div></a></li>
+                                              <li><a href="">
+                                                  <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Notifications</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Output Control</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="output_format.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">HTML Output Formatting</span></div></a></li>
+                                              <li><a href="fullpage.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Editing Complete HTML Pages</span></div></a></li>
+                                              <li><a href="enterkey.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Enter Key Configuration</span></div></a></li>
+                                              <li><a href="bbcode.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">BBCode Editing</span></div></a></li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Utilities</span></div>
+                                      <ul class="tree__item-nested-list">
+                                              <li><a href="devtools.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Developer Tools</span></div></a></li>
+                                              <li><a href="uicolorpicker.html">
+                                                  <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">UI Color Picker</span></div></a></li>
+                                      </ul>
+                                    </li>
+                            </ul>
+                          </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </main>
+    <footer class="footer footer--bordered">
+      <p>&copy; 2003-2020 <a href="javascript:;">CKSource</a>. All rights reserved.</p>
+    </footer>
+    <script type="text/javascript" src="static/js/docsearch.min.js"></script><script type="text/javascript">
+docsearch({
+apiKey:'7fd1a5354ceba927a56450ce0459620d',indexName:'ckeditor_docs_site',inputSelector:'#docsearch_input',algoliaOptions:{hitsPerPage:250,attributesToRetrieve:'*',facetFilters:['tags: ckeditor4']},
+transformData: function( hits ) {var sortingFn = function( a, b ) {a.custom_ranking = a.custom_ranking || 0;b.custom_ranking = b.custom_ranking || 0;if ( a.custom_ranking === b.custom_ranking ) return a.index - b.index;if ( a.custom_ranking > b.custom_ranking ) return -1;if ( a.custom_ranking < b.custom_ranking ) return 1;};var result = [];var tags = [ 'guide', 'features', 'examples', 'api' ];var hitsGrouped = { api: [] };hitsGrouped[ 'features' ] = hits.filter( function( h ) {return h.tags.includes( 'features' );} ).slice( 0, 7 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn );tags.forEach( function( tag ) {if ( tag !== 'features' ) {hitsGrouped[ tag ] = hits.filter( function( h ) {return h.tags.includes( tag );} ).slice( 0, 10 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn ).slice( 0, 3 );}} );var apiSearchHits = [];if ( window.apiSearch ) apiSearchHits = window.apiSearch();hitsGrouped.api = hitsGrouped.api.filter( function( h ) {var isDuplicated = false;for ( var i = 0; i < apiSearchHits.length; i++ ) {if ( h.url.includes( apiSearchHits[ i ].urlShort ) ) {isDuplicated = true;break;}}return !isDuplicated;} );hitsGrouped.api = ( apiSearchHits || [] ).concat( hitsGrouped.api );result = result.concat( hitsGrouped[ 'features' ] );tags.forEach( function( tag ) {if ( tag !== 'features' ) result = result.concat( hitsGrouped[ tag ].slice( 0, 4 ) );} );return result;}
+});
+</script>
+  </body>
+</html>

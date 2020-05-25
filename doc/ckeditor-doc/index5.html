@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API documentation - CKEditor 4 API docs</title>
+    <meta name="description" content="Learn how to install, integrate and configure CKEditor 4. More complex aspects, like creating plugins, widgets and skins are explained here, too. API reference and examples included.">
+    <meta name="twitter:card" content="Learn how to install, integrate and configure CKEditor 4. More complex aspects, like creating plugins, widgets and skins are explained here, too. API reference and examples included.">
+    <meta name="twitter:site" content="@ckeditor">
+    <meta property="og:title" content="API documentation - CKEditor 4 API docs">
+    <meta property="og:description" content="Learn how to install, integrate and configure CKEditor 4. More complex aspects, like creating plugins, widgets and skins are explained here, too. API reference and examples included.">
+    <meta property="og:image" content="https://ckeditor.com/docs/assets/img/og/ogimage-ecosystem.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ckeditor.com/docs/ckeditor4/latest/api/index.html">
+    <meta property="DC.language" content="en">
+    <meta property="DC.publisher" content="CKSource">
+    <meta property="DC.creator" content="CKEditor">
+    <meta property="DC.title" content="API documentation - CKEditor 4 API docs">
+    <meta property="DC.format" content="text/html">
+    <meta property="DC.type" content="Text">
+    <meta property="DC.description" content="Learn how to install, integrate and configure CKEditor 4. More complex aspects, like creating plugins, widgets and skins are explained here, too. API reference and examples included.">
+    <link rel="canonical" href="static/css/index">
+    
+    
+    
+    
+    <link rel="stylesheet" href="static/css/docsearch.min.css">
+    <link rel="stylesheet" href="static/css/styles.css" type="text/css" media="all">
+    <script>
+      ( function() {
+      	'use strict';
+      	// Set up global variables;
+      	if ( !window.umebrto ) {
+      		window.umberto = {};
+      	}
+      	window.umberto.relativeAppPath = "../../../assets/1.3.1/scripts"
+      
+      	// Add app script
+      	var el = document.createElement( 'script' );
+      	el.setAttribute( 'async', 'async' );
+      	el.setAttribute( 'defer', 'defer' );
+      	if ( typeof Symbol === 'function' && typeof Symbol() === 'symbol' ) {
+      		el.src = "../../../assets/1.3.1/scripts/app.js";
+      	} else {
+      		el.src = "../../../assets/1.3.1/scripts/app-polyfill.js";
+      	}
+      	document.getElementsByTagName( 'head' )[ 0 ].appendChild( el );
+      
+      	// Changing documentation theme enable it via `localStorage.setItem( 'theme', 'theme-dark' )`
+      	if ( localStorage.getItem( 'theme' ) === 'theme-dark' ) {
+      		document.getElementsByTagName( 'html' )[ 0 ].classList.add( 'theme-dark' );
+      	}
+      } )();
+    </script>
+    <!-- Google Tag Manager-->
+    <script>if (["ckeditor.com"].indexOf(location.hostname) !== -1) {
+          (function (w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+              var f = d.getElementsByTagName(s)[0],
+                  j = d.createElement(s),
+                  dl = l != 'dataLayer' ? '&l=' + l : '';
+              j.async = true;
+              j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+              f.parentNode.insertBefore(j, f);
+          })( window, document, 'script', 'dataLayer', 'GTM-KFSS6L' );
+      }
+      
+    </script>
+    <!-- End Google Tag Manager-->
+    <script>if ( ["ckeditor.com"].indexOf( location.hostname ) !== -1) {
+      	window.emojicsOpts = {
+      		widget: '50c7737f072dfd100f3dad0411f02e',
+      		position: 'inline'
+      	};
+      	( function( d, s, id ) {
+      		var js, fjs = d.getElementsByTagName( s )[ 0 ];
+      		js = d.createElement( s );
+      		js.id = id;
+      		js.async = 1;
+      		js.src = '//connect.emojics.com/dist/sdk.js';
+      		fjs.parentNode.insertBefore( js, fjs );
+      	} )( document, 'script', 'emojics-js' );
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="javascript:;" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript)-->
+    <header class="top" data-project="ckeditor4">
+      <div class="header__main">
+        <div class="header__main-rwd-button"><a href="#"><span></span><span></span><span></span></a></div>
+        <div class="header__main-title"><a class="header__main-title-home" href="index1.html">CKEditor Ecosystem Documentation</a></div>
+        <div class="top__search">
+          <input class="top__search__box" type="text" id="docsearch_input" placeholder="Search in CKEditor 4">
+          <div class="top__search__button"><img src="static/picture/loupe.jpg" alt="Search"></div>
+        </div>
+      </div>
+      <div class="header__sub">
+        <ul class="top__menu">
+          <li class="top__menu-project-logo"><a href="index2.html">CKEditor 4</a></li>
+          <li><a href="index.html">Guides</a></li>
+          <li><a href="index3.html">Features</a></li>
+          <li><a href="index4.html">Examples</a></li>
+          <li><a class="top__menu__item--active top__menu__api" href="">API</a></li>
+          <li><a class="top__menu-github-link" href="javascript:;" target="_blank" title="CKEditor 4 on GitHub."><svg viewbox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a></li>
+        </ul>
+      </div>
+      <div class="header__menu-rwd">
+        <ul class="header__menu-rwd__projects">
+          <li data-project="ckeditor5"><a href="index6.html">CKEditor 5</a></li>
+          <li data-project="ckeditor4"><a href="index2.html">CKEditor 4
+              <ul class="tree header__menu-rwd__projects-pages">
+                <li data-group="guide"><a href="index.html">Guides</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+                <li data-group="features"><a href="index3.html">Features</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+                <li data-group="sdk"><a href="index4.html">Examples</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+                <li data-group="api-reference"><a href="">API</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+              </ul></a></li>
+          <li data-project="letters"><a href="overview.html">Letters</a></li>
+          <li data-project="cs"><a href="overview1.html">Cloud Services</a></li>
+          <li data-project="ckfinder"><a href="index7.html">CKFinder</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="main">
+      <section class="main__content formatted main__content--api">
+        <div class="main__content-inner">
+          <div class="github-contrib"><a href="javascript:;" title="Contribute to this guide"><img src="static/picture/edit.jpg" alt="Contribute to this guide"></a><a href="javascript:;" title="Report an issue"><img src="static/picture/exclamation-circle.jpg" alt="Report an issue"></a>
+          </div>
+          <div class="rwd-breadcrumbs"><a href="index1.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="index2.html">CKEditor 4</a><span class="rwd-breadcrumbs__separator">/</span><a href="">API</a>
+          </div>
+          <h1 class="main__content-title" data-ln="CKEDITOR"><img src="https://ckeditor.com/docs/assets/1.3.1/img/cog.svg" alt="API">API documentation
+          </h1>
+<div class="info-box notice"><p>Use the <strong>navigation tree on the left</strong> to navigate through CKEditor API.</p></div>
+<h2 id="popular-api-pages"><a class="headerlink" href="#popular-api-pages">#</a> Popular API pages</h2>
+<ul>
+<li><a href="ckeditor"><code>CKEDITOR</code> Object</a> &#x2013; The main namespace. The entry point for the CKEditor integration.</li>
+<li><a href="ckeditor_config">Configuration Reference</a> &#x2013; <code>CKEDITOR.config</code>, with all configuration settings.</li>
+<li><a href="ckeditor_editor"><code>CKEDITOR.editor</code> Class</a> &#x2013; The entry point for the Inline editor integration.</li>
+</ul>
+<h2 id="contribute"><a class="headerlink" href="#contribute">#</a> Contribute</h2>
+<p>CKEditor is an Open Source project and your contribution is most welcome. Feel free to <a href="dev_issues_readme.html">report bugs</a> or improve the code on <a href="javascript:;" target="_blank" rel="noopener">GitHub</a>. Since CKEditor is localized, you can also help <a href="javascript:;" target="_blank" rel="noopener">to translate it</a>. You do not need to be a programmer to contribute to the project!</p>
+
+          <div class="feedback-widget">
+            <div id="emojics-root"></div>
+          </div>
+        </div>
+      </section>
+<div class="side-navigation">
+  <div class="side-navigation__wrapper">
+    <nav class="side-navigation__inner side-navigation__inner--api">
+      <ul class="tree api-tree">
+        <li class="toggler--collapsed">
+          <div class="tree__item__wrapper" data-ln="CKEDITOR_Adapters"><span class="tree__item--package tree__item__text">CKEDITOR_Adapters</span>
+          </div>
+          <ul>
+            <li><a href="ckeditor_adapters_jquery">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR_Adapters.jQuery"><span class="tree__item--class tree__item__text">jQuery</span></div></a>
+            </li>
+          </ul>
+        </li>
+        <li class="toggler--collapsed" data-public="true">
+          <div class="tree__item__wrapper" data-ln="CKEDITOR"><a class="tree__item--class tree__item__text" href="ckeditor">CKEDITOR</a>
+          </div>
+          <ul>
+            <li class="toggler--collapsed">
+              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">dom</span>
+              </div>
+              <ul>
+                <li><a href="ckeditor_dom_comment">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.comment"><span class="tree__item--class tree__item__text">comment</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_document">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.document"><span class="tree__item--class tree__item__text">document</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_documentfragment">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.documentFragment"><span class="tree__item--class tree__item__text">documentFragment</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_domobject">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.domObject"><span class="tree__item--class tree__item__text">domObject</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_element">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.element"><span class="tree__item--class tree__item__text">element</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_elementpath">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.elementPath"><span class="tree__item--class tree__item__text">elementPath</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_event">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.event"><span class="tree__item--class tree__item__text">event</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_iterator">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.iterator"><span class="tree__item--class tree__item__text">iterator</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_node">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.node"><span class="tree__item--class tree__item__text">node</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_nodelist">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.nodeList"><span class="tree__item--class tree__item__text">nodeList</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_range">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.range"><span class="tree__item--class tree__item__text">range</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_rangelist">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.rangeList"><span class="tree__item--class tree__item__text">rangeList</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_rangelistiterator">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.rangeListIterator"><span class="tree__item--class tree__item__text">rangeListIterator</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_rect">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.rect"><span class="tree__item--class tree__item__text">rect</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_selection">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.selection"><span class="tree__item--class tree__item__text">selection</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_text">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.text"><span class="tree__item--class tree__item__text">text</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_walker">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.walker"><span class="tree__item--class tree__item__text">walker</span></div></a>
+                </li>
+                <li><a href="ckeditor_dom_window">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dom.window"><span class="tree__item--class tree__item__text">window</span></div></a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="ckeditor_ajax">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.ajax"><span class="tree__item--class tree__item__text">ajax</span></div></a>
+            </li>
+            <li><a href="ckeditor_command">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.command"><span class="tree__item--class tree__item__text">command</span></div></a>
+            </li>
+            <li><a href="ckeditor_commanddefinition">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.commandDefinition"><span class="tree__item--class tree__item__text">commandDefinition</span></div></a>
+            </li>
+            <li><a href="ckeditor_config">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.config"><span class="tree__item--class tree__item__text">config</span></div></a>
+            </li>
+            <li><a href="ckeditor_dataprocessor">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.dataProcessor"><span class="tree__item--class tree__item__text">dataProcessor</span></div></a>
+            </li>
+            <li class="toggler--collapsed">
+              <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog"><a class="tree__item--class tree__item__text" href="ckeditor_dialog">dialog</a>
+              </div>
+              <ul>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition"><a class="tree__item--class tree__item__text" href="ckeditor_dialog_definition">definition</a>
+                  </div>
+                  <ul>
+                    <li><a href="ckeditor_dialog_definition_butto">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.button"><span class="tree__item--class tree__item__text">button</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_dialog_definition_check">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.checkbox"><span class="tree__item--class tree__item__text">checkbox</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_dialog_definition_conte">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.content"><span class="tree__item--class tree__item__text">content</span></div></a>
+                    </li>
+                    <li data-private="true"><a href="ckeditor_dialog_definition_conte">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.contentObject"><span class="tree__item--class tree__item__text">contentObject</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_dialog_definition_file">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.file"><span class="tree__item--class tree__item__text">file</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_dialog_definition_fileb">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.fileButton"><span class="tree__item--class tree__item__text">fileButton</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_dialog_definition_hbox">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.hbox"><span class="tree__item--class tree__item__text">hbox</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_dialog_definition_html">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.html"><span class="tree__item--class tree__item__text">html</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_dialog_definition_label">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.labeledElement"><span class="tree__item--class tree__item__text">labeledElement</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_dialog_definition_radio">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.radio"><span class="tree__item--class tree__item__text">radio</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_dialog_definition_selec">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.select"><span class="tree__item--class tree__item__text">select</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_dialog_definition_texta">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.textarea"><span class="tree__item--class tree__item__text">textarea</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_dialog_definition_texti">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.textInput"><span class="tree__item--class tree__item__text">textInput</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_dialog_definition_uiele">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.uiElement"><span class="tree__item--class tree__item__text">uiElement</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_dialog_definition_vbox">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definition.vbox"><span class="tree__item--class tree__item__text">vbox</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li data-private="true"><a href="ckeditor_dialog_definitionobject">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.definitionObject"><span class="tree__item--class tree__item__text">definitionObject</span></div></a>
+                </li>
+                <li><a href="ckeditor_dialog_validate">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.dialog.validate"><span class="tree__item--class tree__item__text">validate</span></div></a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="ckeditor_dialogcommand">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.dialogCommand"><span class="tree__item--class tree__item__text">dialogCommand</span></div></a>
+            </li>
+            <li><a href="ckeditor_dtd">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.dtd"><span class="tree__item--class tree__item__text">dtd</span></div></a>
+            </li>
+            <li><a href="ckeditor_editable">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.editable"><span class="tree__item--class tree__item__text">editable</span></div></a>
+            </li>
+            <li class="toggler--collapsed" data-public="true">
+              <div class="tree__item__wrapper" data-ln="CKEDITOR.editor"><a class="tree__item--class tree__item__text" href="ckeditor_editor">editor</a>
+              </div>
+              <ul>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">commands</span>
+                  </div>
+                  <ul>
+                    <li><a href="ckeditor_editor_commands_paste">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.editor.commands.paste"><span class="tree__item--class tree__item__text">paste</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_editor_commands_pastefr">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.editor.commands.pastefromword"><span class="tree__item--class tree__item__text">pastefromword</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_editor_commands_pastete">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.editor.commands.pastetext"><span class="tree__item--class tree__item__text">pastetext</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="ckeditor_editor_plugins">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.editor.plugins"><span class="tree__item--class tree__item__text">plugins</span></div></a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="ckeditor_env">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.env"><span class="tree__item--class tree__item__text">env</span></div></a>
+            </li>
+            <li><a href="ckeditor_event">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.event"><span class="tree__item--class tree__item__text">event</span></div></a>
+            </li>
+            <li><a href="ckeditor_eventinfo">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.eventInfo"><span class="tree__item--class tree__item__text">eventInfo</span></div></a>
+            </li>
+            <li><a href="ckeditor_feature">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.feature"><span class="tree__item--class tree__item__text">feature</span></div></a>
+            </li>
+            <li class="toggler--collapsed">
+              <div class="tree__item__wrapper" data-ln="CKEDITOR.fileTools"><a class="tree__item--class tree__item__text" href="ckeditor_filetools">fileTools</a>
+              </div>
+              <ul>
+                <li><a href="ckeditor_filetools_fileloader">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.fileTools.fileLoader"><span class="tree__item--class tree__item__text">fileLoader</span></div></a>
+                </li>
+                <li><a href="ckeditor_filetools_uploadreposit">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.fileTools.uploadRepository"><span class="tree__item--class tree__item__text">uploadRepository</span></div></a>
+                </li>
+                <li><a href="ckeditor_filetools_uploadwidgetd">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.fileTools.uploadWidgetDefinition"><span class="tree__item--class tree__item__text">uploadWidgetDefinition</span></div></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toggler--collapsed">
+              <div class="tree__item__wrapper" data-ln="CKEDITOR.filter"><a class="tree__item--class tree__item__text" href="ckeditor_filter">filter</a>
+              </div>
+              <ul>
+                <li><a href="ckeditor_filter_allowedcontentru">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.filter.allowedContentRules"><span class="tree__item--class tree__item__text">allowedContentRules</span></div></a>
+                </li>
+                <li><a href="ckeditor_filter_contentrule">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.filter.contentRule"><span class="tree__item--class tree__item__text">contentRule</span></div></a>
+                </li>
+                <li><a href="ckeditor_filter_disallowedconten">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.filter.disallowedContentRules"><span class="tree__item--class tree__item__text">disallowedContentRules</span></div></a>
+                </li>
+                <li><a href="ckeditor_filter_transformationst">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.filter.transformationsTools"><span class="tree__item--class tree__item__text">transformationsTools</span></div></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toggler--collapsed">
+              <div class="tree__item__wrapper" data-ln="CKEDITOR.focusManager"><a class="tree__item--class tree__item__text" href="ckeditor_focusmanager">focusManager</a>
+              </div>
+              <ul>
+                <li data-private="true"><a href="ckeditor_focusmanager__">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.focusManager._"><span class="tree__item--class tree__item__text">_</span></div></a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="ckeditor_htmldataprocessor">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlDataProcessor"><span class="tree__item--class tree__item__text">htmlDataProcessor</span></div></a>
+            </li>
+            <li class="toggler--collapsed">
+              <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlParser"><a class="tree__item--class tree__item__text" href="ckeditor_htmlparser">htmlParser</a>
+              </div>
+              <ul>
+                <li><a href="ckeditor_htmlparser_basicwriter">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlParser.basicWriter"><span class="tree__item--class tree__item__text">basicWriter</span></div></a>
+                </li>
+                <li><a href="ckeditor_htmlparser_cdata">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlParser.cdata"><span class="tree__item--class tree__item__text">cdata</span></div></a>
+                </li>
+                <li><a href="ckeditor_htmlparser_comment">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlParser.comment"><span class="tree__item--class tree__item__text">comment</span></div></a>
+                </li>
+                <li><a href="ckeditor_htmlparser_cssstyle">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlParser.cssStyle"><span class="tree__item--class tree__item__text">cssStyle</span></div></a>
+                </li>
+                <li data-public="true"><a href="ckeditor_htmlparser_element">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlParser.element"><span class="tree__item--class tree__item__text">element</span></div></a>
+                </li>
+                <li><a href="ckeditor_htmlparser_filter">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlParser.filter"><span class="tree__item--class tree__item__text">filter</span></div></a>
+                </li>
+                <li><a href="ckeditor_htmlparser_filterrulesd">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlParser.filterRulesDefinition"><span class="tree__item--class tree__item__text">filterRulesDefinition</span></div></a>
+                </li>
+                <li><a href="ckeditor_htmlparser_filterrulesg">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlParser.filterRulesGroup"><span class="tree__item--class tree__item__text">filterRulesGroup</span></div></a>
+                </li>
+                <li><a href="ckeditor_htmlparser_fragment">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlParser.fragment"><span class="tree__item--class tree__item__text">fragment</span></div></a>
+                </li>
+                <li><a href="ckeditor_htmlparser_nametransfor">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlParser.nameTransformRule"><span class="tree__item--class tree__item__text">nameTransformRule</span></div></a>
+                </li>
+                <li><a href="ckeditor_htmlparser_node">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlParser.node"><span class="tree__item--class tree__item__text">node</span></div></a>
+                </li>
+                <li><a href="ckeditor_htmlparser_text">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlParser.text"><span class="tree__item--class tree__item__text">text</span></div></a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="ckeditor_htmlwriter">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.htmlWriter"><span class="tree__item--class tree__item__text">htmlWriter</span></div></a>
+            </li>
+            <li><a href="ckeditor_keystrokehandler">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.keystrokeHandler"><span class="tree__item--class tree__item__text">keystrokeHandler</span></div></a>
+            </li>
+            <li><a href="ckeditor_lang">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.lang"><span class="tree__item--class tree__item__text">lang</span></div></a>
+            </li>
+            <li><a href="ckeditor_loader">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.loader"><span class="tree__item--class tree__item__text">loader</span></div></a>
+            </li>
+            <li><a href="ckeditor_menu">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.menu"><span class="tree__item--class tree__item__text">menu</span></div></a>
+            </li>
+            <li><a href="ckeditor_menuitem">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.menuItem"><span class="tree__item--class tree__item__text">menuItem</span></div></a>
+            </li>
+            <li><a href="ckeditor_plugindefinition">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.pluginDefinition"><span class="tree__item--class tree__item__text">pluginDefinition</span></div></a>
+            </li>
+            <li class="toggler--collapsed">
+              <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins"><a class="tree__item--class tree__item__text" href="ckeditor_plugins">plugins</a>
+              </div>
+              <ul>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">cloudservices</span>
+                  </div>
+                  <ul>
+                    <li><a href="ckeditor_plugins_cloudservices_c">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.cloudservices.cloudServicesLoader"><span class="tree__item--class tree__item__text">cloudServicesLoader</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">find</span>
+                  </div>
+                  <ul>
+                    <li data-private="true"><a href="ckeditor_plugins_find_characterr">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.find.characterRange"><span class="tree__item--class tree__item__text">characterRange</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">undo</span>
+                  </div>
+                  <ul>
+                    <li data-private="true"><a href="ckeditor_plugins_undo_image">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.undo.Image"><span class="tree__item--class tree__item__text">Image</span></div></a>
+                    </li>
+                    <li data-private="true"><a href="ckeditor_plugins_undo_keyeventss">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.undo.KeyEventsStack"><span class="tree__item--class tree__item__text">KeyEventsStack</span></div></a>
+                    </li>
+                    <li data-private="true"><a href="ckeditor_plugins_undo_nativeedit">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.undo.NativeEditingHandler"><span class="tree__item--class tree__item__text">NativeEditingHandler</span></div></a>
+                    </li>
+                    <li data-private="true"><a href="ckeditor_plugins_undo_undomanage">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.undo.UndoManager"><span class="tree__item--class tree__item__text">UndoManager</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.autocomplete"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_autocomplete">autocomplete</a>
+                  </div>
+                  <ul>
+                    <li><a href="ckeditor_plugins_autocomplete_co">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.autocomplete.configDefinition"><span class="tree__item--class tree__item__text">configDefinition</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_plugins_autocomplete_ma">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.autocomplete.matchInfo"><span class="tree__item--class tree__item__text">matchInfo</span></div></a>
+                    </li>
+                    <li class="toggler--collapsed" data-private="true">
+                      <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.autocomplete.model"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_autocomplete_mo">model</a>
+                      </div>
+                      <ul>
+                        <li><a href="ckeditor_plugins_autocomplete_mo">
+                            <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.autocomplete.model.item"><span class="tree__item--class tree__item__text">item</span></div></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li data-private="true"><a href="ckeditor_plugins_autocomplete_vi">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.autocomplete.view"><span class="tree__item--class tree__item__text">view</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="ckeditor_plugins_autoembed">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.autoEmbed"><span class="tree__item--class tree__item__text">autoEmbed</span></div></a>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.balloontoolbar"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_balloontoolbar">balloontoolbar</a>
+                  </div>
+                  <ul>
+                    <li><a href="ckeditor_plugins_balloontoolbar_">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.balloontoolbar.context"><span class="tree__item--class tree__item__text">context</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_plugins_balloontoolbar_">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.balloontoolbar.contextDefinition"><span class="tree__item--class tree__item__text">contextDefinition</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_plugins_balloontoolbar_">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.balloontoolbar.contextManager"><span class="tree__item--class tree__item__text">contextManager</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.clipboard"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_clipboard">clipboard</a>
+                  </div>
+                  <ul>
+                    <li><a href="ckeditor_plugins_clipboard_datat">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.clipboard.dataTransfer"><span class="tree__item--class tree__item__text">dataTransfer</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_plugins_clipboard_fallb">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.clipboard.fallbackDataTransfer"><span class="tree__item--class tree__item__text">fallbackDataTransfer</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.codesnippet"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_codesnippet">codesnippet</a>
+                  </div>
+                  <ul>
+                    <li><a href="ckeditor_plugins_codesnippet_hig">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.codesnippet.highlighter"><span class="tree__item--class tree__item__text">highlighter</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="ckeditor_plugins_contextmenu">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.contextMenu"><span class="tree__item--class tree__item__text">contextMenu</span></div></a>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.copyformatting"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_copyformatting">copyformatting</a>
+                  </div>
+                  <ul>
+                    <li><a href="ckeditor_plugins_copyformatting_">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.copyformatting.state"><span class="tree__item--class tree__item__text">state</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="ckeditor_plugins_easyimage">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.easyimage"><span class="tree__item--class tree__item__text">easyimage</span></div></a>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.embedBase"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_embedbase">embedBase</a>
+                  </div>
+                  <ul>
+                    <li data-private="true"><a href="ckeditor_plugins_embedbase__json">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.embedBase._jsonp"><span class="tree__item--class tree__item__text">_jsonp</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_plugins_embedbase_based">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.embedBase.baseDefinition"><span class="tree__item--class tree__item__text">baseDefinition</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_plugins_embedbase_reque">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.embedBase.request"><span class="tree__item--class tree__item__text">request</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="ckeditor_plugins_forms">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.forms"><span class="tree__item--class tree__item__text">forms</span></div></a>
+                </li>
+                <li><a href="ckeditor_plugins_image2">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.image2"><span class="tree__item--class tree__item__text">image2</span></div></a>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.imagebase"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_imagebase">imagebase</a>
+                  </div>
+                  <ul>
+                    <li class="toggler--collapsed">
+                      <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">featuresDefinitions</span>
+                      </div>
+                      <ul>
+                        <li data-private="true"><a href="ckeditor_plugins_imagebase_featu">
+                            <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.imagebase.featuresDefinitions.caption"><span class="tree__item--class tree__item__text">caption</span></div></a>
+                        </li>
+                        <li data-private="true"><a href="ckeditor_plugins_imagebase_featu">
+                            <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.imagebase.featuresDefinitions.upload"><span class="tree__item--class tree__item__text">upload</span></div></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="ckeditor_plugins_imagebase_image">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.imagebase.imageWidgetDefinition"><span class="tree__item--class tree__item__text">imageWidgetDefinition</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_plugins_imagebase_progr">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.imagebase.progressBar"><span class="tree__item--class tree__item__text">progressBar</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_plugins_imagebase_progr">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.imagebase.progressReporter"><span class="tree__item--class tree__item__text">progressReporter</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.indent"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_indent">indent</a>
+                  </div>
+                  <ul>
+                    <li><a href="ckeditor_plugins_indent_genericd">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.indent.genericDefinition"><span class="tree__item--class tree__item__text">genericDefinition</span></div></a>
+                    </li>
+                    <li><a href="ckeditor_plugins_indent_specific">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.indent.specificDefinition"><span class="tree__item--class tree__item__text">specificDefinition</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="ckeditor_plugins_indentlist">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.indentList"><span class="tree__item--class tree__item__text">indentList</span></div></a>
+                </li>
+                <li class="toggler--collapsed" data-private="true">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.lineutils"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_lineutils">lineutils</a>
+                  </div>
+                  <ul>
+                    <li data-private="true"><a href="ckeditor_plugins_lineutils_finde">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.lineutils.finder"><span class="tree__item--class tree__item__text">finder</span></div></a>
+                    </li>
+                    <li data-private="true"><a href="ckeditor_plugins_lineutils_liner">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.lineutils.liner"><span class="tree__item--class tree__item__text">liner</span></div></a>
+                    </li>
+                    <li data-private="true"><a href="ckeditor_plugins_lineutils_locat">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.lineutils.locator"><span class="tree__item--class tree__item__text">locator</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="ckeditor_plugins_link">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.link"><span class="tree__item--class tree__item__text">link</span></div></a>
+                </li>
+                <li><a href="ckeditor_plugins_list">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.list"><span class="tree__item--class tree__item__text">list</span></div></a>
+                </li>
+                <li class="toggler--collapsed" data-private="true">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.mathjax"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_mathjax">mathjax</a>
+                  </div>
+                  <ul>
+                    <li data-private="true"><a href="ckeditor_plugins_mathjax_framewr">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.mathjax.frameWrapper"><span class="tree__item--class tree__item__text">frameWrapper</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.mentions"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_mentions">mentions</a>
+                  </div>
+                  <ul>
+                    <li><a href="ckeditor_plugins_mentions_config">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.mentions.configDefinition"><span class="tree__item--class tree__item__text">configDefinition</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.notification"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_notification">notification</a>
+                  </div>
+                  <ul>
+                    <li data-private="true"><a href="ckeditor_plugins_notification_ar">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.notification.area"><span class="tree__item--class tree__item__text">area</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.notificationAggregator"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_notificationagg">notificationAggregator</a>
+                  </div>
+                  <ul>
+                    <li><a href="ckeditor_plugins_notificationagg">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.notificationAggregator.task"><span class="tree__item--class tree__item__text">task</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="ckeditor_plugins_pagebreak">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pagebreak"><span class="tree__item--class tree__item__text">pagebreak</span></div></a>
+                </li>
+                <li><a href="ckeditor_plugins_pastefromword">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastefromword"><span class="tree__item--class tree__item__text">pastefromword</span></div></a>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastetools"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_pastetools">pastetools</a>
+                  </div>
+                  <ul>
+                    <li class="toggler--collapsed">
+                      <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastetools.filters"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_pastetools_filt">filters</a>
+                      </div>
+                      <ul>
+                        <li class="toggler--collapsed">
+                          <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastetools.filters.common"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_pastetools_filt">common</a>
+                          </div>
+                          <ul>
+                            <li><a href="ckeditor_plugins_pastetools_filt">
+                                <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastetools.filters.common.elements"><span class="tree__item--class tree__item__text">elements</span></div></a>
+                            </li>
+                            <li class="toggler--collapsed">
+                              <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastetools.filters.common.styles"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_pastetools_filt">styles</a>
+                              </div>
+                              <ul>
+                                <li><a href="ckeditor_plugins_pastetools_filt">
+                                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastetools.filters.common.styles.inliner"><span class="tree__item--class tree__item__text">inliner</span></div></a>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="ckeditor_plugins_pastetools_filt">
+                            <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastetools.filters.gdocs"><span class="tree__item--class tree__item__text">gdocs</span></div></a>
+                        </li>
+                        <li><a href="ckeditor_plugins_pastetools_filt">
+                            <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastetools.filters.libreoffice"><span class="tree__item--class tree__item__text">libreoffice</span></div></a>
+                        </li>
+                        <li class="toggler--collapsed">
+                          <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastetools.filters.word"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_pastetools_filt">word</a>
+                          </div>
+                          <ul>
+                            <li><a href="ckeditor_plugins_pastetools_filt">
+                                <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastetools.filters.word.heuristics"><span class="tree__item--class tree__item__text">heuristics</span></div></a>
+                            </li>
+                            <li><a href="ckeditor_plugins_pastetools_filt">
+                                <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastetools.filters.word.images"><span class="tree__item--class tree__item__text">images</span></div></a>
+                            </li>
+                            <li class="toggler--collapsed">
+                              <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastetools.filters.word.lists"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_pastetools_filt">lists</a>
+                              </div>
+                              <ul>
+                                <li><a href="ckeditor_plugins_pastetools_filt">
+                                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.pastetools.filters.word.lists.numbering"><span class="tree__item--class tree__item__text">numbering</span></div></a>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="ckeditor_plugins_preview">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.preview"><span class="tree__item--class tree__item__text">preview</span></div></a>
+                </li>
+                <li><a href="ckeditor_plugins_print">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.print"><span class="tree__item--class tree__item__text">print</span></div></a>
+                </li>
+                <li><a href="ckeditor_plugins_tableselection">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.tableselection"><span class="tree__item--class tree__item__text">tableselection</span></div></a>
+                </li>
+                <li><a href="ckeditor_plugins_textmatch">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.textMatch"><span class="tree__item--class tree__item__text">textMatch</span></div></a>
+                </li>
+                <li><a href="ckeditor_plugins_textwatcher">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.textWatcher"><span class="tree__item--class tree__item__text">textWatcher</span></div></a>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.widget"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_widget">widget</a>
+                  </div>
+                  <ul>
+                    <li><a href="ckeditor_plugins_widget_definiti">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.widget.definition"><span class="tree__item--class tree__item__text">definition</span></div></a>
+                    </li>
+                    <li class="toggler--collapsed">
+                      <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.widget.nestedEditable"><a class="tree__item--class tree__item__text" href="ckeditor_plugins_widget_nesteded">nestedEditable</a>
+                      </div>
+                      <ul>
+                        <li><a href="ckeditor_plugins_widget_nesteded">
+                            <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.widget.nestedEditable.definition"><span class="tree__item--class tree__item__text">definition</span></div></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="ckeditor_plugins_widget_reposito">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.widget.repository"><span class="tree__item--class tree__item__text">repository</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="ckeditor_plugins_widgetselection">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.plugins.widgetselection"><span class="tree__item--class tree__item__text">widgetselection</span></div></a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="ckeditor_resourcemanager">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.resourceManager"><span class="tree__item--class tree__item__text">resourceManager</span></div></a>
+            </li>
+            <li><a href="ckeditor_scriptloader">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.scriptLoader"><span class="tree__item--class tree__item__text">scriptLoader</span></div></a>
+            </li>
+            <li><a href="ckeditor_skin">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.skin"><span class="tree__item--class tree__item__text">skin</span></div></a>
+            </li>
+            <li class="toggler--collapsed">
+              <div class="tree__item__wrapper" data-ln="CKEDITOR.style"><a class="tree__item--class tree__item__text" href="ckeditor_style">style</a>
+              </div>
+              <ul>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.style.customHandlers"><a class="tree__item--class tree__item__text" href="ckeditor_style_customhandlers">customHandlers</a>
+                  </div>
+                  <ul>
+                    <li><a href="ckeditor_style_customhandlers_wi">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.style.customHandlers.widget"><span class="tree__item--class tree__item__text">widget</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="ckeditor_style_definition">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.style.definition"><span class="tree__item--class tree__item__text">definition</span></div></a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="ckeditor_stylecommand">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.styleCommand"><span class="tree__item--class tree__item__text">styleCommand</span></div></a>
+            </li>
+            <li><a href="ckeditor_stylesset">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.stylesSet"><span class="tree__item--class tree__item__text">stylesSet</span></div></a>
+            </li>
+            <li><a href="javascript:;">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.template"><span class="tree__item--class tree__item__text">template</span></div></a>
+            </li>
+            <li class="toggler--collapsed">
+              <div class="tree__item__wrapper" data-ln="CKEDITOR.tools"><a class="tree__item--class tree__item__text" href="javascript:;">tools</a>
+              </div>
+              <ul>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">buffers</span>
+                  </div>
+                  <ul>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.tools.buffers.event"><span class="tree__item--class tree__item__text">event</span></div></a>
+                    </li>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.tools.buffers.throttle"><span class="tree__item--class tree__item__text">throttle</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="javascript:;">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.tools.array"><span class="tree__item--class tree__item__text">array</span></div></a>
+                </li>
+                <li><a href="javascript:;">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.tools.object"><span class="tree__item--class tree__item__text">object</span></div></a>
+                </li>
+                <li><a href="javascript:;">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.tools.promise"><span class="tree__item--class tree__item__text">promise</span></div></a>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.tools.style"><a class="tree__item--class tree__item__text" href="javascript:;">style</a>
+                  </div>
+                  <ul>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.tools.style.border"><span class="tree__item--class tree__item__text">border</span></div></a>
+                    </li>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.tools.style.parse"><span class="tree__item--class tree__item__text">parse</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="toggler--collapsed">
+              <div class="tree__item__wrapper" data-ln="CKEDITOR.ui"><a class="tree__item--class tree__item__text" href="javascript:;">ui</a>
+              </div>
+              <ul>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">dialog</span>
+                  </div>
+                  <ul>
+                    <li data-public="true"><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.button"><span class="tree__item--class tree__item__text">button</span></div></a>
+                    </li>
+                    <li data-public="true"><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.checkbox"><span class="tree__item--class tree__item__text">checkbox</span></div></a>
+                    </li>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.fieldset"><span class="tree__item--class tree__item__text">fieldset</span></div></a>
+                    </li>
+                    <li data-public="true"><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.file"><span class="tree__item--class tree__item__text">file</span></div></a>
+                    </li>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.fileButton"><span class="tree__item--class tree__item__text">fileButton</span></div></a>
+                    </li>
+                    <li data-public="true"><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.hbox"><span class="tree__item--class tree__item__text">hbox</span></div></a>
+                    </li>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.html"><span class="tree__item--class tree__item__text">html</span></div></a>
+                    </li>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.iframeElement"><span class="tree__item--class tree__item__text">iframeElement</span></div></a>
+                    </li>
+                    <li data-public="true"><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.labeledElement"><span class="tree__item--class tree__item__text">labeledElement</span></div></a>
+                    </li>
+                    <li data-public="true"><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.radio"><span class="tree__item--class tree__item__text">radio</span></div></a>
+                    </li>
+                    <li data-public="true"><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.select"><span class="tree__item--class tree__item__text">select</span></div></a>
+                    </li>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.textarea"><span class="tree__item--class tree__item__text">textarea</span></div></a>
+                    </li>
+                    <li data-public="true"><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.textInput"><span class="tree__item--class tree__item__text">textInput</span></div></a>
+                    </li>
+                    <li data-public="true"><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.uiElement"><span class="tree__item--class tree__item__text">uiElement</span></div></a>
+                    </li>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.dialog.vbox"><span class="tree__item--class tree__item__text">vbox</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.balloonPanel"><a class="tree__item--class tree__item__text" href="javascript:;">balloonPanel</a>
+                  </div>
+                  <ul>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.balloonPanel.definition"><span class="tree__item--class tree__item__text">definition</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="javascript:;">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.balloonToolbar"><span class="tree__item--class tree__item__text">balloonToolbar</span></div></a>
+                </li>
+                <li data-private="true"><a href="javascript:;">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.balloonToolbarView"><span class="tree__item--class tree__item__text">balloonToolbarView</span></div></a>
+                </li>
+                <li class="toggler--collapsed" data-public="true">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.button"><a class="tree__item--class tree__item__text" href="javascript:;">button</a>
+                  </div>
+                  <ul>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.button.handler"><span class="tree__item--class tree__item__text">handler</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="javascript:;">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.floatPanel"><span class="tree__item--class tree__item__text">floatPanel</span></div></a>
+                </li>
+                <li><a href="javascript:;">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.handlerDefinition"><span class="tree__item--class tree__item__text">handlerDefinition</span></div></a>
+                </li>
+                <li><a href="javascript:;">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.menuButton"><span class="tree__item--class tree__item__text">menuButton</span></div></a>
+                </li>
+                <li class="toggler--collapsed" data-public="true">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.panel"><a class="tree__item--class tree__item__text" href="javascript:;">panel</a>
+                  </div>
+                  <ul>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.panel.block"><span class="tree__item--class tree__item__text">block</span></div></a>
+                    </li>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.panel.handler"><span class="tree__item--class tree__item__text">handler</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="javascript:;">
+                    <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.panelButton"><span class="tree__item--class tree__item__text">panelButton</span></div></a>
+                </li>
+                <li class="toggler--collapsed">
+                  <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.richCombo"><a class="tree__item--class tree__item__text" href="javascript:;">richCombo</a>
+                  </div>
+                  <ul>
+                    <li><a href="javascript:;">
+                        <div class="tree__item__wrapper" data-ln="CKEDITOR.ui.richCombo.handler"><span class="tree__item--class tree__item__text">handler</span></div></a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="javascript:;">
+                <div class="tree__item__wrapper" data-ln="CKEDITOR.xml"><span class="tree__item--class tree__item__text">xml</span></div></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="api-tree__filter">
+        <p>
+          <input type="checkbox" id="p1" value="public">
+          <label for="p1">Show private items</label>
+        </p>
+      </div>
+    </nav>
+  </div>
+</div>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2003-2020 <a href="javascript:;">CKSource</a>. All rights reserved.</p>
+    </footer>
+    <script type="text/javascript" src="static/js/docsearch.min.js"></script><script type="text/javascript">
+docsearch({
+apiKey:'7fd1a5354ceba927a56450ce0459620d',indexName:'ckeditor_docs_site',inputSelector:'#docsearch_input',algoliaOptions:{hitsPerPage:250,attributesToRetrieve:'*',facetFilters:['tags: ckeditor4']},
+transformData: function( hits ) {var sortingFn = function( a, b ) {a.custom_ranking = a.custom_ranking || 0;b.custom_ranking = b.custom_ranking || 0;if ( a.custom_ranking === b.custom_ranking ) return a.index - b.index;if ( a.custom_ranking > b.custom_ranking ) return -1;if ( a.custom_ranking < b.custom_ranking ) return 1;};var result = [];var tags = [ 'guide', 'features', 'examples', 'api' ];var hitsGrouped = { api: [] };hitsGrouped[ 'api' ] = hits.filter( function( h ) {return h.tags.includes( 'api' );} ).slice( 0, 7 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn );tags.forEach( function( tag ) {if ( tag !== 'api' ) {hitsGrouped[ tag ] = hits.filter( function( h ) {return h.tags.includes( tag );} ).slice( 0, 10 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn ).slice( 0, 3 );}} );var apiSearchHits = [];if ( window.apiSearch ) apiSearchHits = window.apiSearch();hitsGrouped.api = hitsGrouped.api.filter( function( h ) {var isDuplicated = false;for ( var i = 0; i < apiSearchHits.length; i++ ) {if ( h.url.includes( apiSearchHits[ i ].urlShort ) ) {isDuplicated = true;break;}}return !isDuplicated;} );hitsGrouped.api = ( apiSearchHits || [] ).concat( hitsGrouped.api );result = result.concat( hitsGrouped[ 'api' ] );tags.forEach( function( tag ) {if ( tag !== 'api' ) result = result.concat( hitsGrouped[ tag ].slice( 0, 4 ) );} );return result;}
+});
+</script>
+  </body>
+</html>

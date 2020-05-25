@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spreadsheets - CKEditor 4 Documentation</title>
+    <meta name="description" content="Learn how to install, integrate, configure and develop CKEditor Ecosystem products. Browse through API documentation and online samples.">
+    <meta name="twitter:card" content="Learn how to install, integrate, configure and develop CKEditor Ecosystem products. Browse through API documentation and online samples.">
+    <meta name="twitter:site" content="@ckeditor">
+    <meta property="og:title" content="Spreadsheets - CKEditor 4 Documentation">
+    <meta property="og:description" content="Learn how to install, integrate, configure and develop CKEditor Ecosystem products. Browse through API documentation and online samples.">
+    <meta property="og:image" content="https://ckeditor.com/docs/assets/img/og/ogimage-ecosystem.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ckeditor.com/docs/ckeditor4/latest/examples/spreadsheets.html">
+    <meta property="DC.language" content="en">
+    <meta property="DC.publisher" content="CKSource">
+    <meta property="DC.creator" content="CKEditor">
+    <meta property="DC.title" content="Spreadsheets - CKEditor 4 Documentation">
+    <meta property="DC.format" content="text/html">
+    <meta property="DC.type" content="Text">
+    <meta property="DC.description" content="Learn how to install, integrate, configure and develop CKEditor Ecosystem products. Browse through API documentation and online samples.">
+    <link rel="canonical" href="static/css/spreadsheets">
+    
+    
+    
+    
+    <link rel="stylesheet" href="static/css/docsearch.min.css">
+    <link rel="stylesheet" href="static/css/styles.css" type="text/css" media="all">
+    <script>
+      ( function() {
+      	'use strict';
+      	// Set up global variables;
+      	if ( !window.umebrto ) {
+      		window.umberto = {};
+      	}
+      	window.umberto.relativeAppPath = "../../../assets/1.3.1/scripts"
+      
+      	// Add app script
+      	var el = document.createElement( 'script' );
+      	el.setAttribute( 'async', 'async' );
+      	el.setAttribute( 'defer', 'defer' );
+      	if ( typeof Symbol === 'function' && typeof Symbol() === 'symbol' ) {
+      		el.src = "../../../assets/1.3.1/scripts/app.js";
+      	} else {
+      		el.src = "../../../assets/1.3.1/scripts/app-polyfill.js";
+      	}
+      	document.getElementsByTagName( 'head' )[ 0 ].appendChild( el );
+      
+      	// Changing documentation theme enable it via `localStorage.setItem( 'theme', 'theme-dark' )`
+      	if ( localStorage.getItem( 'theme' ) === 'theme-dark' ) {
+      		document.getElementsByTagName( 'html' )[ 0 ].classList.add( 'theme-dark' );
+      	}
+      } )();
+    </script>
+    <!-- Google Tag Manager-->
+    <script>if (["ckeditor.com"].indexOf(location.hostname) !== -1) {
+          (function (w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+              var f = d.getElementsByTagName(s)[0],
+                  j = d.createElement(s),
+                  dl = l != 'dataLayer' ? '&l=' + l : '';
+              j.async = true;
+              j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+              f.parentNode.insertBefore(j, f);
+          })( window, document, 'script', 'dataLayer', 'GTM-KFSS6L' );
+      }
+      
+    </script>
+    <!-- End Google Tag Manager-->
+    <script>if ( ["ckeditor.com"].indexOf( location.hostname ) !== -1) {
+      	window.emojicsOpts = {
+      		widget: '50c7737f072dfd100f3dad0411f02e',
+      		position: 'inline'
+      	};
+      	( function( d, s, id ) {
+      		var js, fjs = d.getElementsByTagName( s )[ 0 ];
+      		js = d.createElement( s );
+      		js.id = id;
+      		js.async = 1;
+      		js.src = '//connect.emojics.com/dist/sdk.js';
+      		fjs.parentNode.insertBefore( js, fjs );
+      	} )( document, 'script', 'emojics-js' );
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="javascript:;" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript)-->
+    <header class="top" data-project="ckeditor4">
+      <div class="header__main">
+        <div class="header__main-rwd-button"><a href="#"><span></span><span></span><span></span></a></div>
+        <div class="header__main-title"><a class="header__main-title-home" href="index1.html">CKEditor Ecosystem Documentation</a></div>
+        <div class="top__search">
+          <input class="top__search__box" type="text" id="docsearch_input" placeholder="Search in CKEditor 4">
+          <div class="top__search__button"><img src="static/picture/loupe.jpg" alt="Search"></div>
+        </div>
+      </div>
+      <div class="header__sub">
+        <ul class="top__menu">
+          <li class="top__menu-project-logo"><a href="index2.html">CKEditor 4</a></li>
+          <li><a href="index.html">Guides</a></li>
+          <li><a href="index3.html">Features</a></li>
+          <li><a class="top__menu__item--active" href="index4.html">Examples</a></li>
+          <li><a class="top__menu__api" href="index5.html">API</a></li>
+        </ul>
+      </div>
+      <div class="header__menu-rwd">
+        <ul class="header__menu-rwd__projects">
+          <li data-project="ckeditor5"><a href="index6.html">CKEditor 5</a></li>
+          <li data-project="ckeditor4"><a href="index2.html">CKEditor 4
+              <ul class="tree header__menu-rwd__projects-pages">
+                <li data-group="guide"><a href="index.html">Guides</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+                <li data-group="features"><a href="index3.html">Features</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+                <li data-group="sdk"><a href="index4.html">Examples</a>
+                  <!-- Display subpages for active project.-->
+                  <ul class="header__menu-rwd__projects-subpages">
+                                        <li>
+                                          <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">End-user Features</span></div>
+                                          <ul class="tree__item-nested-list">
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">User Interface</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="uicolor1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">UI Color</span></div></a></li>
+                                                                                        <li><a href="uilanguages.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">UI Language</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Resizing</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="size1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Editor Size</span></div></a></li>
+                                                                                        <li><a href="autogrow1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Editor Auto Grow</span></div></a></li>
+                                                                                        <li><a href="resize1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Resizing Customization</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting Images</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="image1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Default Image Plugin</span></div></a></li>
+                                                                                        <li><a href="image21.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Enhanced Image Plugin</span></div></a></li>
+                                                                                        <li><a href="easyimage1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Easy Image Plugin</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting Content</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="pastefromword1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from Word</span></div></a></li>
+                                                                                        <li><a href="pastefromgoogledocs1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from Google Docs</span></div></a></li>
+                                                                                        <li><a href="pastefromexcel1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from Excel</span></div></a></li>
+                                                                                        <li><a href="pastefromlibreoffice1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from LibreOffice</span></div></a></li>
+                                                                                        <li><a href="">
+                                                                                            <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--sdk tree__item__text">Spreadsheets</span></div></a></li>
+                                                                                        <li><a href="fileupload.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">File Upload</span></div></a></li>
+                                                                                        <li><a href="mediaembed.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Embedding Media Resources</span></div></a></li>
+                                                                                        <li><a href="table1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Tables with Column Resizing</span></div></a></li>
+                                                                                        <li><a href="codesnippet1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Code Snippets</span></div></a></li>
+                                                                                        <li><a href="mathjax1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Mathematical Formulas</span></div></a></li>
+                                                                                        <li><a href="mathtype1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Mathematical and Chemical Formulas</span></div></a></li>
+                                                                                        <li><a href="placeholder1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Placeholders</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Styling and Formatting</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="basicstyles1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Basic Text Styles</span></div></a></li>
+                                                                                        <li><a href="copyformatting1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Copying Text Formatting</span></div></a></li>
+                                                                                        <li><a href="removeformat1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Removing Text Formatting</span></div></a></li>
+                                                                                        <li><a href="styles1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Styles and Stylesheet Parser</span></div></a></li>
+                                                                                        <li><a href="format1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Text Formats</span></div></a></li>
+                                                                                        <li><a href="colorbutton1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Text and Background Color</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Working with Document</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="spellchecker.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Spelling and Grammar Checking</span></div></a></li>
+                                                                                        <li><a href="mentions1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Mentions, Tags and Emoji</span></div></a></li>
+                                                                                        <li><a href="autocomplete1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Autocomplete</span></div></a></li>
+                                                                                        <li><a href="sourcearea1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Source Code Editing</span></div></a></li>
+                                                                                        <li><a href="magicline1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Magic Line</span></div></a></li>
+                                                                                        <li><a href="language.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Multilingual Content</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Accessibility Support</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="accessibility.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Accessibility and Keyboard Shortcuts</span></div></a></li>
+                                                                                        <li><a href="accessibilitychecker.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Accessibility Checker</span></div></a></li>
+                                                                                        <li><a href="tabindex.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">&quot;Tab&quot; Key Navigation</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                          </ul>
+                                        </li>
+                                        <li>
+                                          <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Integration Features</span></div>
+                                          <ul class="tree__item-nested-list">
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Types</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="classic.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Classic Editor</span></div></a></li>
+                                                                                        <li><a href="inline.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Inline Editor</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor UI</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="fixedui.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Fixed User Interface</span></div></a></li>
+                                                                                        <li><a href="floatingui.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Floating User Interface</span></div></a></li>
+                                                                                        <li><a href="sharedspace1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Shared User Interface</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Presets</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="basicpreset.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Basic Preset</span></div></a></li>
+                                                                                        <li><a href="standardpreset.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Standard Preset</span></div></a></li>
+                                                                                        <li><a href="fullpreset.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Full Preset</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Framework Integration</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="angular.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Angular Integration</span></div></a></li>
+                                                                                        <li><a href="react.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">React Integration</span></div></a></li>
+                                                                                        <li><a href="vue.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Vue Integration</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Toolbar</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="toolbar1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Custom Toolbar</span></div></a></li>
+                                                                                        <li><a href="balloontoolbar1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Balloon Toolbar</span></div></a></li>
+                                                                                        <li><a href="toolbarlocation1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Toolbar Location</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Content Filtering</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="acf.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">ACF – Automatic Mode</span></div></a></li>
+                                                                                        <li><a href="acfcustom.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">ACF – Custom Mode</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Saving Data</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="savetextarea.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Saving Textarea Data</span></div></a></li>
+                                                                                        <li><a href="saveajax.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Saving in Ajax Applications</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Output Control</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="htmlformatting.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">HTML Output Formatting</span></div></a></li>
+                                                                                        <li><a href="fullpage1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Editing Complete HTML Pages</span></div></a></li>
+                                                                                        <li><a href="enterkey1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Enter Key Configuration</span></div></a></li>
+                                                                                        <li><a href="bbcode1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">BBCode Editing</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">API Usage</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="api.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Using CKEditor API</span></div></a></li>
+                                                                                        <li><a href="readonly1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Read-Only Mode</span></div></a></li>
+                                                                                        <li><a href="draganddrop.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Drag and Drop Integration</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Utilities</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="devtools1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Developer Tools</span></div></a></li>
+                                                                                        <li><a href="uicolorpicker1.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">UI Color Picker</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                                                <li>
+                                                                  <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Tutorials</span></div>
+                                                                  <ul class="tree__item-nested-list">
+                                                                                        <li><a href="timestamp.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Timestamp Plugin</span></div></a></li>
+                                                                                        <li><a href="abbr.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Abbreviation Plugin</span></div></a></li>
+                                                                                        <li><a href="simplebox.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Custom Widget</span></div></a></li>
+                                                                                        <li><a href="autotag.html">
+                                                                                            <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Autotag Plugin</span></div></a></li>
+                                                                  </ul>
+                                                                </li>
+                                          </ul>
+                                        </li>
+                  </ul>
+                </li>
+                <li data-group="api-reference"><a href="index5.html">API</a>
+                  <!-- Display subpages for active project.-->
+                </li>
+              </ul></a></li>
+          <li data-project="letters"><a href="overview.html">Letters</a></li>
+          <li data-project="cs"><a href="overview1.html">Cloud Services</a></li>
+          <li data-project="ckfinder"><a href="index7.html">CKFinder</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="main">
+      <section class="main__content formatted main__content--sdk">
+        <div class="main__content-inner">
+          <div class="github-contrib"><a href="javascript:;" title="Contribute to this guide"><img src="static/picture/edit.jpg" alt="Contribute to this guide"></a><a href="javascript:;" title="Report an issue"><img src="static/picture/exclamation-circle.jpg" alt="Report an issue"></a>
+          </div>
+          <div class="rwd-breadcrumbs"><a href="index1.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="index2.html">CKEditor 4</a><span class="rwd-breadcrumbs__separator">/</span><a href="index4.html">Examples</a>
+          </div>
+          <script src="static/js/ckeditor.js"></script>
+          <script src="static/js/icons.js"></script>
+		<style>
+			#browserSupportInfo, #browserSupportInfo .ie11, #browserSupportInfo .edge {
+				display: none;
+			}
+		</style>
+
+		<h1>Creating Data Grids with Spreadsheet Plugin <a class="documentation" href="spreadsheets.html">Documentation</a></h1>
+
+		<p>
+			The optional, commercial <a href="javascript:;">Spreadsheet</a> plugin, introduced in CKEditor 4.13, offers Excel-like functionality available right inside CKEditor 4. It allows you to create intelligent, data-driven documents in your WYSIWYG editor. This makes it a perfect solution for financial, auditing, engineering, technical and science industries.
+		</p>
+
+		<p class="tip">
+			This feature is provided as a commercial product and provides integration with our partner solution, <a href="javascript:;">Handsontable</a>. A license can be purchased <a href="javascript:;">here</a>.
+		</p>
+
+		<p>
+			When enabled, the Spreadsheet plugin allows you to insert advanced spreadsheet widgets into your rich-text content and provides the following features:
+		</p>
+
+		<ul>
+			<li>Inserting spreadsheets with and without a header row or column and with any number of rows and columns.</li>
+			<li>Creating auto-updating references to spreadsheet cells right inside editor content.</li>
+			<li>Autoconverting data pasted from Microsoft Excel and Google Sheets into a Spreadsheet instance.</li>
+			<li>Converting existing tables to spreadsheet instances and vice versa.</li>
+			<li>Inserting spreadsheets using predefined templates.</li>
+			<li>Spreadsheet structure manipulation (adding, removing and resizing rows and columns).</li>
+			<li>Renaming row and column headers.</li>
+			<li>Single and multi-column sorting.</li>
+			<li>Basic data styling like bold, italic, underline and so on.</li>
+			<li>Changing cell alignment, text and background color, font size and font family.</li>
+			<li>Selecting cell type and formatting with data validation support.</li>
+			<li>Using formulas.</li>
+			<li>Auto filling rows and columns.</li>
+			<li>Applying various conditional formatting rules to single and multiple cells, entire columns or spreadsheets.</li>
+			<li>Advanced copying and pasting.</li>
+		</ul>
+
+		<p>
+			For a more detailed Spreadsheet plugin functionality overview, refer to the <a href="spreadsheets.html">Creating Data Grids with Spreadsheet Plugin</a> article. See the <a href="dev_spreadsheets.html">Spreadsheets Integration</a> guide for information about how to install and configure the plugin.
+		</p>
+
+		<p class="tip">
+			Some of the existing CKEditor 4 features are not supported in the spreadsheet widget at the moment. This means that applying content changes with the <a href="styles1.html">Styles</a> and <a href="format1.html">Format</a> dropdowns or inserting <a href="javascript:;">emoji</a> inside the spreadsheet widget content will have no effect.
+		</p>
+
+		<p class="tip" id="browserSupportInfo" aria-hidden="true">
+			<span class="ie11">
+				<strong>Internet Explorer 11</strong> browser support is limited: the plugin is usable but there are known, visible issues.
+				If your application requires wider support for it or you have encountered any issues using the Spreadsheet plugin there, please <a href="javascript:;">contact us</a>.
+			</span>
+		</p>
+
+		<textarea cols="80" id="editor1" name="editor1" rows="10" data-sample="1" data-sample-short="">
+			<h1>Top Tech Companies that Rule the World</h1>
+			<table data-cke-spreadsheet-widget="1">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Symbol</th>
+						<th>Company</th>
+						<th>Entry Price</th>
+						<th>Last Price</th>
+						<th data-sort-order="desc" data-sort-priority="0">% Change</th>
+						<th>Market Cap (B)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">NVDA</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">NVIDIA&#xA0;Corporation</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(80, 199, 100);">154.26</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">191.17</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D1-C1)/D1" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(119, 212, 134);">0.1930742271276874</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(177, 189, 230);">116.33</td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">AMD</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">Advanced&#xA0;Micro&#xA0;Devices</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(119, 212, 134);">23.53</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">28.46</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D2-C2)/D2" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(119, 212, 134);">0.17322557976106814</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(197, 206, 236);">30.78</td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">AAPL</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">Apple</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(80, 199, 100);">173.15</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">207.16</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D3-C3)/D3" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(119, 212, 134);">0.16417262019694917</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(138, 157, 218);">976.82</td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">AMZN</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">Amazon.com</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(42, 135, 58);">1639.83</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">1901.75</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D4-C4)/D4" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(158, 224, 169);">0.13772577888786647</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(138, 157, 218);">935.76</td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">F</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">Facebook</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(80, 199, 100);">161.45</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">182.58</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D5-C5)/D5" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(158, 224, 169);">0.1157300909190493</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(138, 157, 218);">521.38</td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">GOOG</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">Alphabet</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(42, 135, 58);">1119.92</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">1256</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D6-C6)/D6" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(158, 224, 169);">0.10834394904458593</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(138, 157, 218);">874.70</td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">MSFT</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">Microsoft&#xA0;Corporation</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(80, 199, 100);">112.03</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">125.01</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D7-C7)/D7" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(158, 224, 169);">0.10383169346452287</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(138, 157, 218);">959.10</td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">MTCH</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">Match&#xA0;Group</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(119, 212, 134);">55.38</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">61.65</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D8-C8)/D8" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(158, 224, 169);">0.10170316301703157</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(197, 206, 236);">17.17</td>
+					</tr>
+					<tr>
+						<th>9</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">ATVI</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">Activision&#xA0;Blizzard</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(119, 212, 134);">42.14</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">46.75</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D9-C9)/D9" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(197, 236, 203);">0.09860962566844919</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(197, 206, 236);">35.71</td>
+					</tr>
+					<tr>
+						<th>10</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">INTC</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">Intel&#xA0;Corporation</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(119, 212, 134);">52.96</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">58</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D10-C10)/D10" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(197, 236, 203);">0.08689655172413792</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(158, 173, 224);">264.16</td>
+					</tr>
+					<tr>
+						<th>11</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">PYPL</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">PayPal&#xA0;Holdings</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(119, 212, 134);">98.07</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">107.22</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D11-C11)/D11" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(197, 236, 203);">0.0853385562395076</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(177, 189, 230);">125.68</td>
+					</tr>
+					<tr>
+						<th>12</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">BABA</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">Alibaba&#xA0;Group</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(80, 199, 100);">183.03</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">185.67</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D12-C12)/D12" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(235, 248, 237);">0.014218775246404839</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(158, 173, 224);">481.29</td>
+					</tr>
+					<tr>
+						<th>13</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">EA</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">Electronic&#xA0;Arts</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(119, 212, 134);">95.78</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">94</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D13-C13)/D13" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(236, 196, 196);">-0.01893617021276597</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(197, 206, 236);">28.21</td>
+					</tr>
+					<tr>
+						<th>14</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">CR</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">salesforce.com</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(80, 199, 100);">163.65</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">159.56</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D14-C14)/D14" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(236, 196, 196);">-0.025632990724492374</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(177, 189, 230);">123.64</td>
+					</tr>
+					<tr>
+						<th>15</th>
+						<td data-style="text-align:center; font-weight:bold" style="text-align: center; font-weight: bold;">TSLA</td>
+						<td data-style="font-weight:; font-style:; text-decoration:">Tesla</td>
+						<td data-formatting-0="greater" data-formatting-0-style="color:#2a873a" data-formatting-0-value-0="1000" data-formatting-1="greater" data-formatting-1-style="color:#37ae4a" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="color:#50c764" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="color:#77d486" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="color: rgb(55, 174, 74);">319.88</td>
+						<td data-type="numeric" data-type-pattern="$0,0.00">258</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=(D15-C15)/D15" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(199, 80, 80);">-0.23984496124031007</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#8a9dda" data-formatting-0-value-0="500" data-formatting-1="greater" data-formatting-1-style="background-color:#9eade0" data-formatting-1-value-0="200" data-formatting-2="greater" data-formatting-2-style="background-color:#b1bde6" data-formatting-2-value-0="100" data-formatting-3="greater" data-formatting-3-style="background-color:#c5ceec" data-formatting-3-value-0="0" data-type="numeric" data-type-pattern="$0,0.00" style="background-color: rgb(197, 206, 236);">44.93</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Based on &quot;Tech Stocks That Move The Market&quot; by <a href="https://finance.yahoo.com/u/yahoo-finance/watchlists/tech-stocks-that-move-the-market">Yahoo Finance</a>.</p>
+		</textarea>
+
+		<h2 id="cell-referencing">Cell Referencing</h2>
+
+		<p class="tip">
+			The cell referencing feature was introduced in version 1.2.0 of the Spreadsheet plugin.
+		</p>
+
+		<p>
+			This feature allows you to create a reference to any spreadsheet cell inside the CKEditor 4 content. Creating references is super simple thanks to an intuitive autocomplete panel showing the best matching suggestions for the currently typed query. It supports fuzzy matching, which means you need to only type a part of the spreadsheet, row or column name to get relevant suggestions. This makes creating references very quick.
+		</p>
+
+		<p>
+			Whenever the spreadsheet cells are updated or their values change, the references are also auto-updated. This keeps the entire content up to date with no user action needed.
+		</p>
+
+		<p>
+			To display the cell referencing suggestion panel, just type the <code>$</code> sign. By default, the suggestion panel will show up to 10 items, narrowed down based on the closest pattern match and the spreadsheet cell order, starting from the top-left corner.
+		</p>
+		<p>
+			Each suggestion consists of six parts. For example, a suggestion like <span style="color:hsl(0, 0%, 45%);">$</span><span style="color:hsl(113, 69%, 26%);">spreadsheet1</span><span style="color:hsl(0, 0%, 45%);">!</span><span style="color:hsl(286, 44%, 47%);">Symbol</span><span style="color:hsl(0, 0%, 45%);">:</span><span style="color:hsl(214, 93%, 41%);">11</span> consists of:
+		</p>
+
+		<ol>
+			<li>The suggestion prefix (<span style="color:hsl(0, 0%, 45%);">$</span>) &#x2013; Opens the suggestions panel.</li>
+			<li>The spreadsheet name (<span style="color:hsl(113, 69%, 26%);">spreadsheet1</span>) &#x2013; Filters suggestions by spreadsheet names (which can be set via the dialog during the spreadsheet insertion).</li>
+			<li>The cell prefix (<span style="color:hsl(0, 0%, 45%);">!</span>) &#x2013; Separates the spreadsheet name from the column and row names.</li>
+			<li>The column name (<span style="color:hsl(286, 44%, 47%);">Symbol</span>) &#x2013; Filters suggestions by column names.</li>
+			<li>The column and row name separator (<span style="color:hsl(0, 0%, 45%);">:</span>) &#x2013; Separates the column name from the row name.</li>
+			<li>The row name (<span style="color:hsl(214, 93%, 41%);">11</span>) &#x2013; Filters suggestions by row names.</li>
+		</ol>
+
+		<div class="tip">
+			<p>Spreadsheet, column and row name filtering uses fuzzy matching. Some examples:</p>
+			<ul>
+				<li>Type <code>!sheet</code> to match <code>spreadsheet1</code> and <code>spreadsheet2</code> but not <code>custom-data1</code>.</li>
+				<li>Type <code>$!</code>... to take all spreadsheet instances in the content into account.</li>
+				<li>Type <code>$!ch</code> to match the all the columns showing the <code>change</code> in all available spreadsheet instances.</li>
+				<li>Type <code>$sheet1!ch</code> to match the same columns but only for spreadsheet instances whose names contain the <code>sheet1</code> text.</li>
+			</ul>
+		</div>
+
+		<textarea cols="80" id="editor2" name="editor2" rows="10" data-sample="2" data-sample-short="">
+			<h1>The Biggest Passenger Car Producers Worldwide</h1>
+
+			<p>The biggest car producer in the world is
+				<span class="cell-reference" data-column="0" data-id="e5b10114a6564c5728548c422e48c3c48" data-row="0">China</span>
+				&#xA0;that produced
+				<span class="cell-reference" data-column="5" data-id="e5b10114a6564c5728548c422e48c3c48" data-row="0">21,360.19</span>
+				&#xA0;thousand cars in 2019. This number is even more impressive when compared to the total yearly production from 2000 which was only
+				<span class="cell-reference" data-column="1" data-id="e5b10114a6564c5728548c422e48c3c48" data-row="0">604.68</span>
+				&#xA0;thousand cars.
+				<strong>
+					This means a whopping
+					<span class="cell-reference" data-column="8" data-id="e5b10114a6564c5728548c422e48c3c48" data-row="0">3,432.48%</span>
+					&#xA0;increase in the production number from year 2000 to 2019.
+				</strong>
+			</p>
+
+			<p>Another country with a significant growth in recent years is
+				<span class="cell-reference" data-column="0" data-id="e5b10114a6564c5728548c422e48c3c48" data-row="3">India</span> with a
+				<span class="cell-reference" data-column="6" data-id="e5b10114a6564c5728548c422e48c3c48" data-row="3">7.26%</span>,&#xA0;
+				<span class="cell-reference" data-column="7" data-id="e5b10114a6564c5728548c422e48c3c48" data-row="3">27.96%</span>&#xA0;and
+				<span class="cell-reference" data-column="8" data-id="e5b10114a6564c5728548c422e48c3c48" data-row="3">599.54%</span>
+				&#xA0;increase in the last 5, 10 and 19 years, respectively.
+			</p>
+
+			<p>The table below presents ten biggest passenger car producers worldwide (<em>all numbers in thousands</em>).</p>
+
+			<table data-cke-spreadsheet-id="e5b10114a6564c5728548c422e48c3c48" data-cke-spreadsheet-name="spreadsheet1" data-cke-spreadsheet-widget="1">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Country</th>
+						<th>2000</th>
+						<th>2005</th>
+						<th>2010</th>
+						<th>2015</th>
+						<th>2019</th>
+						<th>5y change (%)</th>
+						<th>10y change (%)</th>
+						<th>19y change (%)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>China</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">604.68</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">3078.15</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">13897.08</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">21079.43</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">21360.19</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F1-E1)/E1;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(236, 196, 196);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F1-D1)/D1;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(119, 212, 134);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((F1-B1)/B1;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(65, 185, 88);"></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>Japan</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">8359.43</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">9016.74</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">8310.36</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">7830.72</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">8328.76</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F2-E2)/E2;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(197, 236, 203);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F2-D2)/D2;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(119, 212, 134);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((F2-B2)/B2;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(236, 196, 196);"></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>Germany</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">5131.92</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">5350.19</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">5552.41</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">5707.94</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">4661.33</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F3-E3)/E3;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(212, 119, 119);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F3-D3)/D3;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(212, 119, 119);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((F3-B3)/B3;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(236, 196, 196);"></td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>India</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">517.96</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">1264.00</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2831.54</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">3378.06</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">3623.34</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F4-E4)/E4;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(158, 224, 169);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F4-D4)/D4;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(119, 212, 134);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((F4-B4)/B4;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(65, 185, 88);"></td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td>South&#xA0;Korea</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2602.01</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">3357.09</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">3866.21</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">4135.11</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">3612.59</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F5-E5)/E5;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(224, 158, 158);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F5-D5)/D5;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(212, 119, 119);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((F5-B5)/B5;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(119, 212, 134);"></td>
+					</tr>
+					<tr>
+						<th>6</th>
+						<td>USA</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">5542.22</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">4321.27</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2731.11</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">4163.68</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2512.78</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F6-E6)/E6;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(199, 80, 80);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F6-D6)/D6;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(224, 158, 158);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((F6-B6)/B6;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(199, 80, 80);"></td>
+					</tr>
+					<tr>
+						<th>7</th>
+						<td>Brazil</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">1352.00</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2009.49</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2584.69</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2018.95</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2448.49</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F7-E7)/E7;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(119, 212, 134);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F7-D7)/D7;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(224, 158, 158);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((F7-B7)/B7;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(119, 212, 134);"></td>
+					</tr>
+					<tr>
+						<th>8</th>
+						<td>Spain</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2366.36</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2098.17</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">1931.51</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2218.98</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2248.02</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F8-E8)/E8;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(236, 196, 196);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F8-D8)/D8;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(119, 212, 134);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((F8-B8)/B8;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(236, 196, 196);"></td>
+					</tr>
+					<tr>
+						<th>9</th>
+						<td>France</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2879.81</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">3112.96</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">1924.17</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">1553.80</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">1675.20</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F9-E9)/E9;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(197, 236, 203);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F9-D9)/D9;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(224, 158, 158);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((F9-B9)/B9;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(199, 80, 80);"></td>
+					</tr>
+					<tr>
+						<th>10</th>
+						<td>Mexico</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">1279.09</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">989.84</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">1386.15</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">1968.05</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">1382.71</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F10-E10)/E10;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(199, 80, 80);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F10-D10)/D10;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(236, 196, 196);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((F10-B10)/B10;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(119, 212, 134);"></td>
+					</tr>
+					<tr>
+						<th>11</th>
+						<td data-style="font-weight:bold" style="font-weight: bold;">Total</td>
+						<td data-type="numeric" data-style="font-weight:bold" style="font-weight: bold;" data-formula="=SUM(B1:B10)" data-type-pattern="0,0.00"></td>
+						<td data-type="numeric" data-style="font-weight:bold" style="font-weight: bold;" data-formula="=SUM(C1:C10)" data-type-pattern="0,0.00"></td>
+						<td data-type="numeric" data-style="font-weight:bold" style="font-weight: bold;" data-formula="=SUM(D1:D10)" data-type-pattern="0,0.00"></td>
+						<td data-type="numeric" data-style="font-weight:bold" style="font-weight: bold;" data-formula="=SUM(E1:E10)" data-type-pattern="0,0.00"></td>
+						<td data-type="numeric" data-style="font-weight:bold" style="font-weight: bold;" data-formula="=SUM(F1:F10)" data-type-pattern="0,0.00"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F11-E11)/E11;4)" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(236, 196, 196);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#77d486" data-formatting-0-value-0="0.15" data-formatting-1="greater" data-formatting-1-style="background-color:#9ee0a9" data-formatting-1-value-0="0.1" data-formatting-2="greater" data-formatting-2-style="background-color:#c5eccb" data-formatting-2-value-0="0.05" data-formatting-3="greater" data-formatting-3-style="background-color:#ebf8ed" data-formatting-3-value-0="0" data-formatting-4="less" data-formatting-4-style="background-color:#c75050" data-formatting-4-value-0="-0.15" data-formatting-5="less" data-formatting-5-style="background-color:#d47777" data-formatting-5-value-0="-0.1" data-formatting-6="less" data-formatting-6-style="background-color:#e09e9e" data-formatting-6-value-0="-0.05" data-formatting-7="less" data-formatting-7-style="background-color:#ecc4c4" data-formatting-7-value-0="0" data-formula="=ROUND((F11-D11)/D11;4)" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(119, 212, 134);"></td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((F11-B11)/B11;4)" data-style="font-weight:bold" data-type="numeric" data-type-pattern="%0,0.00" style="font-weight: bold; background-color: rgb(119, 212, 134);"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>On the other hand, countries like the
+				<span class="cell-reference" data-column="0" data-id="e5b10114a6564c5728548c422e48c3c48part" data-row="0">USA</span>&#x200B;&#x200B;,&#xA0;
+				<span class="cell-reference" data-column="0" data-id="e5b10114a6564c5728548c422e48c3c48part" data-row="1">France</span>&#xA0;and
+				<span class="cell-reference" data-column="0" data-id="e5b10114a6564c5728548c422e48c3c48part" data-row="2">Spain</span>&#xA0;in recent years noted a visible decrease in the production number. For example, the
+				<span class="cell-reference" data-column="0" data-id="e5b10114a6564c5728548c422e48c3c48part" data-row="0">USA</span>
+				&#xA0;produced&#xA0;
+				<span class="cell-reference" data-column="1" data-id="e5b10114a6564c5728548c422e48c3c48part" data-row="0">5,542.22</span>
+				&#xA0;thousand cars in 2000 and only&#xA0;
+				<span class="cell-reference" data-column="2" data-id="e5b10114a6564c5728548c422e48c3c48part" data-row="0">2,512.78</span>
+				&#xA0;thousand cars in 2019, which constitutes a
+				<span class="cell-reference" data-column="3" data-id="e5b10114a6564c5728548c422e48c3c48part" data-row="0">-54.66%</span>
+				&#xA0;change. Refer to the table below for more details (<em>all numbers in thousands</em>).
+			</p>
+
+			<table data-cke-spreadsheet-id="e5b10114a6564c5728548c422e48c3c48part" data-cke-spreadsheet-name="spreadsheet2" data-cke-spreadsheet-widget="1">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Country</th>
+						<th>2000</th>
+						<th>2019</th>
+						<th>19y change (%)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>1</th>
+						<td>USA</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">5542.22</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2512.78</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((C1-B1)/B1;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(199, 80, 80);"></td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>France</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2879.81</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">1675.20</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((C2-B2)/B2;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(199, 80, 80);"></td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>Spain</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2366.36</td>
+						<td data-type="numeric" data-type-pattern="0,0.00">2248.02</td>
+						<td data-formatting-0="greater" data-formatting-0-style="background-color:#41b958" data-formatting-0-value-0="1" data-formatting-1="greater" data-formatting-1-style="background-color:#77d486" data-formatting-1-value-0="0.15" data-formatting-2="greater" data-formatting-2-style="background-color:#9ee0a9" data-formatting-2-value-0="0.1" data-formatting-3="greater" data-formatting-3-style="background-color:#c5eccb" data-formatting-3-value-0="0.05" data-formatting-4="greater" data-formatting-4-style="background-color:#ebf8ed" data-formatting-4-value-0="0" data-formatting-5="less" data-formatting-5-style="background-color:#c75050" data-formatting-5-value-0="-0.15" data-formatting-6="less" data-formatting-6-style="background-color:#d47777" data-formatting-6-value-0="-0.1" data-formatting-7="less" data-formatting-7-style="background-color:#e09e9e" data-formatting-7-value-0="-0.05" data-formatting-8="less" data-formatting-8-style="background-color:#ecc4c4" data-formatting-8-value-0="0" data-formula="=ROUND((C3-B3)/B3;4)" data-type="numeric" data-type-pattern="%0,0.00" style="background-color: rgb(236, 196, 196);"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>Source: <a href="https://knoema.com/kiywikd/world-passenger-car-production">World Passenger Car Production Dataset</a></p>
+		</textarea>
+
+		<h2 id="related-features">Related Features</h2>
+		<ul>
+			<li><a href="pastefromexcel1.html">Inserting Content &#x2013; Pasting Content from Microsoft Excel</a></li>
+			<li><a href="table1.html">Inserting Content &#x2013; Table Support with Column Resizing</a></li>
+		</ul>
+
+		<script>
+			var LICENSE_KEY = 'JcbYHjXk45Gx8z/KGByD5NYamnLx/qb8BofSqNLTrbzolE02wKBaYkNApb7x3011Ll75lFLiCqizhBY7NyAaDzh8DEyy1wEPFMja4b3U3vAAyE3InbDUpOeXYmcK9wcRj9Ank3AGGJQVawLEtsg9dUu0VHk8bYl5KN8VUwQUB0ltX5QwQKv/esNKbF1nQg9P3x43qdB6M1PSTtsb1aN4h9FB';
+
+			CKEDITOR.addCss( '.cke table, th, td {border-collapse: collapse;border: 1px solid #444;} .cke table {width: 100%;} .cke th, td {padding: 0 2px;}' );
+
+			CKEDITOR.plugins.addExternal( 'spreadsheet', '../../../ckeditor4/4.14.0/examples/assets/plugins/spreadsheet/', 'plugin.js' );
+
+			if ( CKEDITOR.env.ie && !CKEDITOR.env.edge ) {
+				var supportInfoEl = document.querySelector( '#browserSupportInfo' );
+				supportInfoEl.style.display = 'block';
+				supportInfoEl.setAttribute( 'aria-hidden', false );
+				supportInfoEl.querySelector( '.ie11' ).style.display = 'block';
+			}
+		</script>
+
+		<script data-sample="1">
+			CKEDITOR.replace( 'editor1', {
+				width: 'auto',
+				height: 550,
+				extraAllowedContent: 'h1;a[!href]',
+
+				spreadsheet_licenseKey: LICENSE_KEY,
+				spreadsheet_enableAutoConversion: true,
+
+				plugins:
+					'spreadsheet,' +
+					'ajax,' +
+					'link,' +
+					'undo,' +
+					'justify,' +
+					'enterkey,' +
+					'about,' +
+					'basicstyles,' +
+					'clipboard,' +
+					'elementspath,' +
+					'floatingspace,' +
+					'htmlwriter,' +
+					'removeformat,' +
+					'sourcedialog,' +
+					'tab,' +
+					'toolbar,' +
+					'undo,' +
+					'resize,' +
+					'wysiwygarea,' +
+					'contextmenu,' +
+					'colorbutton,' +
+					'pastefromword,' +
+					'pastefromgdocs,' +
+					'image,' +
+					'format,' +
+					'font,' +
+					'list,' +
+					'magicline,' +
+					'maximize,' +
+					'print,' +
+					'table',
+
+					toolbar: [
+						{ name: 'insert', items: [ 'Spreadsheet', 'Table', 'Image' ] },
+						{ name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat' ] },
+						{ name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+						{ name: 'align', items: [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
+						{ name: 'links', items: [ 'Link', 'Unlink' ] },
+						{ name: 'styles', items: [ 'Font', 'FontSize' ] },
+						{ name: 'document', items: [ 'Print' ] },
+						{ name: 'tools', items: [ 'Maximize' ] }
+					]
+			} );
+		</script>
+
+		<script data-sample="2">
+			CKEDITOR.replace( 'editor2', {
+				width: 'auto',
+				height: 750,
+				extraAllowedContent: 'h1;a[!href]',
+
+				spreadsheet_licenseKey: LICENSE_KEY,
+				spreadsheet_enableAutoConversion: true,
+
+				plugins:
+					'spreadsheet,' +
+					'ajax,' +
+					'link,' +
+					'undo,' +
+					'justify,' +
+					'enterkey,' +
+					'about,' +
+					'basicstyles,' +
+					'clipboard,' +
+					'elementspath,' +
+					'floatingspace,' +
+					'htmlwriter,' +
+					'removeformat,' +
+					'sourcedialog,' +
+					'tab,' +
+					'toolbar,' +
+					'undo,' +
+					'resize,' +
+					'wysiwygarea,' +
+					'contextmenu,' +
+					'colorbutton,' +
+					'pastefromword,' +
+					'pastefromgdocs,' +
+					'image,' +
+					'format,' +
+					'font,' +
+					'list,' +
+					'magicline,' +
+					'maximize,' +
+					'print,' +
+					'table',
+
+					toolbar: [
+						{ name: 'insert', items: [ 'Spreadsheet', 'Table', 'Image' ] },
+						{ name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat' ] },
+						{ name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+						{ name: 'align', items: [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
+						{ name: 'links', items: [ 'Link', 'Unlink' ] },
+						{ name: 'styles', items: [ 'Font', 'FontSize' ] },
+						{ name: 'document', items: [ 'Print' ] },
+						{ name: 'tools', items: [ 'Maximize' ] }
+					]
+			} );
+		</script>
+	
+          <h2>Get Sample Source Code</h2>
+          <ul class="sdk-sample-source-code">
+            <li><a class="sdk-sample-source-code__button" href="#">Creating data grids with Spreadsheet plugin</a>
+              <pre class="sdk-sample-source-code__code-block">
+                <div class="sdk-sample-source-code__code-block-action-buttons"><a class="sdk-sample-source-code__code-block-copy" href="#">Copy</a><a class="sdk-sample-source-code__code-block-download" href="#">Download</a></div><code class="html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;robots&quot; content=&quot;noindex, nofollow&quot;&gt;
+  &lt;title&gt;Creating data grids with Spreadsheet plugin&lt;/title&gt;
+  &lt;script src=&quot;https://cdn.ckeditor.com/4.14.0/standard-all/ckeditor.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;textarea cols=&quot;80&quot; id=&quot;editor1&quot; name=&quot;editor1&quot; rows=&quot;10&quot; data-sample-short&gt;&amp;lt;p&amp;gt;This is some &amp;lt;strong&amp;gt;sample text&amp;lt;/strong&amp;gt;. You are using &amp;lt;a href=&amp;quot;https://ckeditor.com/&amp;quot;&amp;gt;CKEditor&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;&lt;/textarea&gt;
+  &lt;script&gt;
+    CKEDITOR.replace('editor1', {
+      width: 'auto',
+      height: 550,
+      extraAllowedContent: 'h1;a[!href]',
+
+      spreadsheet_licenseKey: LICENSE_KEY,
+      spreadsheet_enableAutoConversion: true,
+
+      plugins: 'spreadsheet,' +
+        'ajax,' +
+        'link,' +
+        'undo,' +
+        'justify,' +
+        'enterkey,' +
+        'about,' +
+        'basicstyles,' +
+        'clipboard,' +
+        'elementspath,' +
+        'floatingspace,' +
+        'htmlwriter,' +
+        'removeformat,' +
+        'sourcedialog,' +
+        'tab,' +
+        'toolbar,' +
+        'undo,' +
+        'resize,' +
+        'wysiwygarea,' +
+        'contextmenu,' +
+        'colorbutton,' +
+        'pastefromword,' +
+        'pastefromgdocs,' +
+        'image,' +
+        'format,' +
+        'font,' +
+        'list,' +
+        'magicline,' +
+        'maximize,' +
+        'print,' +
+        'table',
+
+      toolbar: [{
+          name: 'insert',
+          items: ['Spreadsheet', 'Table', 'Image']
+        },
+        {
+          name: 'basicstyles',
+          items: ['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat']
+        },
+        {
+          name: 'colors',
+          items: ['TextColor', 'BGColor']
+        },
+        {
+          name: 'align',
+          items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
+        },
+        {
+          name: 'links',
+          items: ['Link', 'Unlink']
+        },
+        {
+          name: 'styles',
+          items: ['Font', 'FontSize']
+        },
+        {
+          name: 'document',
+          items: ['Print']
+        },
+        {
+          name: 'tools',
+          items: ['Maximize']
+        }
+      ]
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+            </li>
+            <li><a class="sdk-sample-source-code__button" href="#">Cell Referencing</a>
+              <pre class="sdk-sample-source-code__code-block">
+                <div class="sdk-sample-source-code__code-block-action-buttons"><a class="sdk-sample-source-code__code-block-copy" href="#">Copy</a><a class="sdk-sample-source-code__code-block-download" href="#">Download</a></div><code class="html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;robots&quot; content=&quot;noindex, nofollow&quot;&gt;
+  &lt;title&gt;Cell Referencing&lt;/title&gt;
+  &lt;script src=&quot;https://cdn.ckeditor.com/4.14.0/standard-all/ckeditor.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;textarea cols=&quot;80&quot; id=&quot;editor2&quot; name=&quot;editor2&quot; rows=&quot;10&quot; data-sample-short&gt;&amp;lt;p&amp;gt;This is some &amp;lt;strong&amp;gt;sample text&amp;lt;/strong&amp;gt;. You are using &amp;lt;a href=&amp;quot;https://ckeditor.com/&amp;quot;&amp;gt;CKEditor&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;&lt;/textarea&gt;
+  &lt;script&gt;
+    CKEDITOR.replace('editor2', {
+      width: 'auto',
+      height: 750,
+      extraAllowedContent: 'h1;a[!href]',
+
+      spreadsheet_licenseKey: LICENSE_KEY,
+      spreadsheet_enableAutoConversion: true,
+
+      plugins: 'spreadsheet,' +
+        'ajax,' +
+        'link,' +
+        'undo,' +
+        'justify,' +
+        'enterkey,' +
+        'about,' +
+        'basicstyles,' +
+        'clipboard,' +
+        'elementspath,' +
+        'floatingspace,' +
+        'htmlwriter,' +
+        'removeformat,' +
+        'sourcedialog,' +
+        'tab,' +
+        'toolbar,' +
+        'undo,' +
+        'resize,' +
+        'wysiwygarea,' +
+        'contextmenu,' +
+        'colorbutton,' +
+        'pastefromword,' +
+        'pastefromgdocs,' +
+        'image,' +
+        'format,' +
+        'font,' +
+        'list,' +
+        'magicline,' +
+        'maximize,' +
+        'print,' +
+        'table',
+
+      toolbar: [{
+          name: 'insert',
+          items: ['Spreadsheet', 'Table', 'Image']
+        },
+        {
+          name: 'basicstyles',
+          items: ['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat']
+        },
+        {
+          name: 'colors',
+          items: ['TextColor', 'BGColor']
+        },
+        {
+          name: 'align',
+          items: ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
+        },
+        {
+          name: 'links',
+          items: ['Link', 'Unlink']
+        },
+        {
+          name: 'styles',
+          items: ['Font', 'FontSize']
+        },
+        {
+          name: 'document',
+          items: ['Print']
+        },
+        {
+          name: 'tools',
+          items: ['Maximize']
+        }
+      ]
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+            </li>
+          </ul>
+          <div class="feedback-widget">
+            <div id="emojics-root"></div>
+          </div>
+        </div>
+      </section>
+      <div class="side-navigation side-navigation--sdk">
+        <div class="side-navigation__wrapper">
+          <nav class="side-navigation__inner">
+            <ul class="tree sdk-tree">
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">End-user Features</span></div>
+                              <ul class="tree__item-nested-list">
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">User Interface</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="uicolor1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">UI Color</span></div></a></li>
+                                                                <li><a href="uilanguages.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">UI Language</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Resizing</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="size1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Editor Size</span></div></a></li>
+                                                                <li><a href="autogrow1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Editor Auto Grow</span></div></a></li>
+                                                                <li><a href="resize1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Resizing Customization</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting Images</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="image1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Default Image Plugin</span></div></a></li>
+                                                                <li><a href="image21.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Enhanced Image Plugin</span></div></a></li>
+                                                                <li><a href="easyimage1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Easy Image Plugin</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Inserting Content</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="pastefromword1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from Word</span></div></a></li>
+                                                                <li><a href="pastefromgoogledocs1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from Google Docs</span></div></a></li>
+                                                                <li><a href="pastefromexcel1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from Excel</span></div></a></li>
+                                                                <li><a href="pastefromlibreoffice1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Paste from LibreOffice</span></div></a></li>
+                                                                <li><a href="">
+                                                                    <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--sdk tree__item__text">Spreadsheets</span></div></a></li>
+                                                                <li><a href="fileupload.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">File Upload</span></div></a></li>
+                                                                <li><a href="mediaembed.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Embedding Media Resources</span></div></a></li>
+                                                                <li><a href="table1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Tables with Column Resizing</span></div></a></li>
+                                                                <li><a href="codesnippet1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Code Snippets</span></div></a></li>
+                                                                <li><a href="mathjax1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Mathematical Formulas</span></div></a></li>
+                                                                <li><a href="mathtype1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Mathematical and Chemical Formulas</span></div></a></li>
+                                                                <li><a href="placeholder1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Placeholders</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Styling and Formatting</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="basicstyles1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Basic Text Styles</span></div></a></li>
+                                                                <li><a href="copyformatting1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Copying Text Formatting</span></div></a></li>
+                                                                <li><a href="removeformat1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Removing Text Formatting</span></div></a></li>
+                                                                <li><a href="styles1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Styles and Stylesheet Parser</span></div></a></li>
+                                                                <li><a href="format1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Text Formats</span></div></a></li>
+                                                                <li><a href="colorbutton1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Text and Background Color</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Working with Document</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="spellchecker.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Spelling and Grammar Checking</span></div></a></li>
+                                                                <li><a href="mentions1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Mentions, Tags and Emoji</span></div></a></li>
+                                                                <li><a href="autocomplete1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Autocomplete</span></div></a></li>
+                                                                <li><a href="sourcearea1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Source Code Editing</span></div></a></li>
+                                                                <li><a href="magicline1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Magic Line</span></div></a></li>
+                                                                <li><a href="language.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Multilingual Content</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Accessibility Support</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="accessibility.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Accessibility and Keyboard Shortcuts</span></div></a></li>
+                                                                <li><a href="accessibilitychecker.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Accessibility Checker</span></div></a></li>
+                                                                <li><a href="tabindex.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">&quot;Tab&quot; Key Navigation</span></div></a></li>
+                                                </ul>
+                                              </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Integration Features</span></div>
+                              <ul class="tree__item-nested-list">
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Types</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="classic.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Classic Editor</span></div></a></li>
+                                                                <li><a href="inline.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Inline Editor</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor UI</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="fixedui.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Fixed User Interface</span></div></a></li>
+                                                                <li><a href="floatingui.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Floating User Interface</span></div></a></li>
+                                                                <li><a href="sharedspace1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Shared User Interface</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Editor Presets</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="basicpreset.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Basic Preset</span></div></a></li>
+                                                                <li><a href="standardpreset.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Standard Preset</span></div></a></li>
+                                                                <li><a href="fullpreset.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Full Preset</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Framework Integration</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="angular.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Angular Integration</span></div></a></li>
+                                                                <li><a href="react.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">React Integration</span></div></a></li>
+                                                                <li><a href="vue.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Vue Integration</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Toolbar</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="toolbar1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Custom Toolbar</span></div></a></li>
+                                                                <li><a href="balloontoolbar1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Balloon Toolbar</span></div></a></li>
+                                                                <li><a href="toolbarlocation1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Toolbar Location</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Content Filtering</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="acf.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">ACF – Automatic Mode</span></div></a></li>
+                                                                <li><a href="acfcustom.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">ACF – Custom Mode</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Saving Data</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="savetextarea.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Saving Textarea Data</span></div></a></li>
+                                                                <li><a href="saveajax.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Saving in Ajax Applications</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Output Control</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="htmlformatting.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">HTML Output Formatting</span></div></a></li>
+                                                                <li><a href="fullpage1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Editing Complete HTML Pages</span></div></a></li>
+                                                                <li><a href="enterkey1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Enter Key Configuration</span></div></a></li>
+                                                                <li><a href="bbcode1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">BBCode Editing</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">API Usage</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="api.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Using CKEditor API</span></div></a></li>
+                                                                <li><a href="readonly1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Read-Only Mode</span></div></a></li>
+                                                                <li><a href="draganddrop.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Drag and Drop Integration</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Utilities</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="devtools1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Developer Tools</span></div></a></li>
+                                                                <li><a href="uicolorpicker1.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">UI Color Picker</span></div></a></li>
+                                                </ul>
+                                              </li>
+                                              <li>
+                                                <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Tutorials</span></div>
+                                                <ul class="tree__item-nested-list">
+                                                                <li><a href="timestamp.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Timestamp Plugin</span></div></a></li>
+                                                                <li><a href="abbr.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Abbreviation Plugin</span></div></a></li>
+                                                                <li><a href="simplebox.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Custom Widget</span></div></a></li>
+                                                                <li><a href="autotag.html">
+                                                                    <div class="tree__item__wrapper"><span class="tree__item--sdk tree__item__text">Autotag Plugin</span></div></a></li>
+                                                </ul>
+                                              </li>
+                              </ul>
+                            </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </main>
+    <footer class="footer footer--bordered">
+      <p>&copy; 2003-2020 <a href="javascript:;">CKSource</a>. All rights reserved.</p>
+    </footer>
+    <script type="text/javascript" src="static/js/docsearch.min.js"></script><script type="text/javascript">
+docsearch({
+apiKey:'7fd1a5354ceba927a56450ce0459620d',indexName:'ckeditor_docs_site',inputSelector:'#docsearch_input',algoliaOptions:{hitsPerPage:250,attributesToRetrieve:'*',facetFilters:['tags: ckeditor4']},
+transformData: function( hits ) {var sortingFn = function( a, b ) {a.custom_ranking = a.custom_ranking || 0;b.custom_ranking = b.custom_ranking || 0;if ( a.custom_ranking === b.custom_ranking ) return a.index - b.index;if ( a.custom_ranking > b.custom_ranking ) return -1;if ( a.custom_ranking < b.custom_ranking ) return 1;};var result = [];var tags = [ 'guide', 'features', 'examples', 'api' ];var hitsGrouped = { api: [] };hitsGrouped[ 'examples' ] = hits.filter( function( h ) {return h.tags.includes( 'examples' );} ).slice( 0, 7 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn );tags.forEach( function( tag ) {if ( tag !== 'examples' ) {hitsGrouped[ tag ] = hits.filter( function( h ) {return h.tags.includes( tag );} ).slice( 0, 10 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn ).slice( 0, 3 );}} );var apiSearchHits = [];if ( window.apiSearch ) apiSearchHits = window.apiSearch();hitsGrouped.api = hitsGrouped.api.filter( function( h ) {var isDuplicated = false;for ( var i = 0; i < apiSearchHits.length; i++ ) {if ( h.url.includes( apiSearchHits[ i ].urlShort ) ) {isDuplicated = true;break;}}return !isDuplicated;} );hitsGrouped.api = ( apiSearchHits || [] ).concat( hitsGrouped.api );result = result.concat( hitsGrouped[ 'examples' ] );tags.forEach( function( tag ) {if ( tag !== 'examples' ) result = result.concat( hitsGrouped[ tag ].slice( 0, 4 ) );} );return result;}
+});
+</script>
+  </body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Overview - Letters Documentation</title>
+    <meta name="description" content="Letters is a ready-to-use, distraction-free, real-time collaborative editor built on top of CKEditor 5 Framework. Learn how to integrate Letters with your web application.">
+    <meta name="twitter:card" content="Letters is a ready-to-use, distraction-free, real-time collaborative editor built on top of CKEditor 5 Framework. Learn how to integrate Letters with your web application.">
+    <meta name="twitter:site" content="@ckeditor">
+    <meta property="og:title" content="Overview - Letters Documentation">
+    <meta property="og:description" content="Letters is a ready-to-use, distraction-free, real-time collaborative editor built on top of CKEditor 5 Framework. Learn how to integrate Letters with your web application.">
+    <meta property="og:image" content="https://ckeditor.com/docs/assets/img/og/ogimage-ecosystem.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ckeditor.com/docs/letters/latest/guides/overview.html">
+    <meta property="DC.language" content="en">
+    <meta property="DC.publisher" content="CKSource">
+    <meta property="DC.creator" content="CKEditor">
+    <meta property="DC.title" content="Overview - Letters Documentation">
+    <meta property="DC.format" content="text/html">
+    <meta property="DC.type" content="Text">
+    <meta property="DC.description" content="Letters is a ready-to-use, distraction-free, real-time collaborative editor built on top of CKEditor 5 Framework. Learn how to integrate Letters with your web application.">
+    
+    
+    
+    
+    <link rel="stylesheet" href="static/css/docsearch.min.css">
+    <link rel="stylesheet" href="static/css/styles.css" type="text/css" media="all">
+    <script>
+      ( function() {
+      	'use strict';
+      	// Set up global variables;
+      	if ( !window.umebrto ) {
+      		window.umberto = {};
+      	}
+      	window.umberto.relativeAppPath = "../../../assets/1.3.1/scripts"
+      
+      	// Add app script
+      	var el = document.createElement( 'script' );
+      	el.setAttribute( 'async', 'async' );
+      	el.setAttribute( 'defer', 'defer' );
+      	if ( typeof Symbol === 'function' && typeof Symbol() === 'symbol' ) {
+      		el.src = "../../../assets/1.3.1/scripts/app.js";
+      	} else {
+      		el.src = "../../../assets/1.3.1/scripts/app-polyfill.js";
+      	}
+      	document.getElementsByTagName( 'head' )[ 0 ].appendChild( el );
+      
+      	// Changing documentation theme enable it via `localStorage.setItem( 'theme', 'theme-dark' )`
+      	if ( localStorage.getItem( 'theme' ) === 'theme-dark' ) {
+      		document.getElementsByTagName( 'html' )[ 0 ].classList.add( 'theme-dark' );
+      	}
+      } )();
+    </script>
+    <!-- Google Tag Manager-->
+    <script>if (["ckeditor.com"].indexOf(location.hostname) !== -1) {
+          (function (w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+              var f = d.getElementsByTagName(s)[0],
+                  j = d.createElement(s),
+                  dl = l != 'dataLayer' ? '&l=' + l : '';
+              j.async = true;
+              j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+              f.parentNode.insertBefore(j, f);
+          })( window, document, 'script', 'dataLayer', 'GTM-KFSS6L' );
+      }
+      
+    </script>
+    <!-- End Google Tag Manager-->
+    <script>if ( ["ckeditor.com"].indexOf( location.hostname ) !== -1) {
+      	window.emojicsOpts = {
+      		widget: '50c7737f072dfd100f3dad0411f02e',
+      		position: 'inline'
+      	};
+      	( function( d, s, id ) {
+      		var js, fjs = d.getElementsByTagName( s )[ 0 ];
+      		js = d.createElement( s );
+      		js.id = id;
+      		js.async = 1;
+      		js.src = '//connect.emojics.com/dist/sdk.js';
+      		fjs.parentNode.insertBefore( js, fjs );
+      	} )( document, 'script', 'emojics-js' );
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="javascript:;" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript)-->
+    <header class="top" data-project="letters">
+      <div class="header__main">
+        <div class="header__main-rwd-button"><a href="#"><span></span><span></span><span></span></a></div>
+        <div class="header__main-title"><a class="header__main-title-home" href="index1.html">CKEditor Ecosystem Documentation</a></div>
+        <div class="top__search">
+          <input class="top__search__box" type="text" id="docsearch_input" placeholder="Search in Letters">
+          <div class="top__search__button"><img src="static/picture/loupe.jpg" alt="Search"></div>
+        </div>
+      </div>
+      <div class="header__sub">
+        <ul class="top__menu">
+          <li class="top__menu-project-logo"><a href="">Letters</a></li>
+          <li><a class="top__menu__item--active" href="javascript:;">Guides</a></li>
+        </ul>
+      </div>
+      <div class="header__menu-rwd">
+        <ul class="header__menu-rwd__projects">
+          <li data-project="ckeditor5"><a href="index6.html">CKEditor 5</a></li>
+          <li data-project="ckeditor4"><a href="index2.html">CKEditor 4</a></li>
+          <li data-project="letters"><a href="">Letters
+              <ul class="tree header__menu-rwd__projects-pages">
+                <li data-group="guides"><a href="javascript:;">Guides</a>
+                  <!-- Display subpages for active project.-->
+                  <ul class="header__menu-rwd__projects-subpages">
+                            <li><a href="">
+                                <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Integration</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Quick start</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integration</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Development</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Configuration</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Theme customization</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Plugin customization</span></div></a></li>
+                              </ul>
+                            </li>
+                            <li>
+                              <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Support</span></div>
+                              <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Browser compatibility</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting support</span></div></a></li>
+                              </ul>
+                            </li>
+                  </ul>
+                </li>
+              </ul></a></li>
+          <li data-project="cs"><a href="overview1.html">Cloud Services</a></li>
+          <li data-project="ckfinder"><a href="index7.html">CKFinder</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="main">
+      <section class="main__content formatted">
+        <div class="main__content-inner">
+          <div class="rwd-breadcrumbs"><a href="index1.html">Home</a><span class="rwd-breadcrumbs__separator">/</span><a href="">Letters</a><span class="rwd-breadcrumbs__separator">/</span><a href="javascript:;">Guides</a>
+          </div>
+          <h1 class="main__content-title"><img src="static/picture/book.jpg" alt="guide">Overview
+          </h1><nav class="secondary-navigation"><h3>Table of contents</h3><ol><li><a href="#interface">Interface</a></li><li><a href="#real-time-collaboration">Real-time collaboration</a></li><li><a href="#block-toolbar">Block toolbar</a></li><li><a href="#inline-toolbar">Inline toolbar</a></li><li><a href="#easy-image">Easy Image</a><ol><li><a href="#image-styles">Image styles</a></li></ol></li><li><a href="#comments">Comments</a></li><li><a href="#keyboard-support">Keyboard support</a></li><li><a href="#autoformatting">Autoformatting</a></li><li><a href="#inviting-users">Inviting users</a></li><li><a href="#offline-mode">Offline mode</a></li><li><a href="#finish-editing">Finish editing</a></li><li><a href="#feedback">Feedback!</a></li></ol></nav>
+<p><a href="javascript:;" target="_blank" rel="noopener">Letters</a> is a ready-to-use, distraction-free, real-time collaborative editor built on top of CKEditor 5 Framework and using CKEditor Cloud Services.</p>
+<ul>
+<li><strong>Ready to use</strong> &#x2013; It only requires minimal configuration and integration effort to use in a web page, CMS or a web application.</li>
+<li><strong>Distraction-free</strong> &#x2013; When designing Letters, we focused on keeping the interface clean and beautiful, at the same time maintaining high usability and providing the user with all necessary options.</li>
+<li><strong>Real-time collaborative editing</strong> &#x2013; Letters lets you edit the same document simultaneously and shows you the selection made by other users in real time. It also supports asynchronous collaboration allowing users to add comments and start discussions over the document.</li>
+</ul>
+<p>Letters is a perfect implementation of the possibilities of <a href="javascript:;">CKEditor 5 Framework</a>:</p>
+<ul>
+<li>The document model from the CKEditor 5 engine handles document editing with support for collaboration.</li>
+<li>CKEditor 5 plugins are mixed with some custom plugins and the default CKEditor 5 interface is enhanced with custom skins and panels using the CKEditor 5 UI library &#x2014; which shows the flexibility and customizability of the Framework.</li>
+</ul>
+<p><a href="javascript:;" target="_blank" rel="noopener">CKEditor Cloud Services</a> handles the backend, including:</p>
+<ul>
+<li>Comments and discussions,</li>
+<li>Collaborative editing,</li>
+<li>Easy Image upload.</li>
+</ul>
+<h2 id="interface"><a class="headerlink" href="#interface">#</a> Interface</h2>
+<p>When designing Letters, we focused on keeping the interface clean and beautiful. The user interface consists of three parts:</p>
+<ul>
+<li>The top bar, designed mainly for showing active users connected to the document.</li>
+<li>The main working space for text editing. Heavy, fixed toolbar at the top was abandoned in favor of light contextual toolbars shown next to the user selection.</li>
+<li>The sidebar which is empty unless comments are added to the content.</li>
+</ul>
+<p><img src="static/picture/interface.png" data-lightbox="true" alt="Letters interface." width="600"></p>
+<h2 id="real-time-collaboration"><a class="headerlink" href="#real-time-collaboration">#</a> Real-time collaboration</h2>
+<p>Letters lets you edit the same document simultaneously and shows you the selection made by other users in real time. Users connected to the document are displayed at the top of the application.</p>
+<p><img src="static/picture/collaboration-selection.png" data-lightbox="true" alt="Users selection in real time." width="464"></p>
+<h2 id="block-toolbar"><a class="headerlink" href="#block-toolbar">#</a> Block toolbar</h2>
+<p>Letters comes with two toolbars. The first one is for block elements and is located on the left side of the interface. It allows for creating various block elements like headers or lists. It also lets you insert images.</p>
+<p><img src="static/picture/block-toolbar.png" data-lightbox="true" alt="Block toolbar." width="782"></p>
+<h2 id="inline-toolbar"><a class="headerlink" href="#inline-toolbar">#</a> Inline toolbar</h2>
+<p>The second type of the toolbar, the inline toolbar, shows up after you select some content. It lets you apply styles or add comments to the selection:</p>
+<p><img src="static/picture/inline-toolbar.png" data-lightbox="true" alt="Inline toolbar." width="782"></p>
+<h2 id="easy-image"><a class="headerlink" href="#easy-image">#</a> Easy Image</h2>
+<p>Letters comes with a built-in Easy Image feature, which means that handling image uploads is available out of the box.</p>
+<p>There are several ways for the end user to insert images in Letters:</p>
+<ul>
+<li>Pasting it from the clipboard.</li>
+<li>Dragging a file from the file system.</li>
+<li>Selecting it through a file system dialog after the Insert image button is pressed:</li>
+</ul>
+<p><img src="static/picture/insert-image.png" data-lightbox="true" alt="Insert image button." width="275"></p>
+<!-- TODO YouTube movie with drag&dropping an image into Letters. -->
+<p>Letters is using responsive images in the content. With a single image upload, several optimized versions of that image are created after upload by Cloud Services, for different sizes of displays. All this is totally transparent to the end user who uploaded the image. Rescaled and optimized images are delivered through a blazing-fast CDN.</p>
+<img src="static/picture/easy-image.png" width="1440" alt="Responsive images with Easy Image.">
+<h3 id="image-styles"><a class="headerlink" href="#image-styles">#</a> Image styles</h3>
+<p>Each image provides a contextual toolbar that lets the user apply styles to it. By default the user can choose between two styles:</p>
+<ul>
+<li>A full&#x2013;width image without any CSS class.</li>
+<li>A side image styled with the <code>image-style-side</code> CSS class.</li>
+</ul>
+<p><img src="static/picture/sideimage.png" data-lightbox="true" alt="Side image." width="378"></p>
+<p>The exact styling of these two types of images can be controlled by your application. You can read more about the included image styles feature in the <a href="javascript:;">CKEditor 5 image styles documentation</a>. Image styles in Letters are configurable in a similar way as in CKEditor 5, so you are not limited to the default configuration.</p>
+<h2 id="comments"><a class="headerlink" href="#comments">#</a> Comments</h2>
+<p>Apart from real-time editing, Letters also supports asynchronous collaboration allowing users to add comments and start discussions over the document.</p>
+<p><img src="static/picture/comment-draft.png" data-lightbox="true" alt="Adding a single comment." width="600"></p>
+<p>A sample comment thread:</p>
+<p><img src="static/picture/comment-thread.png" data-lightbox="true" alt="Comment thread."></p>
+<h2 id="keyboard-support"><a class="headerlink" href="#keyboard-support">#</a> Keyboard support</h2>
+<p>For maximum productivity and for better accessibility support, Letters comes with good keyboard support. This lets you perform repeatable tasks like text formatting much faster.</p>
+<p>For a list of available keyboard shortcuts, check the <a href="javascript:;">CKEditor 5 keyboard support</a> documentation.</p>
+<p>As an addition to keyboard shortcuts available in CKEditor 5, Letters offers additional keyboard shortcuts designed exclusively for its features:</p>
+<ul>
+<li>The <kbd>Esc</kbd> key can be used to finish editing when running Letters in a dialog window.</li>
+<li>Once in comment mode, the <kbd>Tab</kbd> and <kbd>Enter</kbd> keys can be used to submit comments and replies.</li>
+</ul>
+<h2 id="autoformatting"><a class="headerlink" href="#autoformatting">#</a> Autoformatting</h2>
+<p>Another productivity enhancement included in Letters is the autoformatting support. Whenever you want to make e.g. a header or a list, you may do it by just entering plain text in Markdown. Users familiar with Markdown syntax will find it intuitive, other users will soon find it attractive, too, as it can save a good amount of time.</p>
+<p><img src="static/picture/autoformat.png" data-lightbox="true" alt="Autoformatting in action." width="642"></p>
+<!-- TODO make an animated gif out of it, couldn't do this with unstable connection. -->
+<p>The autoformatting feature comes straight from CKEditor 5 and you can read more about it in the <a href="javascript:;">CKEditor 5 autoformatting feature</a> documentation.</p>
+<h2 id="inviting-users"><a class="headerlink" href="#inviting-users">#</a> Inviting users</h2>
+<p>The share button lets you invite users to collaborate within the same document in a convenient manner.<br>
+It can be turned on easily, read more in the <a href="javascript:;">Integration article</a>.</p>
+<p><img src="static/picture/share-document.png" data-lightbox="true" alt="Share button and balloon panel." width="600"></p>
+<h2 id="offline-mode"><a class="headerlink" href="#offline-mode">#</a> Offline mode</h2>
+<p>The key requirement for a good collaboration experience is an internet connection. Without this it is impossible to transmit changes coming from active users to other users connected to the document. Letters detects if the internet connection is up and in case of any issues, it temporarily switches to offline mode.</p>
+<p>Currently, in offline mode the content is available in read-only mode until the internet connection is back.</p>
+<p><img src="static/picture/offline-mode.png" data-lightbox="true" alt="Offline mode." width="378"></p>
+<h2 id="finish-editing"><a class="headerlink" href="#finish-editing">#</a> Finish editing</h2>
+<p>One of the common scenarios is displaying the Letters interface in a separate overlay (dialog window).<br>
+In such cases, Letters offers a finish editing button to easily exit to the application from the editing window.</p>
+<p><img src="static/picture/finish-editing.png" data-lightbox="true" alt="Finish editing button." width="600"></p>
+<h2 id="feedback"><a class="headerlink" href="#feedback">#</a> Feedback!</h2>
+<p>If you are interested in Letters or would like to suggest some improvements, feel free to <a href="javascript:;" target="_blank" rel="noopener">contact us</a>.</p>
+
+          <div class="feedback-widget">
+            <div id="emojics-root"></div>
+          </div>
+        </div>
+      </section>
+      <div class="side-navigation">
+        <div class="side-navigation__wrapper">
+          <nav class="side-navigation__inner">
+            <ul class="tree guide-tree">
+                          <li><a href="">
+                              <div class="tree__item__wrapper tree__item__wrapper--active"><span class="tree__item--guide tree__item__text">Overview</span></div></a></li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Integration</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Quick start</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Integration</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Development</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Configuration</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Theme customization</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Plugin customization</span></div></a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="tree__item__wrapper"><span class="tree__item--folder tree__item__text">Support</span></div>
+                            <ul class="tree__item-nested-list">
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Browser compatibility</span></div></a></li>
+                                    <li><a href="javascript:;">
+                                        <div class="tree__item__wrapper"><span class="tree__item--guide tree__item__text">Getting support</span></div></a></li>
+                            </ul>
+                          </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </main>
+    <footer class="footer footer--bordered">
+      <p>&copy; 2003-2020 <a href="javascript:;">CKSource</a>. All rights reserved.</p>
+    </footer>
+    <script type="text/javascript" src="static/js/docsearch.min.js"></script><script type="text/javascript">
+docsearch({
+apiKey:'7fd1a5354ceba927a56450ce0459620d',indexName:'ckeditor_docs_site',inputSelector:'#docsearch_input',algoliaOptions:{hitsPerPage:250,attributesToRetrieve:'*',facetFilters:['tags: letters']},
+transformData: function( hits ) {var sortingFn = function( a, b ) {a.custom_ranking = a.custom_ranking || 0;b.custom_ranking = b.custom_ranking || 0;if ( a.custom_ranking === b.custom_ranking ) return a.index - b.index;if ( a.custom_ranking > b.custom_ranking ) return -1;if ( a.custom_ranking < b.custom_ranking ) return 1;};var result = [];var tags = [ 'guides' ];var hitsGrouped = { api: [] };hitsGrouped[ 'guides' ] = hits.filter( function( h ) {return h.tags.includes( 'guides' );} ).slice( 0, 7 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn );tags.forEach( function( tag ) {if ( tag !== 'guides' ) {hitsGrouped[ tag ] = hits.filter( function( h ) {return h.tags.includes( tag );} ).slice( 0, 10 ).map( function( item, idx ) {item.index = idx;return item;} ).sort( sortingFn ).slice( 0, 3 );}} );var apiSearchHits = [];if ( window.apiSearch ) apiSearchHits = window.apiSearch();hitsGrouped.api = hitsGrouped.api.filter( function( h ) {var isDuplicated = false;for ( var i = 0; i < apiSearchHits.length; i++ ) {if ( h.url.includes( apiSearchHits[ i ].urlShort ) ) {isDuplicated = true;break;}}return !isDuplicated;} );hitsGrouped.api = ( apiSearchHits || [] ).concat( hitsGrouped.api );result = result.concat( hitsGrouped[ 'guides' ] );tags.forEach( function( tag ) {if ( tag !== 'guides' ) result = result.concat( hitsGrouped[ tag ].slice( 0, 4 ) );} );return result;}
+});
+</script>
+  </body>
+</html>
